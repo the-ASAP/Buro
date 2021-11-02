@@ -83,3 +83,38 @@
         position: relative;
     }
 }
+
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 3.125rem;
+        display: block;
+
+        &__logo {
+            align-items: center;
+        }
+
+        &__mail {
+            display: none;
+        }
+
+        &__contacts {
+            margin-top: 1.875rem;
+            text-align: left;
+        }
+    }
+
+    .footerMenu {
+        display: none;
+    }
+
+    .license {
+        padding: 1.5625rem 0;
+
+        &__text {
+            font-size: 0.75rem;
+            line-height: 1.2;
+            color: $grayMain;
+            max-width: 50%;
+        }
+    }
+}

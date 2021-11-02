@@ -175,6 +175,10 @@
         }
     }
 
+    &__more {
+        display: none;
+    }
+
     &__map {
         width: 12.875rem;
         height: 3.125rem;
@@ -207,8 +211,11 @@
 
 .cards {
     margin-top: 3.125rem;
-    display: flex;
-    justify-content: space-between;
+
+    &__blocks {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .card {
@@ -271,6 +278,10 @@
     &__choice {
         display: flex;
         align-items: center;
+
+        &_mobile {
+            display: none;
+        }
     }
 
     &__all {
@@ -412,10 +423,21 @@
 }
 
 .family {
-    height: 45.5625rem;
-    background: url("../img/family.png");
     margin-top: 6.25rem;
-    padding: 3.75rem;
+
+    &__back {
+        height: 45.5625rem;
+        padding: 3.75rem;
+        position: relative;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
     &__form {
         width: 27.0625rem;
@@ -423,6 +445,7 @@
         padding: 1.875rem;
         background-color: #fff;
         border-radius: 3px;
+        position: relative;
     }
 
     &__text {
@@ -716,6 +739,10 @@
     &__choice {
         display: flex;
         align-items: center;
+
+        &_mobile {
+            display: none;
+        }
     }
 
     &__all {
@@ -747,6 +774,7 @@
         font-size: 1rem;
         line-height: 1.37;
         color: $grayLight;
+        margin-top: 0.625rem;
     }
 
     &__text {
@@ -835,7 +863,6 @@
         font-weight: 500;
         font-size: 1.5rem;
         line-height: 1.37;
-        color: $grayMain;
     }
 
     &__address,
@@ -911,6 +938,10 @@
     opacity: 0.5;
 }
 
+.owl-carousel {
+    height: fit-content;
+}
+
 @media (max-width: 768px) {
     .intro {
         background: #fff;
@@ -957,10 +988,6 @@
             min-width: 50%;
         }
 
-        &__more {
-            display: none;
-        }
-
         &__map {
             order: 1;
             width: 100%;
@@ -990,7 +1017,9 @@
     }
 
     .cards {
-        display: block;
+        &__blocks {
+            display: block;
+        }
     }
 
     .card {
@@ -1005,6 +1034,13 @@
     .flats {
         &__choice {
             display: none;
+
+            &_mobile {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1.875rem;
+            }
         }
 
         &__title {
@@ -1017,5 +1053,220 @@
     .fire {
         width: 2.25rem;
         height: 2.625rem;
+    }
+
+    .carouselFlats {
+        margin-top: 1.5rem;
+    }
+
+    .family {
+        &__back {
+            padding: 0;
+            height: auto;
+        }
+
+        &__image {
+            position: relative;
+            width: 100%;
+            height: 73vw;
+            object-fit: cover;
+        }
+
+        &__form {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .mortgageCalc {
+        &__blocks {
+            flex-wrap: wrap;
+        }
+
+        &__block {
+            &:nth-child(2) {
+                width: 100%;
+            }
+
+            width: 100%;
+        }
+    }
+
+    .mortgage {
+        margin-top: 3.125rem;
+
+        &__blocks {
+            display: block;
+            margin-top: 1.5625rem;
+        }
+
+        &__block {
+            width: 100%;
+            height: fit-content;
+
+            & + & {
+                margin-top: 1.25rem;
+            }
+        }
+
+        &__subtitle {
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 1.2;
+        }
+
+        &__text {
+            margin-top: 1.25rem;
+            font-size: 0.875rem;
+            line-height: 1.29;
+            color: $grayMid;
+        }
+    }
+
+    .agency {
+        height: auto;
+        display: block;
+        text-align: center;
+        padding: 0 3.125rem;
+
+        &__title {
+            padding-top: 1.875rem;
+        }
+
+        &__ref {
+            margin-top: 1.25rem;
+        }
+
+        &__image {
+            width: auto;
+            height: auto;
+            margin-top: 1.875rem;
+            padding-bottom: 1.875rem;
+        }
+    }
+
+    .advantage {
+        margin-top: 3.125rem;
+
+        &__blocks {
+            margin-top: 1.5625rem;
+            display: block;
+        }
+
+        &__block {
+            width: auto;
+            height: auto;
+            padding: 1.25rem;
+
+            & + & {
+                margin-top: 1.25rem;
+            }
+        }
+
+        &__icon {
+            position: relative;
+            margin-top: 1.25rem;
+            bottom: 0;
+            width: 3.75rem;
+            height: 3.75rem;
+            left: 78%;
+        }
+
+        &__subtitle {
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 1.2;
+        }
+
+        &__text {
+            font-size: 0.875rem;
+            line-height: 1.29;
+            color: $grayMid;
+        }
+    }
+
+    .exchange {
+        margin-top: 3.125rem;
+        display: block;
+        height: fit-content;
+
+        &__info {
+            padding: 3.125rem 1.25rem 0;
+        }
+
+        &__buttons {
+            margin: 0;
+        }
+
+        &__mainButton {
+            margin-top: 1.875rem;
+            width: 100%;
+        }
+
+        &__button {
+            margin-top: 0.625rem;
+            width: 100%;
+        }
+
+        &__pink {
+            margin-top: 3.75rem;
+        }
+    }
+
+    .reviews {
+        &__choice {
+            display: none;
+
+            &_mobile {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1.875rem;
+            }
+        }
+
+        &__all {
+            margin: 0;
+        }
+    }
+
+    .review {
+        width: 100%;
+    }
+
+    .carouselReviews {
+        margin-top: 1.5rem;
+    }
+
+    .contacts {
+        margin-top: 3.125rem;
+        padding: 0;
+
+        &__info {
+            padding: 3.125rem 5% 0;
+        }
+
+        &__blocks {
+            margin-top: 1.5625rem;
+            display: block;
+        }
+
+        &__block {
+            width: 100%;
+
+            & + & {
+                margin-top: 1.25rem;
+            }
+        }
+
+        &__consul {
+            width: 100%;
+            position: relative;
+            margin-top: 3.125rem;
+        }
+    }
+
+    .yandexMap {
+        margin-top: 3.125rem;
     }
 }

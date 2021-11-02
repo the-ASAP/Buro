@@ -111,7 +111,7 @@ $(() => {
             "https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU"
         )
         .then((maps) => {
-            const map = new maps.Map("yandexMap", {
+            new maps.Map("yandexMap", {
                 center: [55.76, 37.64],
                 zoom: 10,
                 controls: ["zoomControl"],

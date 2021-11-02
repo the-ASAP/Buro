@@ -130,6 +130,12 @@ h1 {
   font-size: 2.25rem;
   line-height: 1.2;
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.37;
+  }
+}
 h2 {
   font-weight: 500;
   font-size: 1.5rem;
@@ -198,6 +204,17 @@ button {
     width: 90%;
   }
 }
+.wrapper_fullPhone {
+  margin: 0 auto;
+  max-width: 83.75rem;
+  position: relative;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .wrapper_fullPhone {
+    width: 100%;
+  }
+}
 .header {
   height: 5.625rem;
   background-color: #fff;
@@ -263,6 +280,9 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .logo__title {
   font-family: Oswald;
@@ -348,6 +368,21 @@ button {
 
   .nav {
     display: none;
+  }
+
+  .logo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .logo__title {
+    font-size: 1rem;
+    line-height: 1.25;
+    max-width: 8rem;
+  }
+  .logo__icon {
+    width: 3.375rem;
+    height: 3.375rem;
   }
 }
 .footer {
@@ -435,6 +470,39 @@ button {
   width: 7.0625rem;
   height: 2.3125rem;
   position: relative;
+}
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 3.125rem;
+    display: block;
+  }
+  .footer__logo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer__mail {
+    display: none;
+  }
+  .footer__contacts {
+    margin-top: 1.875rem;
+    text-align: left;
+  }
+
+  .footerMenu {
+    display: none;
+  }
+
+  .license {
+    padding: 1.5625rem 0;
+  }
+  .license__text {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    color: #3d3d3d;
+    color: var(--gray-main);
+    max-width: 50%;
+  }
 }
 .intro {
   height: 42vw;
@@ -669,6 +737,9 @@ button {
 .filter__price .filter__item:first-child {
   border-right: 1px solid #dcdcdc;
 }
+.filter__more {
+  display: none;
+}
 .filter__map {
   width: 12.875rem;
   height: 3.125rem;
@@ -704,6 +775,8 @@ button {
 }
 .cards {
   margin-top: 3.125rem;
+}
+.cards__blocks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -798,6 +871,9 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.flats__choice_mobile {
+  display: none;
 }
 .flats__all {
   font-weight: 500;
@@ -961,10 +1037,19 @@ button {
   height: 11.25rem;
 }
 .family {
-  height: 45.5625rem;
-  background: url(../img/family-94b1e012aa81e8234995.png);
   margin-top: 6.25rem;
+}
+.family__back {
+  height: 45.5625rem;
   padding: 3.75rem;
+  position: relative;
+}
+.family__image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .family__form {
   width: 27.0625rem;
@@ -972,6 +1057,7 @@ button {
   padding: 1.875rem;
   background-color: #fff;
   border-radius: 3px;
+  position: relative;
 }
 .family__text {
   margin-top: 1.25rem;
@@ -1279,6 +1365,9 @@ button {
       -ms-flex-align: center;
           align-items: center;
 }
+.reviews__choice_mobile {
+  display: none;
+}
 .reviews__all {
   margin-right: 11.5rem;
   font-weight: 500;
@@ -1315,6 +1404,7 @@ button {
   line-height: 1.37;
   color: #979797;
   color: var(--gray-light);
+  margin-top: 0.625rem;
 }
 .review__text {
   display: block;
@@ -1408,8 +1498,6 @@ button {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.37;
-  color: #3d3d3d;
-  color: var(--gray-main);
 }
 .contacts__address, .contacts__time {
   margin-top: 1rem;
@@ -1478,6 +1566,11 @@ button {
   background: var(--main-color);
   opacity: 0.5;
 }
+.owl-carousel {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 @media (max-width: 768px) {
   .intro {
     background: #fff;
@@ -1521,9 +1614,6 @@ button {
   .filter__price .filter__item {
     min-width: 50%;
   }
-  .filter__more {
-    display: none;
-  }
   .filter__map {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -1551,7 +1641,7 @@ button {
     right: 2px;
   }
 
-  .cards {
+  .cards__blocks {
     display: block;
   }
 
@@ -1566,6 +1656,18 @@ button {
   .flats__choice {
     display: none;
   }
+  .flats__choice_mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 1.875rem;
+  }
   .flats__title h1 {
     font-size: 1.5rem;
     line-height: 1.37;
@@ -1574,6 +1676,199 @@ button {
   .fire {
     width: 2.25rem;
     height: 2.625rem;
+  }
+
+  .carouselFlats {
+    margin-top: 1.5rem;
+  }
+
+  .family__back {
+    padding: 0;
+    height: auto;
+  }
+  .family__image {
+    position: relative;
+    width: 100%;
+    height: 73vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .family__form {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mortgageCalc__blocks {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .mortgageCalc__block {
+    width: 100%;
+  }
+  .mortgageCalc__block:nth-child(2) {
+    width: 100%;
+  }
+
+  .mortgage {
+    margin-top: 3.125rem;
+  }
+  .mortgage__blocks {
+    display: block;
+    margin-top: 1.5625rem;
+  }
+  .mortgage__block {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .mortgage__block + .mortgage__block {
+    margin-top: 1.25rem;
+  }
+  .mortgage__subtitle {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+  }
+  .mortgage__text {
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.29;
+    color: #5d5d5d;
+    color: var(--gray-mid);
+  }
+
+  .agency {
+    height: auto;
+    display: block;
+    text-align: center;
+    padding: 0 3.125rem;
+  }
+  .agency__title {
+    padding-top: 1.875rem;
+  }
+  .agency__ref {
+    margin-top: 1.25rem;
+  }
+  .agency__image {
+    width: auto;
+    height: auto;
+    margin-top: 1.875rem;
+    padding-bottom: 1.875rem;
+  }
+
+  .advantage {
+    margin-top: 3.125rem;
+  }
+  .advantage__blocks {
+    margin-top: 1.5625rem;
+    display: block;
+  }
+  .advantage__block {
+    width: auto;
+    height: auto;
+    padding: 1.25rem;
+  }
+  .advantage__block + .advantage__block {
+    margin-top: 1.25rem;
+  }
+  .advantage__icon {
+    position: relative;
+    margin-top: 1.25rem;
+    bottom: 0;
+    width: 3.75rem;
+    height: 3.75rem;
+    left: 78%;
+  }
+  .advantage__subtitle {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+  }
+  .advantage__text {
+    font-size: 0.875rem;
+    line-height: 1.29;
+    color: #5d5d5d;
+    color: var(--gray-mid);
+  }
+
+  .exchange {
+    margin-top: 3.125rem;
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .exchange__info {
+    padding: 3.125rem 1.25rem 0;
+  }
+  .exchange__buttons {
+    margin: 0;
+  }
+  .exchange__mainButton {
+    margin-top: 1.875rem;
+    width: 100%;
+  }
+  .exchange__button {
+    margin-top: 0.625rem;
+    width: 100%;
+  }
+  .exchange__pink {
+    margin-top: 3.75rem;
+  }
+
+  .reviews__choice {
+    display: none;
+  }
+  .reviews__choice_mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 1.875rem;
+  }
+  .reviews__all {
+    margin: 0;
+  }
+
+  .review {
+    width: 100%;
+  }
+
+  .carouselReviews {
+    margin-top: 1.5rem;
+  }
+
+  .contacts {
+    margin-top: 3.125rem;
+    padding: 0;
+  }
+  .contacts__info {
+    padding: 3.125rem 5% 0;
+  }
+  .contacts__blocks {
+    margin-top: 1.5625rem;
+    display: block;
+  }
+  .contacts__block {
+    width: 100%;
+  }
+  .contacts__block + .contacts__block {
+    margin-top: 1.25rem;
+  }
+  .contacts__consul {
+    width: 100%;
+    position: relative;
+    margin-top: 3.125rem;
+  }
+
+  .yandexMap {
+    margin-top: 3.125rem;
   }
 }
 /**

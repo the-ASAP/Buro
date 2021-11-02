@@ -48,6 +48,7 @@
 
 .logo {
     display: flex;
+    align-items: center;
 
     &__title {
         font-family: Oswald;
@@ -132,5 +133,18 @@
     }
     .nav {
         display: none;
+    }
+    .logo {
+        align-items: center;
+
+        &__title {
+            font-size: 1rem;
+            line-height: 1.25;
+            max-width: 8rem;
+        }
+        &__icon {
+            width: 3.375rem;
+            height: 3.375rem;
+        }
     }
 }
