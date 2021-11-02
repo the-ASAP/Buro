@@ -1,0 +1,136 @@
+.header {
+    height: 5.625rem;
+    background-color: #fff;
+    padding: 1rem 2.8125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__favorites {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 2.25rem;
+        border-radius: 50%;
+        border: 1px solid #dcdcdc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: border-color 0.3s ease-in;
+
+        svg {
+            path {
+                transition: fill 0.3s ease-in;
+            }
+        }
+
+        &:hover {
+            border-color: $mainColor;
+            svg {
+                path {
+                    fill: $mainColor;
+                }
+            }
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+    }
+
+    &__phone {
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.22;
+        text-decoration-line: underline;
+    }
+}
+
+.logo {
+    display: flex;
+
+    &__title {
+        font-family: Oswald;
+        font-size: 1.4375rem;
+        line-height: 1.24;
+        text-transform: uppercase;
+        color: $mainColor;
+        max-width: 13rem;
+    }
+}
+
+.nav {
+    &__item {
+        @extend %regularText;
+        margin: 0 1.875rem;
+        position: relative;
+    }
+
+    &__item_button {
+        position: relative;
+        padding-right: 1.125rem;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 3px;
+            width: 5px;
+            height: 1px;
+            background-color: $grayMain;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease-in;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            right: 0;
+        }
+    }
+
+    &__options {
+        position: absolute;
+        left: -0.625rem;
+        width: calc(120% + 1.25rem);
+        height: fit-content;
+        background: #fff;
+        border-radius: 3px;
+        padding: 0 0.625rem 0.625rem;
+        z-index: 1;
+        display: none;
+    }
+
+    &__option {
+        display: block;
+        text-align: left;
+        margin-top: 0.625rem;
+        font-size: 1rem;
+        line-height: 1.37;
+
+        &:first-child {
+            margin-top: 1.25rem;
+        }
+    }
+
+    &__active {
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem;
+
+        &__contact {
+            display: none;
+        }
+    }
+    .nav {
+        display: none;
+    }
+}

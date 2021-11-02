@@ -1,0 +1,85 @@
+.footer {
+    margin-top: 3.75rem;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 1.875rem 0 3.125rem;
+    display: flex;
+
+    &__logo {
+        display: flex;
+        width: 21.25rem;
+
+        &__title {
+            font-family: Oswald;
+            font-size: 1.4375rem;
+            line-height: 1.24;
+            text-transform: uppercase;
+            color: $mainColor;
+            max-width: 13rem;
+        }
+    }
+
+    &__contacts {
+        text-align: right;
+        flex-grow: 1;
+    }
+
+    &__phone {
+        display: block;
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.22;
+        text-decoration-line: underline;
+    }
+
+    &__mail {
+        display: block;
+        margin-top: 0.625rem;
+        font-size: 1rem;
+        line-height: 1.37;
+        text-align: right;
+    }
+}
+
+.footerMenu {
+    display: flex;
+
+    &__column {
+        margin-right: 6.25rem;
+    }
+
+    &__title {
+        display: block;
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    &__ref {
+        display: block;
+        margin-top: 1.25rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+
+        & + & {
+            margin-top: 0.9375rem;
+        }
+    }
+}
+
+.license {
+    padding: 2.6875rem 0 4.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    &__image {
+        width: 7.0625rem;
+        height: 2.3125rem;
+        position: relative;
+    }
+}

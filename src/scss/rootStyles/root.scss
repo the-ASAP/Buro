@@ -1,0 +1,22 @@
+//Определение свойств
+:root {
+    --main-color: #e23d3d;
+    --hover-color: #c83a3a;
+    --main-back: #e5e5e5;
+    --gray-main: #3d3d3d;
+    --gray-mid: #5d5d5d;
+    --gray-light: #979797;
+
+    --main-font: "Inter", sans-serif;
+    --font-color: #484848;
+}
+
+//Создание переменных
+$mainColor: var(--main-color);
+$hoverColor: var(--hover-color);
+$mainBack: var(--main-back);
+$mainFont: var(--main-font);
+$grayMain: var(--gray-main);
+$grayMid: var(--gray-mid);
+$grayLight: var(--gray-light);
+$fontColor: var(--font-color);

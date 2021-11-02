@@ -1,0 +1,101 @@
+@import "media";
+@import "mixins";
+@import "root";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//Базовые стили body
+body {
+    background-color: $mainBack;
+    font-family: $mainFont;
+    color: $fontColor;
+    cursor: default;
+    @extend %scrollbar;
+}
+
+section {
+    position: relative;
+}
+//Создание базовых стилей для основных тегов
+h1 {
+    font-weight: 500;
+    font-size: 2.25rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+}
+
+a {
+    color: $grayMain;
+    display: inline-block;
+    text-decoration: none;
+}
+
+svg {
+    min-height: 1rem;
+}
+img {
+    width: 100%;
+}
+blockquote {
+}
+// убирает цвет автокомплита у инпута
+input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        font-size: 1rem;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    color: $grayMain;
+}
+
+textarea,
+button,
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+
+    &[disabled] {
+        cursor: default;
+        opacity: 0.7;
+    }
+
+    font-family: $mainFont;
+}
+button {
+    cursor: pointer;
+    color: $grayMain;
+    font-family: $mainFont;
+}
+
+//Стандартный враппер
+.wrapper {
+    margin: 0 auto;
+    max-width: 83.75rem;
+    position: relative;
+    height: 100%;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}

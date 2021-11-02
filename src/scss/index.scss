@@ -1,0 +1,1021 @@
+.intro {
+    height: 42vw;
+    position: relative;
+    background: url("../img/mainBack.png") no-repeat;
+    background-size: cover;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        object-fit: cover;
+        height: 100%;
+    }
+
+    &__title {
+        color: #fff;
+        position: relative;
+        padding-top: 6.25rem;
+        margin: 0 auto;
+        text-align: center;
+        max-width: 38.875rem;
+    }
+}
+
+.filter {
+    margin: 2.6875rem auto 0;
+    padding: 0 1.25rem 1.125rem;
+    background-color: #fff;
+    width: 72.125rem;
+    position: relative;
+
+    &__tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        position: relative;
+    }
+
+    &__tab {
+        padding: 1.375rem 0 0.6875rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        border-bottom: 1px solid rgba(61, 61, 61, 0.1);
+        transition: color 0.3s ease, border-color 0.3s ease;
+
+        &:hover {
+            color: $mainColor;
+            border-color: $mainColor;
+        }
+    }
+    &__item {
+        min-width: 12.9375rem;
+        height: 3.125rem;
+        padding: 0 1.25rem;
+        border: 1px solid #dcdcdc;
+        border-radius: 3px;
+        font-size: 0.875rem;
+        line-height: 1.57;
+        margin-right: 1.25rem;
+        text-align: left;
+        display: flex;
+        align-items: center;
+
+        &_select {
+            position: relative;
+            transition: border-radius 0.3s ease-in;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 23px;
+                width: 5px;
+                height: 1px;
+                background-color: $grayMain;
+                transform: rotate(45deg);
+                transition: transform 0.3s ease-in;
+            }
+            &::after {
+                transform: rotate(-45deg);
+                right: 20px;
+            }
+        }
+
+        &_input,
+        &_price {
+            height: 100%;
+            width: 100%;
+
+            &::placeholder {
+                font-size: 0.875rem;
+                line-height: 1.57;
+                color: $grayMain;
+            }
+        }
+
+        &_square {
+            position: relative;
+        }
+
+        &_city {
+            width: 41.3125rem;
+
+            &::placeholder {
+                font-size: 0.875rem;
+                line-height: 1.57;
+                color: $grayMain;
+            }
+        }
+
+        &_active {
+            border-radius: 3px 3px 0 0;
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__options {
+        display: none;
+        position: absolute;
+        left: -1px;
+        top: 100%;
+        width: calc(100% + 2px);
+        height: fit-content;
+        background: #fff;
+        border-bottom: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+        border-left: 1px solid #dcdcdc;
+        border-radius: 0 0 3px 3px;
+    }
+
+    &__option {
+        display: block;
+        padding-left: 1.25rem;
+        margin: 0.625rem 0 0.625rem;
+
+        &:first-child {
+            margin-top: 1.25rem;
+        }
+    }
+
+    &__ruble {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    &__price {
+        background: #ffffff;
+        border: 1px solid #dcdcdc;
+        border-radius: 3px;
+        height: 3.125rem;
+        width: 100%;
+        display: flex;
+    }
+
+    &__row {
+        display: flex;
+        margin-top: 1.25rem;
+    }
+
+    &__price &__item {
+        border: 0;
+        width: 50%;
+        margin: 0;
+
+        &:first-child {
+            border-right: 1px solid #dcdcdc;
+        }
+    }
+
+    &__map {
+        width: 12.875rem;
+        height: 3.125rem;
+        border: 1px solid $grayMain;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: $grayMain;
+        margin-right: 1.25rem;
+    }
+
+    &__list {
+        width: 12.875rem;
+        height: 3.125rem;
+        border: 1px solid $mainColor;
+        background-color: $mainColor;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: #fff;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+    }
+}
+
+.cards {
+    margin-top: 3.125rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 20rem;
+    height: 10rem;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 1.25rem 1.375rem 1.875rem 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__intro {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        color: $grayMain;
+    }
+
+    &__button {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: $mainColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+    }
+
+    &__text {
+        font-size: 1rem;
+        line-height: 1.2;
+        color: $grayMid;
+    }
+}
+
+.flats {
+    margin-top: 6.25rem;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+    }
+
+    &__choice {
+        display: flex;
+        align-items: center;
+    }
+
+    &__all {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.2;
+        color: $mainColor;
+        text-decoration-line: underline;
+        margin-right: 4.5rem;
+    }
+}
+.fire {
+    margin-left: 1rem;
+}
+
+.carouselFlats,
+.carouselReviews {
+    margin-top: 3.125rem;
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__prev,
+    &__next {
+        width: 3.1875rem;
+        height: 3.1875rem;
+        background-color: $mainColor;
+        border-color: $mainColor;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0.875rem;
+        transition: background-color 0.3s ease-in, border-color 0.3s ease-in;
+
+        svg {
+            path {
+                fill: #fff;
+            }
+        }
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+
+        &.disabled {
+            border: 1px solid $grayMain;
+            background-color: $mainBack;
+
+            svg {
+                path {
+                    fill: $grayMain;
+                }
+            }
+
+            &:hover {
+                background-color: $mainBack;
+                cursor: auto;
+            }
+        }
+    }
+
+    &__next {
+        transform: rotate(180deg);
+    }
+}
+
+.flat {
+    position: relative;
+
+    &__desc {
+        background: #ffffff;
+        border-radius: 0px 0px 3px 3px;
+        padding: 1.25rem;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.2;
+        color: $grayMain;
+    }
+
+    &__favorites {
+        border: 1px solid #e3e3e3;
+        border-radius: 50%;
+        width: 1.875rem;
+        height: 1.875rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: border-color 0.3s ease-in;
+
+        svg {
+            path {
+                transition: fill 0.3s ease-in;
+            }
+        }
+
+        &:hover {
+            border-color: $mainColor;
+            svg {
+                path {
+                    fill: $mainColor;
+                }
+            }
+        }
+    }
+
+    &__address {
+        display: block;
+        margin-top: 0.9375rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.2;
+    }
+
+    &__features {
+        margin-top: 1.875rem;
+    }
+
+    &__feature {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        margin-right: 1.25rem;
+    }
+}
+
+.carouselFlatPhotos {
+    height: 11.25rem;
+}
+
+.family {
+    height: 45.5625rem;
+    background: url("../img/family.png");
+    margin-top: 6.25rem;
+    padding: 3.75rem;
+
+    &__form {
+        width: 27.0625rem;
+        height: 38rem;
+        padding: 1.875rem;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &__text {
+        @extend %regularText;
+        margin-top: 1.25rem;
+        display: block;
+        max-width: 18.75rem;
+    }
+}
+
+.mortgageCalc {
+    &__placeholder {
+        display: block;
+        margin-top: 1.875rem;
+        font-size: 0.875rem;
+        line-height: 1.29;
+        color: $grayLight;
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.22;
+        color: $grayMain;
+        margin-top: 0.3125rem;
+        display: block;
+    }
+
+    &__input {
+        &--price,
+        &--rangeTime {
+            background: linear-gradient(
+                to right,
+                rgb(226, 61, 61) 0%,
+                rgb(226, 61, 61) 100%,
+                rgb(255, 255, 255) 100%,
+                rgb(255, 255, 255) 100%
+            );
+            border-radius: 2px;
+            height: 2px;
+            width: 100%;
+            outline: 0;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                width: 0.875rem; /* Set a specific slider handle width */
+                height: 0.875rem; /* Slider handle height */
+                background: #fff; /* Green background */
+                border-radius: 50%;
+                border: 1px solid $mainColor;
+                cursor: pointer; /* Cursor on hover */
+            }
+        }
+    }
+
+    &__blocks {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__block {
+        width: 50%;
+
+        &:nth-child(2) {
+            width: calc(50% - 3.125rem);
+        }
+    }
+}
+
+.total {
+    margin-top: 3.125rem;
+
+    &__title {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        color: $grayMain;
+    }
+
+    &__price {
+        margin-top: 0.5rem;
+    }
+
+    &__button {
+        margin-top: 3.125rem;
+        background-color: $mainColor;
+        border-radius: 6px;
+        width: 100%;
+        height: 3.4375rem;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: #ffffff;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.9375rem;
+    }
+
+    &__payment {
+        font-size: 0.75rem;
+        line-height: 1.2;
+        color: $grayLight;
+        margin-left: 0.5rem;
+    }
+}
+
+.mortgage {
+    margin-top: 6.25rem;
+
+    &__blocks {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3.125rem;
+    }
+
+    &__block {
+        padding: 1.875rem;
+        width: 27.0625rem;
+        height: 15.75rem;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &__subtitle {
+        max-width: 70%;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-right: 1.25rem;
+    }
+
+    &__text {
+        display: block;
+        margin-top: 2.1875rem;
+        max-width: 20.75rem;
+    }
+}
+
+.agency {
+    margin-top: 1.25rem;
+    height: 8.9375rem;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 1.125rem 3.125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__ref {
+        margin-top: 8px;
+        display: block;
+        font-size: 1rem;
+        line-height: 1.37;
+        text-decoration-line: underline;
+        color: $mainColor;
+    }
+
+    &__image {
+        width: 14.5625rem;
+        height: 6.625rem;
+    }
+}
+
+.advantage {
+    margin-top: 6.25rem;
+
+    &__blocks {
+        margin-top: 3.125rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__block {
+        width: 27.0625rem;
+        height: 21.25rem;
+        padding: 1.875rem;
+        background-color: #fff;
+        border-radius: 3px;
+        position: relative;
+    }
+
+    &__subtitle {
+        line-height: 1.3;
+    }
+
+    &__text {
+        display: block;
+        margin-top: 1.25rem;
+        max-width: 20.75rem;
+        line-height: 1.37;
+    }
+
+    &__icon {
+        position: absolute;
+        bottom: 1.875rem;
+        right: 1.875rem;
+    }
+}
+
+.exchange {
+    margin-top: 5rem;
+    background: #ffffff;
+    border-radius: 3px;
+    height: 22.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    &__info {
+        padding: 3.125rem 0 0 3.75rem;
+    }
+
+    &__title {
+        max-width: 31.25rem;
+    }
+
+    &__text {
+        @extend %regularText;
+        display: block;
+        margin-top: 1.25rem;
+        max-width: 20.625rem;
+    }
+
+    &__buttons {
+        margin-top: 3.125rem;
+    }
+
+    &__mainButton {
+        width: 12.5rem;
+        height: 3.4375rem;
+        background-color: $mainColor;
+        border: 2px solid $mainColor;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: #fff;
+        transition: background-color 0.3s ease-in;
+        margin-right: 1.25rem;
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+    }
+
+    &__button {
+        width: 12.5rem;
+        height: 3.4375rem;
+        border: 2px solid $mainColor;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: $mainColor;
+    }
+
+    &__pink {
+        background: url("../img/pinkBack.png");
+        width: 38.75rem;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    &__image {
+        width: 33.875rem;
+        height: 20.1875rem;
+        object-fit: contain;
+    }
+}
+
+.reviews {
+    margin-top: 6.25rem;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__choice {
+        display: flex;
+        align-items: center;
+    }
+
+    &__all {
+        margin-right: 11.5rem;
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.2;
+        text-decoration-line: underline;
+        color: $mainColor;
+    }
+}
+
+.review {
+    width: 27.0625rem;
+    height: 29.5625rem;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title {
+        max-width: 12.5rem;
+    }
+
+    &__category {
+        display: block;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayLight;
+    }
+
+    &__text {
+        display: block;
+        margin-top: 1.875rem;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayMid;
+        padding-right: 1.25rem;
+    }
+
+    &__openReview {
+        margin-top: 1.25rem;
+    }
+
+    &__allReview {
+        font-size: 0.875rem;
+        line-height: 1.4;
+        color: $grayLight;
+        position: relative;
+        padding-right: 1.125rem;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 3px;
+            width: 5px;
+            height: 1px;
+            background-color: $grayLight;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease-in;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            right: 0;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__data {
+        font-size: 0.875rem;
+        line-height: 1.4;
+        color: $grayLight;
+    }
+
+    &__mail {
+        font-size: 1rem;
+        line-height: 1.37;
+        text-decoration-line: underline;
+        color: $mainColor;
+    }
+}
+
+.contacts {
+    margin-top: 6.25rem;
+    background-color: #fff;
+    padding: 3.75rem 3.125rem 0;
+
+    &__blocks {
+        margin-top: 3.125rem;
+        display: flex;
+    }
+
+    &__block {
+        width: calc(100% / 3);
+        position: relative;
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__time {
+        display: block;
+    }
+
+    &__phone,
+    &__mail {
+        margin: 1rem 0 2.25rem;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 1.37;
+        color: $grayMain;
+    }
+
+    &__address,
+    &__time {
+        margin-top: 1rem;
+        display: block;
+
+        & + & {
+            margin: 0;
+        }
+    }
+
+    &__social {
+        margin-top: 1rem;
+    }
+
+    &__icon {
+        margin-right: 0.625rem;
+    }
+
+    &__consul {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: $mainColor;
+        border-radius: 5px;
+        width: 12.5rem;
+        height: 3.4375rem;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: #fff;
+        transition: background-color 0.3s ease-in;
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+    }
+}
+
+.yandexMap {
+    height: 28.75rem;
+    margin-top: 3.75rem;
+}
+
+.owl-dots {
+    width: 100%;
+    padding: 3px 6px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 1;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+
+    & + & {
+        margin-left: 6px;
+    }
+}
+.owl-theme .owl-dots .owl-dot span {
+    display: none;
+}
+
+.owl-theme .owl-dots .active {
+    background: $mainColor;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        background: #fff;
+        height: auto;
+
+        &__title {
+            color: $grayMain;
+            padding-top: 3.125rem;
+            max-width: 80%;
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 1.37;
+        }
+    }
+
+    .filter {
+        width: 100%;
+        padding: 0 1.5rem;
+
+        &__tabs {
+            display: none;
+        }
+
+        &__row {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__item {
+            min-width: 100%;
+
+            &_select {
+                min-width: calc(50% - 0.375rem);
+                margin: 0 0 1.25rem 0;
+            }
+        }
+
+        &__price {
+            height: auto;
+            margin-top: 1.25rem;
+        }
+
+        &__price &__item {
+            min-width: 50%;
+        }
+
+        &__more {
+            display: none;
+        }
+
+        &__map {
+            order: 1;
+            width: 100%;
+            margin: 0.625rem 0 3.125rem 0;
+        }
+
+        &__list {
+            margin-top: 1.875rem;
+            width: 100%;
+        }
+
+        &__more {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.37;
+            color: $grayMid;
+            margin: 1.25rem auto 0;
+            padding-right: 1rem;
+            position: relative;
+
+            &::after {
+                content: "+";
+                position: absolute;
+                right: 2px;
+            }
+        }
+    }
+
+    .cards {
+        display: block;
+    }
+
+    .card {
+        width: 100%;
+        height: 42vw;
+
+        & + & {
+            margin-top: 1.25rem;
+        }
+    }
+
+    .flats {
+        &__choice {
+            display: none;
+        }
+
+        &__title {
+            h1 {
+                font-size: 1.5rem;
+                line-height: 1.37;
+            }
+        }
+    }
+    .fire {
+        width: 2.25rem;
+        height: 2.625rem;
+    }
+}
