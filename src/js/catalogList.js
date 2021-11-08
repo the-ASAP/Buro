@@ -1,5 +1,5 @@
 //styles
-import "../scss/index.scss";
+import "../scss/catalogList.scss";
 import "owl.carousel/dist/assets/owl.carousel.css";
 
 //libraries
@@ -9,7 +9,7 @@ import "owl.carousel";
 
 //Components
 import header from "../components/header.html";
-import footer from "../components/footer.html";
+// import footer from "../components/footer.html";
 
 const owlGallery = (selector, params) => {
     const arrow = ` <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@ function select(btn, content, activeClass) {
 
 $(() => {
     $("#root").prepend(header);
-    $(".contacts").append(footer);
+    // $(".content").append(footer);
 
     owlGallery(".carouselFlats", {
         dots: false,

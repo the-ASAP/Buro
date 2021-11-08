@@ -1,5 +1,5 @@
 //styles
-import "../scss/index.scss";
+import "../scss/catalogMap.scss";
 import "owl.carousel/dist/assets/owl.carousel.css";
 
 //libraries
@@ -50,7 +50,7 @@ function select(btn, content, activeClass) {
 
 $(() => {
     $("#root").prepend(header);
-    $(".contacts").append(footer);
+    $(".section").append(footer);
 
     owlGallery(".carouselFlats", {
         dots: false,
@@ -105,6 +105,7 @@ $(() => {
 
     select(".nav__item_button", ".nav__options", "nav__active");
     select(".filter__item_select", ".filter__options", "filter__item_active");
+    select(".content__select", ".content__options", "content__active");
 
     ymaps
         .load(

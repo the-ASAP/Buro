@@ -19,6 +19,7 @@
 %scrollbar::-webkit-scrollbar-thumb {
     border-left: 1px solid $mainBack;
     background: $mainColor;
+    border-radius: 3px;
 }
 
 %mediumText {

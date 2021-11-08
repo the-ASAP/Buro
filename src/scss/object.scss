@@ -1,0 +1,706 @@
+@import "./rootStyles/main.scss";
+//Components
+@import "./components/header.scss";
+@import "./components/footer.scss";
+
+.breadcrumbs {
+    margin-top: 1.25rem;
+
+    &__text,
+    &__arrow {
+        font-size: 0.75rem;
+        line-height: 1.2;
+        color: $grayMain;
+
+        &_redColor {
+            color: $mainColor;
+        }
+    }
+}
+
+.content {
+    margin-top: 3.75rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.object {
+    background: #ffffff;
+    border-radius: 3px;
+    width: 55.4375rem;
+    padding: 2.5rem;
+
+    &__intro {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button {
+        margin-left: 0.625rem;
+    }
+
+    &__text {
+        display: block;
+        margin-top: 0.625rem;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        color: $grayMain;
+    }
+
+    &__image {
+        width: 29.75rem;
+        height: 16.75rem;
+        margin-top: 2.1875rem;
+    }
+}
+
+.carouselObjectPhotos {
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1.25rem;
+    }
+
+    &__prev,
+    &__next {
+        width: 3.1875rem;
+        height: 3.1875rem;
+        background-color: $mainColor;
+        border-color: $mainColor;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0.875rem;
+        transition: background-color 0.3s ease-in, border-color 0.3s ease-in;
+
+        svg {
+            path {
+                fill: #fff;
+            }
+        }
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+
+        &.disabled {
+            border: 1px solid $grayMain;
+            background-color: #fff;
+
+            svg {
+                path {
+                    fill: $grayMain;
+                }
+            }
+
+            &:hover {
+                background-color: #fff;
+                cursor: auto;
+            }
+        }
+    }
+
+    &__next {
+        transform: rotate(180deg);
+    }
+}
+
+.description {
+    margin-top: 1.25rem;
+    border-top: 1px solid #c4c4c4;
+    padding-top: 1.25rem;
+
+    &__text {
+        max-width: 80%;
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayMid;
+    }
+}
+
+.specifications {
+    margin-top: 1.875rem;
+
+    &__main {
+        display: block;
+        margin-top: 1.875rem;
+    }
+
+    &__row {
+        display: flex;
+        margin-top: 1.25rem;
+    }
+
+    &__key {
+        width: 17.3125rem;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayLight;
+    }
+
+    &__value {
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayMain;
+    }
+
+    &__more {
+        margin-top: 1.875rem;
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.37;
+        color: $grayMain;
+    }
+}
+
+.map {
+    margin-top: 2.5rem;
+}
+
+.yandexMap {
+    height: 20rem;
+    margin-top: 1.625rem;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 2.5rem;
+    width: 27.0625rem;
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__newPrice {
+        font-size: 1.5rem;
+        line-height: 1.37;
+        color: $grayMain;
+    }
+
+    &__oldPrice {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        text-decoration-line: line-through;
+        color: $grayLight;
+    }
+
+    &__main {
+        display: block;
+        margin-top: 2.1875rem;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        color: $grayMain;
+    }
+
+    &__row {
+        display: flex;
+        margin-top: 1.25rem;
+    }
+
+    &__key {
+        width: 7rem;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayLight;
+    }
+
+    &__value {
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayMain;
+    }
+
+    &__button {
+        margin-top: 3.75rem;
+        background: $mainColor;
+        border-radius: 6px;
+        width: 100%;
+        height: 3.625rem;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: #fff;
+        transition: background-color 0.3s ease-in;
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+    }
+}
+
+.realtor {
+    margin-top: 1.25rem;
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__image {
+        border-radius: 50%;
+        width: 9rem;
+        height: 9rem;
+        margin-right: 1.6875rem;
+    }
+
+    &__lightText {
+        display: block;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayLight;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $grayMain;
+        margin-top: 1.25rem;
+        display: block;
+    }
+
+    &__phone {
+        display: block;
+        margin-top: 0.625rem;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: $mainColor;
+    }
+
+    &__text {
+        width: 80%;
+        margin-top: 1.875rem;
+    }
+
+    &__button {
+        margin-top: 1.875rem;
+        width: 12.5rem;
+        height: 3.4375rem;
+        border-radius: 6px;
+        border: 2px solid $mainColor;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: $mainColor;
+        transition: color 0.3s ease-in, background-color 0.3s ease-in;
+
+        &:hover {
+            color: #fff;
+            background-color: $mainColor;
+        }
+    }
+
+    &__refs {
+        display: flex;
+        margin-top: 2.5rem;
+        border-top: 1px solid #c4c4c4;
+        padding-top: 1.875rem;
+    }
+
+    &__ref {
+        width: 1.875rem;
+        height: 1.875rem;
+        border: 1px solid $mainColor;
+        border-radius: 50%;
+        margin-right: 0.625rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.flats {
+    margin-top: 6.25rem;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+    }
+
+    &__choice {
+        display: flex;
+        align-items: center;
+
+        &_mobile {
+            display: none;
+        }
+    }
+
+    &__all {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.2;
+        color: $mainColor;
+        text-decoration-line: underline;
+        margin-right: 4.5rem;
+    }
+}
+.fire {
+    margin-left: 1rem;
+}
+
+.carouselFlats,
+.carouselReviews {
+    margin-top: 3.125rem;
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__prev,
+    &__next {
+        width: 3.1875rem;
+        height: 3.1875rem;
+        background-color: $mainColor;
+        border-color: $mainColor;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0.875rem;
+        transition: background-color 0.3s ease-in, border-color 0.3s ease-in;
+
+        svg {
+            path {
+                fill: #fff;
+            }
+        }
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+
+        &.disabled {
+            border: 1px solid $grayMain;
+            background-color: $mainBack;
+
+            svg {
+                path {
+                    fill: $grayMain;
+                }
+            }
+
+            &:hover {
+                background-color: $mainBack;
+                cursor: auto;
+            }
+        }
+    }
+
+    &__next {
+        transform: rotate(180deg);
+    }
+}
+
+.flat {
+    position: relative;
+
+    &__desc {
+        background: #ffffff;
+        border-radius: 0px 0px 3px 3px;
+        padding: 1.25rem;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.2;
+        color: $grayMain;
+    }
+
+    &__favorites {
+        border: 1px solid #e3e3e3;
+        border-radius: 50%;
+        width: 1.875rem;
+        height: 1.875rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: border-color 0.3s ease-in;
+
+        svg {
+            path {
+                transition: fill 0.3s ease-in;
+            }
+        }
+
+        &:hover {
+            border-color: $mainColor;
+            svg {
+                path {
+                    fill: $mainColor;
+                }
+            }
+        }
+    }
+
+    &__address {
+        display: block;
+        margin-top: 0.9375rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.2;
+    }
+
+    &__features {
+        margin-top: 1.875rem;
+    }
+
+    &__feature {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        margin-right: 1.25rem;
+    }
+}
+
+.carouselFlatPhotos {
+    height: 11.25rem;
+}
+
+.family {
+    margin-top: 6.25rem;
+
+    &__back {
+        height: 45.5625rem;
+        padding: 3.75rem;
+        position: relative;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &__form {
+        width: 27.0625rem;
+        height: 38rem;
+        padding: 1.875rem;
+        background-color: #fff;
+        border-radius: 3px;
+        position: relative;
+    }
+
+    &__text {
+        @extend %regularText;
+        margin-top: 1.25rem;
+        display: block;
+        max-width: 18.75rem;
+    }
+}
+
+.mortgageCalc {
+    &__placeholder {
+        display: block;
+        margin-top: 1.875rem;
+        font-size: 0.875rem;
+        line-height: 1.29;
+        color: $grayLight;
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.22;
+        color: $grayMain;
+        margin-top: 0.3125rem;
+        display: block;
+    }
+
+    &__input {
+        &--price,
+        &--rangeTime {
+            background: linear-gradient(
+                to right,
+                rgb(226, 61, 61) 0%,
+                rgb(226, 61, 61) 100%,
+                rgb(255, 255, 255) 100%,
+                rgb(255, 255, 255) 100%
+            );
+            border-radius: 2px;
+            height: 2px;
+            width: 100%;
+            outline: 0;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                width: 0.875rem; /* Set a specific slider handle width */
+                height: 0.875rem; /* Slider handle height */
+                background: #fff; /* Green background */
+                border-radius: 50%;
+                border: 1px solid $mainColor;
+                cursor: pointer; /* Cursor on hover */
+            }
+        }
+    }
+
+    &__blocks {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__block {
+        width: 50%;
+
+        &:nth-child(2) {
+            width: calc(50% - 3.125rem);
+        }
+    }
+}
+
+.total {
+    margin-top: 3.125rem;
+
+    &__title {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        color: $grayMain;
+    }
+
+    &__price {
+        margin-top: 0.5rem;
+    }
+
+    &__button {
+        margin-top: 3.125rem;
+        background-color: $mainColor;
+        border-radius: 6px;
+        width: 100%;
+        height: 3.4375rem;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.37;
+        color: #ffffff;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.9375rem;
+    }
+
+    &__payment {
+        font-size: 0.75rem;
+        line-height: 1.2;
+        color: $grayLight;
+        margin-left: 0.5rem;
+    }
+}
+
+.mortgage {
+    margin-top: 6.25rem;
+
+    &__blocks {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3.125rem;
+    }
+
+    &__block {
+        padding: 1.875rem;
+        width: 27.0625rem;
+        height: 15.75rem;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &__subtitle {
+        max-width: 70%;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-right: 1.25rem;
+    }
+
+    &__text {
+        display: block;
+        margin-top: 2.1875rem;
+        max-width: 20.75rem;
+    }
+}
+
+.agency {
+    margin-top: 1.25rem;
+    height: 8.9375rem;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 1.125rem 3.125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__ref {
+        margin-top: 8px;
+        display: block;
+        font-size: 1rem;
+        line-height: 1.37;
+        text-decoration-line: underline;
+        color: $mainColor;
+    }
+
+    &__image {
+        width: 14.5625rem;
+        height: 6.625rem;
+    }
+}
+
+.owl-dots {
+    width: 100%;
+    padding: 3px 6px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 1;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+
+    & + & {
+        margin-left: 6px;
+    }
+}
+.owl-theme .owl-dots .owl-dot span {
+    display: none;
+}
+
+.owl-theme .owl-dots .active {
+    background: $mainColor;
+    opacity: 0.5;
+}
+
+.owl-carousel {
+    height: fit-content;
+}

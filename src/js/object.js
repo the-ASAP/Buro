@@ -1,5 +1,5 @@
 //styles
-import "../scss/index.scss";
+import "../scss/object.scss";
 import "owl.carousel/dist/assets/owl.carousel.css";
 
 //libraries
@@ -50,7 +50,7 @@ function select(btn, content, activeClass) {
 
 $(() => {
     $("#root").prepend(header);
-    $(".contacts").append(footer);
+    $("#root").append(footer);
 
     owlGallery(".carouselFlats", {
         dots: false,
@@ -101,6 +101,18 @@ $(() => {
         items: 1,
         margin: 16,
         loop: false,
+    });
+    owlGallery(".carouselObjectPhotos", {
+        dots: false,
+        autoWidth: true,
+        items: 1,
+        margin: 16,
+        loop: false,
+        nav: true,
+        mouseDrag: false,
+        touchDrag: false,
+        navContainer: ".carouselObjectPhotos__buttons",
+        navClass: ["carouselObjectPhotos__prev", "carouselObjectPhotos__next"],
     });
 
     select(".nav__item_button", ".nav__options", "nav__active");
