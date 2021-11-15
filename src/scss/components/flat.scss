@@ -1,0 +1,113 @@
+.flat {
+  position: relative;
+
+  &__desc {
+    background: #ffffff;
+    border-radius: 0px 0px 3px 3px;
+    padding: 1.25rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    color: $grayMain;
+  }
+
+  &__favorites {
+    border: 1px solid #e3e3e3;
+    border-radius: 50%;
+    width: 1.875rem;
+    height: 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease-in;
+
+    svg {
+      path {
+        transition: fill 0.3s ease-in;
+      }
+    }
+
+    &:hover {
+      border-color: $mainColor;
+      svg {
+        path {
+          fill: $mainColor;
+        }
+      }
+    }
+  }
+
+  &__address {
+    display: block;
+    margin-top: 0.9375rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+
+  &__features {
+    margin-top: 1.875rem;
+  }
+
+  &__feature {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    margin-right: 1.25rem;
+  }
+}
+
+.carouselFlatPhotos {
+  height: 11.25rem;
+}
+
+.owl-dots {
+  width: 100%;
+  padding: 3px 6px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  z-index: 1;
+  height: 100%;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 2px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  & + & {
+    margin-left: 6px;
+  }
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: calc(100% - 4px);
+  height: 4px;
+  border-radius: 3px;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: $mainColor;
+  opacity: 0.5;
+}
+
+.owl-carousel {
+  height: fit-content;
+}

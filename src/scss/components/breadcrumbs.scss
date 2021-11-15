@@ -1,0 +1,14 @@
+.breadcrumbs {
+  margin-top: 1.25rem;
+
+  &__text,
+  &__arrow {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    color: $grayMain;
+
+    &_redColor {
+      color: $mainColor;
+    }
+  }
+}
