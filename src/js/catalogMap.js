@@ -5,10 +5,11 @@ import '../scss/catalogMap.scss';
 import * as $ from 'jquery';
 import ymaps from 'ymaps';
 import { owlGallery } from '../vendors/owlGallery.js';
+import '../vendors/script.js';
 
 //Components
-import header from '../components/header.html';
-import footer from '../components/footer.html';
+// import header from '../components/header.html';
+// import footer from '../components/footer.html';
 
 function select(btn, content, activeClass) {
   $(btn).on('click', function (e) {
@@ -29,8 +30,8 @@ function select(btn, content, activeClass) {
 }
 
 $(() => {
-  $('#root').prepend(header);
-  $('.section').append(footer);
+  // $('#root').prepend(header);
+  // $('.section').append(footer);
 
   owlGallery('.carouselFlats', {
     dots: false,
@@ -90,11 +91,18 @@ $(() => {
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')
     .then((maps) => {
-      new maps.Map('yandexMap', {
-        center: [55.76, 37.64],
-        zoom: 10,
-        controls: ['zoomControl']
-      });
+      maps.SuggestView('suggest');
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
+
+  $('.owl-dot').mouseenter(function () {
+    if (!$(this).hasClass('active')) $(this).trigger('click');
+  });
+
+  $('.owl-dot').on('click', function () {
+    if ($(this).hasClass('active')) {
+      let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
+      window.open(ref);
+    }
+  });
 });

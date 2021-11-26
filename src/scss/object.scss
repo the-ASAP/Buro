@@ -3,6 +3,9 @@
 @import './components/header.scss';
 @import './components/footer.scss';
 @import './components/breadcrumbs.scss';
+@import './components/flat.scss';
+@import './components/map.scss';
+@import './components/modals.scss';
 
 .content {
   margin-top: 3.75rem;
@@ -21,8 +24,36 @@
     justify-content: space-between;
   }
 
+  &__icons {
+    display: flex;
+  }
+
   &__button {
     margin-left: 0.625rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #dcdcdc;
+    transition: border-color 0.3s ease-in;
+
+    svg {
+      path {
+        transition: fill 0.3s ease-in;
+      }
+    }
+
+    &:hover {
+      border-color: $mainColor;
+
+      svg {
+        path {
+          fill: $mainColor;
+        }
+      }
+    }
   }
 
   &__text {
@@ -37,10 +68,14 @@
     width: 29.75rem;
     height: 16.75rem;
     margin-top: 2.1875rem;
+    cursor: pointer;
   }
 }
 
 .carouselObjectPhotos {
+  height: 16.5625rem;
+  overflow: hidden;
+
   &__buttons {
     display: flex;
     justify-content: flex-end;
@@ -143,6 +178,11 @@
 
 .map {
   margin-top: 2.5rem;
+
+  &__latitude,
+  &__longitude {
+    display: none;
+  }
 }
 
 .yandexMap {
@@ -165,6 +205,10 @@
     font-size: 1.5rem;
     line-height: 1.37;
     color: $grayMain;
+
+    &::after {
+      content: ' \20BD';
+    }
   }
 
   &__oldPrice {
@@ -172,6 +216,10 @@
     line-height: 1.5;
     text-decoration-line: line-through;
     color: $grayLight;
+
+    &::after {
+      content: ' \20BD';
+    }
   }
 
   &__main {
@@ -329,6 +377,8 @@
     color: $mainColor;
     text-decoration-line: underline;
     margin-right: 4.5rem;
+
+    display: none;
   }
 }
 .fire {
@@ -389,77 +439,6 @@
   }
 }
 
-.flat {
-  position: relative;
-
-  &__desc {
-    background: #ffffff;
-    border-radius: 0px 0px 3px 3px;
-    padding: 1.25rem;
-  }
-
-  &__info {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__price {
-    font-weight: 600;
-    font-size: 1.125rem;
-    line-height: 1.2;
-    color: $grayMain;
-  }
-
-  &__favorites {
-    border: 1px solid #e3e3e3;
-    border-radius: 50%;
-    width: 1.875rem;
-    height: 1.875rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: border-color 0.3s ease-in;
-
-    svg {
-      path {
-        transition: fill 0.3s ease-in;
-      }
-    }
-
-    &:hover {
-      border-color: $mainColor;
-      svg {
-        path {
-          fill: $mainColor;
-        }
-      }
-    }
-  }
-
-  &__address {
-    display: block;
-    margin-top: 0.9375rem;
-    font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 1.2;
-  }
-
-  &__features {
-    margin-top: 1.875rem;
-  }
-
-  &__feature {
-    font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 1.2;
-    margin-right: 1.25rem;
-  }
-}
-
-.carouselFlatPhotos {
-  height: 11.25rem;
-}
-
 .family {
   margin-top: 6.25rem;
 
@@ -510,18 +489,22 @@
     color: $grayMain;
     margin-top: 0.3125rem;
     display: block;
+
+    &--price,
+    &--contribution {
+      &:after {
+        content: ' \20BD';
+      }
+    }
   }
 
   &__input {
+    background: #f0f0f0;
+
     &--price,
-    &--rangeTime {
-      background: linear-gradient(
-        to right,
-        rgb(226, 61, 61) 0%,
-        rgb(226, 61, 61) 100%,
-        rgb(255, 255, 255) 100%,
-        rgb(255, 255, 255) 100%
-      );
+    &--time,
+    &--contribution {
+      position: relative;
       border-radius: 2px;
       height: 2px;
       width: 100%;
@@ -657,36 +640,20 @@
   }
 }
 
-.owl-dots {
-  width: 100%;
-  padding: 3px 6px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  z-index: 1;
-}
+.yandexHint {
+  width: 12.5rem;
+  padding: 1rem;
+  position: relative;
+  color: $grayMain;
+  background-color: #fff;
+  border: 1px solid $grayMain;
+  border-radius: 20px;
+  text-align: center;
 
-.owl-theme .owl-dots .owl-dot {
-  height: 4px;
-  width: 100%;
-  margin: 0;
-  background-color: #f2f2f2;
-  border-radius: 2px;
-
-  & + & {
-    margin-left: 6px;
+  p {
+    &:first-child {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
   }
-}
-.owl-theme .owl-dots .owl-dot span {
-  display: none;
-}
-
-.owl-theme .owl-dots .active {
-  background: $mainColor;
-  opacity: 0.5;
-}
-
-.owl-carousel {
-  height: fit-content;
 }

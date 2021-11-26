@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contacts Page</title>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="modalConsul">
+        <div class="modalReq__content">
+          <h1 class="modalReq__title">Консультация</h1>
+          <span class="modalReq__text"
+            >Введите вопрос и свои данные, мы перезвоним и ответим на ваши вопросы</span
+          >
+          <form class="modalReq__form">
+            <input class="modalReq__input" type="text" placeholder="Ваше имя" />
+            <input class="modalReq__input" type="text" placeholder="Ваш номер телефона" />
+            <textarea class="modalReq__area" placeholder="Комментарий"></textarea>
+          </form>
+          <button type="submit" class="modalReq__submit">Отправить</button>
+          <span class="modalReq__processing">
+            Нажимая на кнопку вы соглашаетесь на обработку
+            <a href="/" class="modalReq__processing modalReq__processing--colorRed"
+              >персональных данных</a
+            >
+          </span>
+        </div>
+      </div>
+
+      <section class="contacts">
+        <div class="wrapper">
+          <div class="contacts__info">
+            <h1 class="contacts__title">Контакты</h1>
+            <div class="contacts__blocks">
+              <div class="contacts__block">
+                <span class="contacts__label">Телефон:</span>
+                <a href="tel:+78454544444" class="contacts__phone">+7 (84545) 4-44-44</a>
+                <span class="contacts__label">Адрес:</span>
+                <span class="contacts__address">Балашов,</span>
+                <span class="contacts__address">ул. К. Маркса, 40 "Б"</span>
+              </div>
+              <div class="contacts__block">
+                <span class="contacts__label">Почта:</span>
+                <a href="mailTo:Buro@mail.ru" class="contacts__mail">Buro@mail.ru</a>
+                <span class="contacts__label">График работы:</span>
+                <span class="contacts__time">пн-пт 09:00-17:00</span>
+                <span class="contacts__time">cб-воскр выходной</span>
+              </div>
+              <div class="contacts__block">
+                <span class="contacts__label">Соц сети:</span>
+                <div class="contacts__social">
+                  <svg
+                    class="contacts__icon"
+                    width="1.875rem"
+                    height="1.875rem"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
+                    <path
+                      d="M15.8467 23V15.7135H18.5122L18.9084 12.8606H15.8467V11.0435C15.8467 10.2202 16.0954 9.65657 17.3766 9.65657H19V7.11306C18.2101 7.03499 17.4162 6.9973 16.6218 7.00015C14.2657 7.00015 12.6481 8.32658 12.6481 10.7616V12.8553H10V15.7082H12.6539V23H15.8467Z"
+                      fill="#E23D3D"
+                    />
+                  </svg>
+                  <svg
+                    class="contacts__icon"
+                    width="1.875rem"
+                    height="1.875rem"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
+                    <path
+                      d="M24 10.4255C23.4116 10.6598 22.7713 10.8284 22.1118 10.8941C22.7965 10.5185 23.3093 9.92521 23.5539 9.22545C22.9113 9.57833 22.2074 9.82578 21.4734 9.95681C21.1666 9.65402 20.7955 9.4128 20.3833 9.24819C19.9711 9.08357 19.5266 8.99909 19.0775 9.00001C17.2604 9.00001 15.7991 10.3598 15.7991 12.0284C15.7991 12.2627 15.8298 12.497 15.8798 12.7225C13.159 12.5911 10.7324 11.3911 9.1191 9.55385C8.82514 10.0174 8.6711 10.5451 8.673 11.0823C8.673 12.1331 9.25177 13.0598 10.1344 13.6047C9.61424 13.5858 9.1063 13.4538 8.65184 13.2195V13.2568C8.65184 14.7284 9.77863 15.9479 11.2804 16.2284C10.9984 16.296 10.7083 16.3306 10.417 16.3314C10.2036 16.3314 10.0017 16.3118 9.79786 16.2852C10.2132 17.4852 11.4227 18.3568 12.8629 18.3852C11.7361 19.2 10.3247 19.6793 8.79221 19.6793C8.51725 19.6793 8.26343 19.6704 8 19.642C9.45367 20.503 11.1785 21 13.0359 21C19.066 21 22.3656 16.3882 22.3656 12.3852C22.3656 12.2539 22.3656 12.1225 22.356 11.9911C22.9944 11.5598 23.5539 11.0254 24 10.4255Z"
+                      fill="#E13C3C"
+                    />
+                  </svg>
+                  <svg
+                    class="contacts__icon"
+                    width="1.875rem"
+                    height="1.875rem"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
+                    <path
+                      d="M22.6332 11.6772C22.7449 11.2865 22.6332 11 22.1046 11H20.3535C19.908 11 19.7044 11.2479 19.5926 11.5201C19.5926 11.5201 18.7023 13.8046 17.4407 15.2858C17.0335 15.7169 16.8475 15.853 16.6255 15.853C16.5145 15.853 16.3532 15.7169 16.3532 15.3262V11.6772C16.3532 11.2084 16.2247 11 15.8534 11H13.1019C12.824 11 12.6563 11.2168 12.6563 11.4235C12.6563 11.8671 13.2871 11.9696 13.3518 13.2198V15.9319C13.3518 16.526 13.2504 16.6343 13.0268 16.6343C12.4336 16.6343 10.9899 14.3415 10.1332 11.7167C9.9663 11.2067 9.79782 11.0008 9.35068 11.0008H7.60045C7.09981 11.0008 7 11.2487 7 11.5209C7 12.0099 7.59326 14.4297 9.76349 17.63C11.2103 19.8153 13.2472 21 15.1028 21C16.2151 21 16.3524 20.737 16.3524 20.2833V18.6315C16.3524 18.1055 16.4586 17.9997 16.8107 17.9997C17.0694 17.9997 17.515 18.1375 18.5538 19.1902C19.7403 20.4387 19.9367 20.9992 20.6035 20.9992H22.3537C22.8535 20.9992 23.1034 20.7362 22.9597 20.2169C22.8024 19.7002 22.2355 18.9482 21.4834 18.0585C21.0745 17.551 20.4637 17.0049 20.2777 16.7318C20.0182 16.3798 20.0932 16.2243 20.2777 15.9118C20.2785 15.9126 22.4112 12.7518 22.6332 11.6772Z"
+                      fill="#E13C3C"
+                    />
+                  </svg>
+                  <svg
+                    class="contacts__icon"
+                    width="1.875rem"
+                    height="1.875rem"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
+                    <path
+                      d="M20.92 9.08548L6.7471 14.3803C5.77986 14.7567 5.78545 15.2794 6.56964 15.5125L10.2084 16.6122L18.6274 11.4661C19.0255 11.2314 19.3892 11.3577 19.0903 11.6148L12.2692 17.5787H12.2676L12.2692 17.5795L12.0182 21.2131C12.3859 21.2131 12.5482 21.0497 12.7544 20.8569L14.5218 19.1919L18.1982 21.8226C18.876 22.1843 19.3628 21.9984 19.5315 21.2147L21.9448 10.196C22.1918 9.23649 21.5667 8.80203 20.92 9.08548Z"
+                      fill="#E13C3C"
+                    />
+                  </svg>
+                </div>
+                <button type="button" class="contacts__consul">Консультация</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="yandexMap" class="yandexMap"></div>
+      </section>
+    </div>
+  </body>
+</html>

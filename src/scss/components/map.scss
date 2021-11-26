@@ -1,0 +1,17 @@
+.yandexHint {
+  width: 12.5rem;
+  padding: 1rem;
+  position: relative;
+  color: $grayMain;
+  background-color: #fff;
+  border: 1px solid $grayMain;
+  border-radius: 20px;
+  text-align: center;
+
+  p {
+    &:first-child {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

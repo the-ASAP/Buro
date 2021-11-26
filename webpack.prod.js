@@ -18,12 +18,12 @@ module.exports = merge(common, {
     minimize: true,
     minimizer: [
       // Минимизация js
-      new TerserPlugin(),
+      new TerserPlugin()
 
       // Минимизация css
-      new CssMinimizerPlugin({
-        include: cssFiles
-      })
+      // new CssMinimizerPlugin({
+      //   include: cssFiles
+      // })
     ]
   },
   plugins: [

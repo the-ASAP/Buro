@@ -92,6 +92,14 @@ module.exports = {
           from: path.resolve('./src/fonts'),
           to: path.resolve('./build/fonts'),
           noErrorOnMissing: true
+        },
+        {
+          from: path.resolve('./src/img'),
+          to: path.resolve('./build/img'),
+          filter: async (resourcePath) => {
+            let ext = resourcePath.substr(resourcePath.length - 3);
+            return ext === 'svg' ? true : false;
+          }
         }
       ]
     }),

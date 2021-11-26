@@ -10,7 +10,9 @@ const calcTotalSum = () => {
   let price = Number($('input[name="rangePrice"]').val());
   let contribution = Number($('input[name="rangeContribution"]').val());
   let time = Number($('input[name="rangeTime"]').val());
-  let totalSum = Math.trunc((price - contribution) / (time * 12));
+
+  //Ипотека под 20%
+  let totalSum = Math.trunc((price * 1.2 - contribution) / (time * 12));
 
   if (totalSum < 0) totalSum = 0;
 

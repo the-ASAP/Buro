@@ -1,0 +1,240 @@
+@import './rootStyles/main.scss';
+
+@import './components/header.scss';
+@import './components/footer.scss';
+
+body {
+  background-color: #fff;
+}
+
+.intro {
+  width: 100%;
+  height: 25rem;
+  background: linear-gradient(272.42deg, #d9d9d9 14.21%, #f5f5f5 103.61%);
+  padding: 3.125rem 3.625rem 0;
+  position: relative;
+
+  &__title {
+    color: $grayMain;
+    font-weight: 500;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    max-width: 21.1875rem;
+  }
+
+  &__text {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.37;
+    color: $grayMid;
+    margin-top: 1.25rem;
+    max-width: 31.75rem;
+  }
+
+  &__button {
+    margin-top: 3.125rem;
+    width: 12.5rem;
+    height: 3.4375rem;
+    border-radius: 5px;
+    background-color: $mainColor;
+
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.22;
+    color: #fff;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background-color: $hoverColor;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 14.0625rem;
+    left: 38.3125rem;
+    width: 10.875rem;
+  }
+
+  &__mac {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    width: 32.625rem;
+  }
+}
+
+.reviews {
+  width: 55.375rem;
+  margin: 3.125rem auto 0;
+
+  &__intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__count {
+    font-weight: 500;
+    line-height: 22px;
+    font-size: 1.37rem;
+    color: $grayMain;
+  }
+
+  &__filters {
+    display: flex;
+  }
+
+  &__view,
+  &__sort {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: $grayMid;
+
+    position: relative;
+    padding-right: 1.125rem;
+    // padding: 0 3rem 0 1.25rem;
+
+    display: none;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 3px;
+      width: 5px;
+      height: 1px;
+      background-color: $grayMain;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      right: 0;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    left: -1.875rem;
+    min-width: calc(100% + 3.75rem);
+    height: fit-content;
+    background: #fff;
+    border-radius: 3px;
+    padding: 0 1.875rem 1.375rem;
+    z-index: 1;
+    display: none;
+  }
+
+  &__option {
+    display: block;
+    text-align: left;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    &:first-child {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__active {
+    &::before {
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__sort {
+    margin-left: 3.125rem;
+  }
+}
+
+.review {
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  padding: 1.25rem 0 0 2rem;
+  height: 22.5rem;
+  margin-top: 1.875rem;
+
+  & + & {
+    margin-top: 1.25rem;
+  }
+
+  &:last-child {
+    margin-bottom: 6.25rem;
+  }
+
+  &__data {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: $grayLight;
+    display: block;
+  }
+
+  &__name {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    color: $grayMain;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.37;
+    display: inline-block;
+  }
+
+  &__ref {
+    font-size: 1rem;
+    line-height: 1.37;
+    text-decoration-line: underline;
+    color: $mainColor;
+  }
+
+  &__proccess {
+    display: block;
+    margin-top: 0.625rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $grayLight;
+  }
+
+  &__content {
+    margin-top: 1.125rem;
+    margin-bottom: 0.875rem;
+    max-width: 45.375rem;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $grayMid;
+  }
+
+  &__all {
+    margin-top: 0.875rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: $grayLight;
+
+    position: relative;
+    padding-right: 1.125rem;
+    // padding: 0 3rem 0 1.25rem;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 3px;
+      width: 5px;
+      height: 1px;
+      background-color: $grayLight;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      right: 0;
+    }
+  }
+}

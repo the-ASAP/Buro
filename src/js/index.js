@@ -7,6 +7,9 @@ import ymaps from 'ymaps';
 import '../vendors/mortgageCalc.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 
+import '../vendors/script.js';
+import { createHint } from '../vendors/map.js';
+
 //Components
 // import header from '../components/header.html';
 // import footer from '../components/footer.html';
@@ -86,18 +89,68 @@ $(() => {
   select('.nav__item_button', '.nav__options', 'nav__active');
   select('.filter__item_select', '.filter__options', 'filter__item_active');
 
+  // Открытие модалки заявки
+  $('.total__button').on('click', function () {
+    let totalPrice = $('.total__price').text();
+    $('.modalReq__totalMort').text(totalPrice);
+    $('.modalReq').addClass('modalReq_active');
+  });
+
+  // Закрытие
+  $('.modalReq').on('click', function (e) {
+    if ($(e.target).hasClass('modalReq_active')) $(this).removeClass('modalReq_active');
+  });
+  $('.modalReq__close').on('click', function () {
+    $('.modalReq').removeClass('modalReq_active');
+  });
+
+  // Отрытие модалки консультации
+  $('.contacts__consul').on('click', function () {
+    $('.modalConsul').addClass('modalConsul_active');
+  });
+  $('.exchange__mainButton').on('click', function () {
+    $('.modalConsul').addClass('modalConsul_active');
+  });
+  $('.exchange__button').on('click', function () {
+    $('.modalConsul').addClass('modalConsul_active');
+  });
+
+  $('.modalConsul').on('click', function (e) {
+    if ($(e.target).hasClass('modalConsul_active')) $(this).removeClass('modalConsul_active');
+  });
+  $('.modalConsul__close').on('click', function () {
+    $('.modalConsul').removeClass('modalConsul_active');
+  });
+
+  $('.owl-dot').mouseenter(function () {
+    if (!$(this).hasClass('active')) $(this).trigger('click');
+  });
+
+  $('.owl-dot').on('click', function () {
+    if ($(this).hasClass('active')) {
+      let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
+      // window.location.href = ref;
+      window.open(ref);
+    }
+  });
+
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')
     .then((maps) => {
-      new maps.Map('yandexMap', {
-        center: [55.76, 37.64],
-        zoom: 10,
+      const myMap = new maps.Map('yandexMap', {
+        center: [51.544542, 43.149542],
+        zoom: 18,
         controls: ['zoomControl']
       });
+
+      myMap.geoObjects.add(
+        createHint(
+          maps,
+          'Балашов, ул. К. Маркса, 40 "Б"',
+          'Бюро недвижимости',
+          [51.544542, 43.149542]
+        )
+      );
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
-
-  $('.owl-dot').mouseenter(function () {
-    $(this).trigger('click');
-  });
 });

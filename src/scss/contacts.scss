@@ -1,0 +1,79 @@
+@import './rootStyles/main.scss';
+
+@import './components/header.scss';
+@import './components/footer.scss';
+@import './components/map.scss';
+@import './components/modals.scss';
+
+.contacts {
+  background-color: #e5e5e5;
+  padding: 3.75rem 3.125rem 0;
+
+  &__blocks {
+    margin-top: 3.125rem;
+    display: flex;
+  }
+
+  &__block {
+    width: calc(100% / 3);
+    position: relative;
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__time {
+    display: block;
+  }
+
+  &__phone,
+  &__mail {
+    margin: 1rem 0 2.25rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.37;
+  }
+
+  &__address,
+  &__time {
+    margin-top: 1rem;
+    display: block;
+
+    & + & {
+      margin: 0;
+    }
+  }
+
+  &__social {
+    margin-top: 1rem;
+  }
+
+  &__icon {
+    margin-right: 0.625rem;
+  }
+
+  &__consul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $mainColor;
+    border-radius: 5px;
+    width: 12.5rem;
+    height: 3.4375rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #fff;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background-color: $hoverColor;
+    }
+  }
+}
+
+.yandexMap {
+  height: 28.75rem;
+  margin-top: 3.75rem;
+}

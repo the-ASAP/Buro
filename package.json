@@ -14,8 +14,10 @@
     "last 5 versions"
   ],
   "dependencies": {
+    "@fancyapps/ui": "^4.0.9",
     "basic-ftp": "^4.6.6",
     "dotenv": "^10.0.0",
+    "imask": "^6.2.2",
     "jquery": "^3.6.0",
     "owl.carousel": "^2.3.4",
     "ymaps": "^0.2.1"

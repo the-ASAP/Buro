@@ -27,6 +27,61 @@
 
   <body>
     <div id="root">
+      <div class="modalReq">
+        <div class="modalReq__content">
+          <button type="button" class="modalReq__close"></button>
+          <h1 class="modalReq__title">Заявка на ипотеку</h1>
+          <span class="modalReq__text"
+            >Оставьте свои данные, мы свяжемся свами для подбора ипотечного предложения</span
+          >
+          <form class="modalReq__form">
+            <input class="modalReq__input" type="text" placeholder="Ваше имя" />
+            <input
+              class="modalReq__input"
+              id="modalReq__input_phone"
+              type="text"
+              placeholder="Ваш номер телефона"
+            />
+            <textarea class="modalReq__area" placeholder="Комментарий"></textarea>
+          </form>
+          <span class="modalReq__miniText">Предварительный расчет</span>
+          <span class="modalReq__totalMort"></span>
+          <button type="submit" class="modalReq__submit">Отправить</button>
+          <span class="modalReq__processing">
+            Нажимая на кнопку вы соглашаетесь на обработку
+            <a href="/" class="modalReq__processing modalReq__processing--colorRed"
+              >персональных данных</a
+            >
+          </span>
+        </div>
+      </div>
+      <div class="modalConsul">
+        <div class="modalConsul__content">
+          <button type="button" class="modalConsul__close"></button>
+          <h1 class="modalConsul__title">Консультация</h1>
+          <span class="modalConsul__text"
+            >Введите вопрос и свои данные, мы перезвоним и ответим на ваши вопросы</span
+          >
+          <form class="modalConsul__form">
+            <input class="modalConsul__input" type="text" placeholder="Ваше имя" />
+            <input
+              class="modalConsul__input"
+              id="modalConsul__input_phone"
+              type="text"
+              placeholder="Ваш номер телефона"
+            />
+            <textarea class="modalConsul__area" placeholder="Комментарий"></textarea>
+          </form>
+          <button type="submit" class="modalConsul__submit">Отправить</button>
+          <span class="modalConsul__processing">
+            Нажимая на кнопку вы соглашаетесь на обработку
+            <a href="/" class="modalConsul__processing modalConsul__processing--colorRed"
+              >персональных данных</a
+            >
+          </span>
+        </div>
+      </div>
+
       <main class="intro">
         <h2 class="intro__title">
           С 2004 г. подбираем жилье в Балашове, помогаем с ипотекой, оформляем документы
@@ -80,9 +135,9 @@
                 class="filter__item filter__item_city"
                 placeholder="Выбрать улицы, ориентиры"
               />
-              <button type="button" class="filter__more">Еще фильтры</button>
-              <button type="button" class="filter__map">Показать на карте</button>
-              <button type="button" class="filter__list">Показать списком</button>
+              <!-- <button type="button" class="filter__more">Еще фильтры</button> -->
+              <a href="/" type="button" class="filter__map">Показать на карте</a>
+              <a href="/" type="button" class="filter__list">Показать списком</a>
             </div>
           </form>
         </div>
@@ -259,9 +314,9 @@
                 <img src="img/flat.png" class="flat__image" alt="Квартира" />
                 <img src="img/flat.png" class="flat__image" alt="Квартира" />
               </div>
-              <div class="flat__desc">
+              <a href="/" class="flat__desc">
                 <div class="flat__info">
-                  <span class="flat__price">2 500 000 ₽</span>
+                  <span class="flat__price">430000</span>
                   <button type="button" class="flat__favorites">
                     <svg
                       width="0.875rem"
@@ -279,11 +334,11 @@
                 </div>
                 <span class="flat__address"> Балашов, ул. Шурова Гора, 7 </span>
                 <div class="flat__features">
-                  <span class="flat__feature">2 к.кв.</span>
-                  <span class="flat__feature">42 м²</span>
-                  <span class="flat__feature">1/9 этаж</span>
+                  <span class="flat__feature">Дом</span>
+                  <span class="flat__feature flat__feature_square">42</span>
+                  <span class="flat__feature flat__feature_floors">1</span>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="flat">
               <div class="owl-carousel owl-theme carouselFlatPhotos">
@@ -517,7 +572,7 @@
                 <div class="total">
                   <span class="total__title">Итого</span>
                   <h2 class="total__price">от 41 865 Р/мес.</h2>
-                  <button type="submit" class="total__button">Подать заявку</button>
+                  <button type="button" class="total__button">Подать заявку</button>
                   <div class="total__info">
                     <svg
                       class="total__icon"
