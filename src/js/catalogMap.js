@@ -6,28 +6,11 @@ import * as $ from 'jquery';
 import ymaps from 'ymaps';
 import { owlGallery } from '../vendors/owlGallery.js';
 import '../vendors/script.js';
+import { select } from '../vendors/script.js';
 
 //Components
 // import header from '../components/header.html';
 // import footer from '../components/footer.html';
-
-function select(btn, content, activeClass) {
-  $(btn).on('click', function (e) {
-    e.preventDefault();
-    if (e.target === this) {
-      $(this).toggleClass(activeClass).find(content).slideToggle();
-    }
-  });
-
-  $(document).on('mousedown', function (e) {
-    if (!$(btn).is($(e.target)) && !$(btn).is($(e.target))) {
-      Array.from($(btn)).forEach((elem) => {
-        if ($(elem).hasClass(activeClass))
-          $(elem).toggleClass(activeClass).find(content).slideToggle();
-      });
-    }
-  });
-}
 
 $(() => {
   // $('#root').prepend(header);
@@ -94,15 +77,4 @@ $(() => {
       maps.SuggestView('suggest');
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
-
-  $('.owl-dot').mouseenter(function () {
-    if (!$(this).hasClass('active')) $(this).trigger('click');
-  });
-
-  $('.owl-dot').on('click', function () {
-    if ($(this).hasClass('active')) {
-      let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
-      window.open(ref);
-    }
-  });
 });

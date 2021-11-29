@@ -7,56 +7,13 @@ import ymaps from 'ymaps';
 import '../vendors/mortgageCalc.js';
 import '../vendors/script.js';
 
+import { select } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
 
 //Components
 // import header from '../components/header.html';
 // import footer from "../components/footer.html";
-
-function select(btn, content, activeClass) {
-  $(btn).on('click', function (e) {
-    e.preventDefault();
-    if (e.target === this) {
-      $(this).toggleClass(activeClass).find(content).slideToggle();
-    }
-  });
-
-  $(document).on('mousedown', function (e) {
-    if (!$(btn).is($(e.target)) && !$(btn).is($(e.target))) {
-      Array.from($(btn)).forEach((elem) => {
-        if ($(elem).hasClass(activeClass))
-          $(elem).toggleClass(activeClass).find(content).slideToggle();
-      });
-    }
-  });
-}
-
-function addNulles(str) {
-  let arr = [...str];
-  for (let i = str.length; i >= 0; i -= 3) {
-    if (i !== str.length && str.length !== 3) arr.splice(i, 0, ' ');
-  }
-  return arr.join('');
-}
-
-// +7 937 021-23-06
-function strToPhone(str) {
-  let array = [...str];
-  array.splice(2, 0, ' ');
-  array.splice(6, 0, ' ');
-  array.splice(10, 0, '-');
-  array.splice(13, 0, '-');
-
-  return array.join('');
-}
-
-function transformText(classElement, callback) {
-  $(`${classElement}`).each((_, item) => {
-    let val = $(item).text();
-    $(item).text(callback(val));
-  });
-}
 
 $(() => {
   // $('#root').prepend(header);
@@ -121,15 +78,4 @@ $(() => {
       });
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
-
-  $('.owl-dot').mouseenter(function () {
-    if (!$(this).hasClass('active')) $(this).trigger('click');
-  });
-
-  $('.owl-dot').on('click', function () {
-    if ($(this).hasClass('active')) {
-      let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
-      window.open(ref);
-    }
-  });
 });

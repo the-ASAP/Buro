@@ -21,4 +21,16 @@ export const owlGallery = (selector, params) => {
         );
     })
     .trigger('refresh.owl.carousel');
+
+  $('.owl-dot').mouseenter(function () {
+    if (!$(this).hasClass('active')) $(this).trigger('click');
+  });
+
+  $('.owl-dot').on('click', function () {
+    if ($(this).hasClass('active')) {
+      let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
+      // window.location.href = ref;
+      window.open(ref);
+    }
+  });
 };

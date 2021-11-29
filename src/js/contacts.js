@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import '../scss/contacts.scss';
 import ymaps from 'ymaps';
+import { consulModal } from '../vendors/script.js';
 import { createHint } from '../vendors/map.js';
 import '../vendors/script.js';
 
@@ -11,16 +12,7 @@ $(() => {
   // $('#root').prepend(header);
   // $('.contacts').append(footer);
 
-  $('.contacts__consul').on('click', function () {
-    $('.modalConsul').addClass('modalConsul_active');
-  });
-
-  $('.modalConsul').on('click', function (e) {
-    if ($(e.target).hasClass('modalConsul_active')) $(this).removeClass('modalConsul_active');
-  });
-  $('.modalConsul__close').on('click', function () {
-    $('.modalConsul').removeClass('modalConsul_active');
-  });
+  consulModal('.contacts__consul');
 
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')

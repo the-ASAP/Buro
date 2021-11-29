@@ -1,26 +1,10 @@
 import * as $ from 'jquery';
 import '../scss/reviews.scss';
 import '../vendors/script.js';
+import { select } from '../vendors/script.js';
 
 // import header from '../components/header.html';
 // import footer from '../components/footer.html';
-
-function select(btn, content, activeClass) {
-  $(btn).on('click', function (e) {
-    if (e.target === this) {
-      $(this).toggleClass(activeClass).find(content).slideToggle();
-    }
-  });
-
-  $(document).on('mousedown', function (e) {
-    if (!$(btn).is($(e.target)) && !$(btn).is($(e.target))) {
-      Array.from($(btn)).forEach((elem) => {
-        if ($(elem).hasClass(activeClass))
-          $(elem).toggleClass(activeClass).find(content).slideToggle();
-      });
-    }
-  });
-}
 
 $(() => {
   // $('#root').prepend(header);
