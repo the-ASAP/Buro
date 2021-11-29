@@ -1,6 +1,8 @@
-import * as $ from 'jquery';
 import '../scss/reviews.scss';
+
+import * as $ from 'jquery';
 import '../vendors/script.js';
+
 import { select } from '../vendors/script.js';
 
 // import header from '../components/header.html';

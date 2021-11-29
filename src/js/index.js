@@ -5,10 +5,10 @@ import '../scss/index.scss';
 import * as $ from 'jquery';
 import ymaps from 'ymaps';
 import '../vendors/mortgageCalc.js';
-import { owlGallery } from '../vendors/owlGallery.js';
-
 import '../vendors/script.js';
+
 import { select, reqModal, consulModal } from '../vendors/script.js';
+import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
 
 //Components

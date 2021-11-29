@@ -4,9 +4,10 @@ import '../scss/catalogMap.scss';
 //libraries
 import * as $ from 'jquery';
 import ymaps from 'ymaps';
-import { owlGallery } from '../vendors/owlGallery.js';
 import '../vendors/script.js';
+
 import { select } from '../vendors/script.js';
+import { owlGallery } from '../vendors/owlGallery.js';
 
 //Components
 // import header from '../components/header.html';

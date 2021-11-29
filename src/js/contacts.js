@@ -1,9 +1,11 @@
-import * as $ from 'jquery';
 import '../scss/contacts.scss';
+
+import * as $ from 'jquery';
 import ymaps from 'ymaps';
+import '../vendors/script.js';
+
 import { consulModal } from '../vendors/script.js';
 import { createHint } from '../vendors/map.js';
-import '../vendors/script.js';
 
 // import header from '../components/header.html';
 // import footer from '../components/footer.html';
