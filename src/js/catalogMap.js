@@ -75,7 +75,7 @@ $(() => {
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')
     .then((maps) => {
-      maps.SuggestView('suggest');
+      new maps.SuggestView('search');
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 });

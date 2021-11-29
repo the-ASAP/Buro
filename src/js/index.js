@@ -95,6 +95,8 @@ $(() => {
           [51.544542, 43.149542]
         )
       );
+
+      new maps.SuggestView('search');
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 });

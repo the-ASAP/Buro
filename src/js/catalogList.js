@@ -76,6 +76,8 @@ $(() => {
             createHint(maps, address, `${oldprice} ₽`, [latitude, longitude], link)
           );
       });
+
+      new maps.SuggestView('search');
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 });
