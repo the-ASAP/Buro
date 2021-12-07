@@ -11,8 +11,8 @@ const calcTotalSum = () => {
   let contribution = Number($('input[name="rangeContribution"]').val());
   let time = Number($('input[name="rangeTime"]').val());
 
-  //Ипотека под 20%
-  let totalSum = Math.trunc((price * 1.2 - contribution) / (time * 12));
+  //Ипотека под 5%
+  let totalSum = Math.trunc((price * 1.05 - contribution) / (time * 12));
 
   if (totalSum < 0) totalSum = 0;
 
@@ -20,6 +20,11 @@ const calcTotalSum = () => {
 };
 
 $(() => {
+  $('input[name="rangePrice"]').css(
+    'background',
+    `linear-gradient(to right, #E23D3D 0%, #E23D3D 15%, #f0f0f0 15%, #f0f0f0 100%`
+  );
+
   $('.mortgageCalc__input').on('input', function () {
     let value = ((this.value - this.min) / (this.max - this.min)) * 100;
 
@@ -28,16 +33,28 @@ $(() => {
 
       let price = Number($('input[name="rangePrice"]').val());
       let contribution = Number($('input[name="rangeContribution"]').val());
-      if (contribution > price) {
-        $('input[name="rangeContribution"]')
-          .val(price)
-          .css(
-            'background',
-            `linear-gradient(to right, #E23D3D 0%, #E23D3D ${value}%, #f0f0f0 ${value}%, #f0f0f0 100%`
-          )
-          .prev()
-          .html(`${numberWithSpaces(this.value)}`);
-      }
+
+      $('input[name="rangeContribution"]')
+        .val(price / 10)
+        .css(
+          'background',
+          `linear-gradient(to right, #E23D3D 0%, #E23D3D ${value / 10}%, #f0f0f0 ${
+            value / 10
+          }%, #f0f0f0 100%`
+        )
+        .prev()
+        .html(`${numberWithSpaces(this.value / 10)}`);
+
+      // if (contribution > price) {
+      //   $('input[name="rangeContribution"]')
+      //     .val(price)
+      //     .css(
+      //       'background',
+      //       `linear-gradient(to right, #E23D3D 0%, #E23D3D ${value}%, #f0f0f0 ${value}%, #f0f0f0 100%`
+      //     )
+      //     .prev()
+      //     .html(`${numberWithSpaces(this.value)}`);
+      // }
     }
 
     if (this.name === 'rangeTime') {

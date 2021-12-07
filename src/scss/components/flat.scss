@@ -52,11 +52,14 @@
   }
 
   &__address {
-    display: block;
     margin-top: 0.9375rem;
     font-weight: 500;
     font-size: 0.875rem;
     line-height: 1.2;
+    -webkit-line-clamp: 1; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden;
   }
 
   &__features {

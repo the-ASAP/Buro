@@ -30,12 +30,14 @@ export function createHint(maps, address, object, coorArr, link) {
       link
     },
     {
-      hintLayout: HintLayout
+      hintLayout: HintLayout,
+      iconColor: '#e23d3d'
     }
   );
 
   myPlacemark.events.add('click', function (e) {
     let link = e.get('target')['properties'].get('link');
+    console.log(e.get('target')['options'].get('hintLayout'));
     if (link) window.location.href = link;
   });
 

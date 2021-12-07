@@ -26,104 +26,131 @@
   </head>
 
   <body>
-    <div id="root">
-      <div class="modalReq">
-        <div class="modalReq__content">
-          <button type="button" class="modalReq__close"></button>
-          <h1 class="modalReq__title">Заявка на ипотеку</h1>
-          <span class="modalReq__text"
-            >Оставьте свои данные, мы свяжемся свами для подбора ипотечного предложения</span
+    <div class="modalReq">
+      <div class="modalReq__content">
+        <button type="button" class="modalReq__close"></button>
+        <h1 class="modalReq__title">Заявка на ипотеку</h1>
+        <span class="modalReq__text"
+          >Оставьте свои данные, мы свяжемся свами для подбора ипотечного предложения</span
+        >
+        <form class="modalReq__form">
+          <input class="modalReq__input" type="text" placeholder="Ваше имя" />
+          <input
+            class="modalReq__input"
+            id="modalReq__input_phone"
+            type="text"
+            placeholder="Ваш номер телефона"
+          />
+          <textarea class="modalReq__area" placeholder="Комментарий"></textarea>
+        </form>
+        <span class="modalReq__miniText">Предварительный расчет</span>
+        <span class="modalReq__totalMort"></span>
+        <button type="submit" class="modalReq__submit">Отправить</button>
+        <span class="modalReq__processing">
+          Нажимая на кнопку вы соглашаетесь на обработку
+          <a href="/" class="modalReq__processing modalReq__processing--colorRed"
+            >персональных данных</a
           >
-          <form class="modalReq__form">
-            <input class="modalReq__input" type="text" placeholder="Ваше имя" />
-            <input
-              class="modalReq__input"
-              id="modalReq__input_phone"
-              type="text"
-              placeholder="Ваш номер телефона"
-            />
-            <textarea class="modalReq__area" placeholder="Комментарий"></textarea>
-          </form>
-          <span class="modalReq__miniText">Предварительный расчет</span>
-          <span class="modalReq__totalMort"></span>
-          <button type="submit" class="modalReq__submit">Отправить</button>
-          <span class="modalReq__processing">
-            Нажимая на кнопку вы соглашаетесь на обработку
-            <a href="/" class="modalReq__processing modalReq__processing--colorRed"
-              >персональных данных</a
-            >
-          </span>
-        </div>
+        </span>
       </div>
-      <div class="modalConsul">
-        <div class="modalConsul__content">
-          <button type="button" class="modalConsul__close"></button>
-          <h1 class="modalConsul__title">Консультация</h1>
-          <span class="modalConsul__text"
-            >Введите вопрос и свои данные, мы перезвоним и ответим на ваши вопросы</span
+    </div>
+    <div class="modalConsul">
+      <div class="modalConsul__content">
+        <button type="button" class="modalConsul__close"></button>
+        <h1 class="modalConsul__title">Консультация</h1>
+        <span class="modalConsul__text"
+          >Введите вопрос и свои данные, мы перезвоним и ответим на ваши вопросы</span
+        >
+        <form class="modalConsul__form">
+          <input class="modalConsul__input" type="text" placeholder="Ваше имя" />
+          <input
+            class="modalConsul__input"
+            id="modalConsul__input_phone"
+            type="text"
+            placeholder="Ваш номер телефона"
+          />
+          <textarea class="modalConsul__area" placeholder="Комментарий"></textarea>
+        </form>
+        <button type="submit" class="modalConsul__submit">Отправить</button>
+        <span class="modalConsul__processing">
+          Нажимая на кнопку вы соглашаетесь на обработку
+          <a href="/" class="modalConsul__processing modalConsul__processing--colorRed"
+            >персональных данных</a
           >
-          <form class="modalConsul__form">
-            <input class="modalConsul__input" type="text" placeholder="Ваше имя" />
-            <input
-              class="modalConsul__input"
-              id="modalConsul__input_phone"
-              type="text"
-              placeholder="Ваш номер телефона"
-            />
-            <textarea class="modalConsul__area" placeholder="Комментарий"></textarea>
-          </form>
-          <button type="submit" class="modalConsul__submit">Отправить</button>
-          <span class="modalConsul__processing">
-            Нажимая на кнопку вы соглашаетесь на обработку
-            <a href="/" class="modalConsul__processing modalConsul__processing--colorRed"
-              >персональных данных</a
-            >
-          </span>
-        </div>
+        </span>
       </div>
+    </div>
+    <div class="modalEmailSuccess">
+      <div class="modalEmailSuccess__content">
+        <button type="button" class="modalEmailSuccess__close"></button>
+        <h1 class="modalEmailSuccess__title">Письмо отправлено!</h1>
+        <span class="modalEmailSuccess__text"> Мы свяжимся с Вами в скором времени</span>
+      </div>
+    </div>
+    <div class="modalEmailFailed">
+      <div class="modalEmailFailed__content">
+        <button type="button" class="modalEmailFailed__close"></button>
+        <h1 class="modalEmailFailed__title">Что-то пошло не так...</h1>
+        <span class="modalEmailFailed__text">Попробуйте отправить заявку чуть позже</span>
+      </div>
+    </div>
 
+    <div id="root">
       <main class="intro">
         <h2 class="intro__title">
           С 2004 г. подбираем жилье в Балашове, помогаем с ипотекой, оформляем документы
         </h2>
         <div class="filter">
           <div class="filter__tabs">
-            <button type="button" class="filter__tab">Квартиры</button>
-            <button type="button" class="filter__tab">Комнаты</button>
-            <button type="button" class="filter__tab">Дома и участки</button>
-            <button type="button" class="filter__tab">Часть домов</button>
-            <button type="button" class="filter__tab">Коммерческая</button>
+            <button type="button" class="filter__tab" name="7">Квартиры</button>
+            <button type="button" class="filter__tab" name="8">Комнаты</button>
+            <button type="button" class="filter__tab" name="9">Дома и участки</button>
+            <button type="button" class="filter__tab" name="10">Часть домов</button>
+            <button type="button" class="filter__tab" name="11">Коммерческая</button>
           </div>
           <form class="filter__inputs">
             <div class="filter__row">
               <button type="button" class="filter__item filter__item_select">
-                Комнат
+                <span class="filter__text">Комнат</span>
                 <div class="filter__options">
-                  <span class="filter__option">1-комнатная</span>
-                  <span class="filter__option">2-комнатная</span>
-                  <span class="filter__option">3-комнатная</span>
+                  <span class="filter__option filter__item_rooms">1</span>
+                  <span class="filter__option filter__item_rooms">2</span>
+                  <span class="filter__option filter__item_rooms">3</span>
                 </div>
               </button>
               <button type="button" class="filter__item filter__item_select">
-                Стены
+                <span class="filter__text">Стены</span>
                 <div class="filter__options">
-                  <span class="filter__option">1-комнатная</span>
-                  <span class="filter__option">2-комнатная</span>
-                  <span class="filter__option">3-комнатная</span>
+                  <span class="filter__option filter__item_walls">1-комнатная</span>
+                  <span class="filter__option filter__item_walls">2-комнатная</span>
+                  <span class="filter__option filter__item_walls">3-комнатная</span>
                 </div>
               </button>
               <div class="filter__item">
-                <input type="text" class="filter__item_input" placeholder="Площадь" />
+                <input
+                  type="text"
+                  class="filter__item_input"
+                  id="filter__squareFrom"
+                  placeholder="Площадь"
+                />
                 <span class="filter__ruble">м2</span>
               </div>
 
               <div class="filter__price">
                 <div class="filter__item">
-                  <input type="text" class="filter__item_price" placeholder="Цена от" />
+                  <input
+                    type="text"
+                    class="filter__item_price filter__priceFrom"
+                    placeholder="Цена от"
+                  />
                   <span class="filter__ruble">&#8381;</span>
                 </div>
                 <div class="filter__item">
-                  <input type="text" class="filter__item_price" placeholder="Цена до" />
+                  <input
+                    type="text"
+                    class="filter__item_price filter__priceTo"
+                    placeholder="Цена до"
+                  />
                   <span class="filter__ruble">&#8381;</span>
                 </div>
               </div>
@@ -137,8 +164,8 @@
                 id="search"
               />
               <!-- <button type="button" class="filter__more">Еще фильтры</button> -->
-              <a href="/" type="button" class="filter__map">Показать на карте</a>
-              <a href="/" type="button" class="filter__list">Показать списком</a>
+              <button type="button" class="filter__map">Показать на карте</button>
+              <button type="button" class="filter__list">Показать списком</button>
             </div>
           </form>
         </div>
@@ -150,7 +177,7 @@
             <div class="card">
               <div class="card__intro">
                 <span class="card__title">Купить</span>
-                <button type="button" class="card__button">
+                <button type="button" class="card__button card__openConsul">
                   <svg
                     width="0.9375rem"
                     height="0.75rem"
@@ -180,7 +207,7 @@
             <div class="card">
               <div class="card__intro">
                 <span class="card__title">Продать</span>
-                <button type="button" class="card__button">
+                <button type="button" class="card__button card__openConsul">
                   <svg
                     width="0.9375rem"
                     height="0.75rem"
@@ -210,7 +237,7 @@
             <div class="card">
               <div class="card__intro">
                 <span class="card__title">Ипотека</span>
-                <button type="button" class="card__button">
+                <a href="#mortgage" class="card__button">
                   <svg
                     width="0.9375rem"
                     height="0.75rem"
@@ -233,14 +260,14 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                </button>
+                </a>
               </div>
               <span class="card__text">От 10 минут</span>
             </div>
             <div class="card">
               <div class="card__intro">
                 <span class="card__title">Трейд ин</span>
-                <button type="button" class="card__button">
+                <a href="#exchange" class="card__button">
                   <svg
                     width="0.9375rem"
                     height="0.75rem"
@@ -263,7 +290,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                </button>
+                </a>
               </div>
               <span class="card__text">Все виды собственности</span>
             </div>
@@ -508,7 +535,7 @@
           </div>
         </div>
       </section>
-      <section class="family">
+      <section class="family" id="mortgage">
         <div class="wrapper_fullPhone">
           <div class="family__back">
             <img class="family__image" src="img/family.png" alt="Семья" />
@@ -518,10 +545,21 @@
                 Отправьте заявку онлайн сразу в несколько банков и сократите время оформления
                 ипотеки
               </span>
+              <div class="family__banks">
+                <div class="family__bank">
+                  <img src="img/bank1.png" class="family__bankLogo" alt="Bank" />
+                </div>
+                <div class="family__bank">
+                  <img src="img/bank2.png" class="family__bankLogo" alt="Bank" />
+                </div>
+                <div class="family__bank">
+                  <span class="family__bankText">25+</span>
+                </div>
+              </div>
               <form class="mortgageCalc">
                 <span class="mortgageCalc__placeholder"> Стоимость недвижимости </span>
                 <label for="rangePrice" class="mortgageCalc__label mortgageCalc__label--price"
-                  >500 000
+                  >3 000 000
                 </label>
                 <input
                   name="rangePrice"
@@ -530,7 +568,7 @@
                   min="500000"
                   max="20000000"
                   type="range"
-                  value="0"
+                  value="3000000"
                   class="mortgageCalc__input mortgageCalc__input--price"
                 />
                 <div class="mortgageCalc__blocks">
@@ -763,7 +801,7 @@
           </div>
         </div>
         <div class="wrapper_fullPhone">
-          <div class="exchange">
+          <div class="exchange" id="exchange">
             <div class="exchange__info">
               <h1 class="exchange__title">Хотите продать или обменять квартиру?</h1>
               <span class="exchange__text"
@@ -891,62 +929,43 @@
               <div class="contacts__block">
                 <span class="contacts__label">Соц сети:</span>
                 <div class="contacts__social">
-                  <svg
-                    class="contacts__icon"
-                    width="1.875rem"
-                    height="1.875rem"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
-                    <path
-                      d="M15.8467 23V15.7135H18.5122L18.9084 12.8606H15.8467V11.0435C15.8467 10.2202 16.0954 9.65657 17.3766 9.65657H19V7.11306C18.2101 7.03499 17.4162 6.9973 16.6218 7.00015C14.2657 7.00015 12.6481 8.32658 12.6481 10.7616V12.8553H10V15.7082H12.6539V23H15.8467Z"
-                      fill="#E23D3D"
-                    />
-                  </svg>
-                  <svg
-                    class="contacts__icon"
-                    width="1.875rem"
-                    height="1.875rem"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
-                    <path
-                      d="M24 10.4255C23.4116 10.6598 22.7713 10.8284 22.1118 10.8941C22.7965 10.5185 23.3093 9.92521 23.5539 9.22545C22.9113 9.57833 22.2074 9.82578 21.4734 9.95681C21.1666 9.65402 20.7955 9.4128 20.3833 9.24819C19.9711 9.08357 19.5266 8.99909 19.0775 9.00001C17.2604 9.00001 15.7991 10.3598 15.7991 12.0284C15.7991 12.2627 15.8298 12.497 15.8798 12.7225C13.159 12.5911 10.7324 11.3911 9.1191 9.55385C8.82514 10.0174 8.6711 10.5451 8.673 11.0823C8.673 12.1331 9.25177 13.0598 10.1344 13.6047C9.61424 13.5858 9.1063 13.4538 8.65184 13.2195V13.2568C8.65184 14.7284 9.77863 15.9479 11.2804 16.2284C10.9984 16.296 10.7083 16.3306 10.417 16.3314C10.2036 16.3314 10.0017 16.3118 9.79786 16.2852C10.2132 17.4852 11.4227 18.3568 12.8629 18.3852C11.7361 19.2 10.3247 19.6793 8.79221 19.6793C8.51725 19.6793 8.26343 19.6704 8 19.642C9.45367 20.503 11.1785 21 13.0359 21C19.066 21 22.3656 16.3882 22.3656 12.3852C22.3656 12.2539 22.3656 12.1225 22.356 11.9911C22.9944 11.5598 23.5539 11.0254 24 10.4255Z"
-                      fill="#E13C3C"
-                    />
-                  </svg>
-                  <svg
-                    class="contacts__icon"
-                    width="1.875rem"
-                    height="1.875rem"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
-                    <path
-                      d="M22.6332 11.6772C22.7449 11.2865 22.6332 11 22.1046 11H20.3535C19.908 11 19.7044 11.2479 19.5926 11.5201C19.5926 11.5201 18.7023 13.8046 17.4407 15.2858C17.0335 15.7169 16.8475 15.853 16.6255 15.853C16.5145 15.853 16.3532 15.7169 16.3532 15.3262V11.6772C16.3532 11.2084 16.2247 11 15.8534 11H13.1019C12.824 11 12.6563 11.2168 12.6563 11.4235C12.6563 11.8671 13.2871 11.9696 13.3518 13.2198V15.9319C13.3518 16.526 13.2504 16.6343 13.0268 16.6343C12.4336 16.6343 10.9899 14.3415 10.1332 11.7167C9.9663 11.2067 9.79782 11.0008 9.35068 11.0008H7.60045C7.09981 11.0008 7 11.2487 7 11.5209C7 12.0099 7.59326 14.4297 9.76349 17.63C11.2103 19.8153 13.2472 21 15.1028 21C16.2151 21 16.3524 20.737 16.3524 20.2833V18.6315C16.3524 18.1055 16.4586 17.9997 16.8107 17.9997C17.0694 17.9997 17.515 18.1375 18.5538 19.1902C19.7403 20.4387 19.9367 20.9992 20.6035 20.9992H22.3537C22.8535 20.9992 23.1034 20.7362 22.9597 20.2169C22.8024 19.7002 22.2355 18.9482 21.4834 18.0585C21.0745 17.551 20.4637 17.0049 20.2777 16.7318C20.0182 16.3798 20.0932 16.2243 20.2777 15.9118C20.2785 15.9126 22.4112 12.7518 22.6332 11.6772Z"
-                      fill="#E13C3C"
-                    />
-                  </svg>
-                  <svg
-                    class="contacts__icon"
-                    width="1.875rem"
-                    height="1.875rem"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="15" cy="15" r="14.5" stroke="#E23D3D" />
-                    <path
-                      d="M20.92 9.08548L6.7471 14.3803C5.77986 14.7567 5.78545 15.2794 6.56964 15.5125L10.2084 16.6122L18.6274 11.4661C19.0255 11.2314 19.3892 11.3577 19.0903 11.6148L12.2692 17.5787H12.2676L12.2692 17.5795L12.0182 21.2131C12.3859 21.2131 12.5482 21.0497 12.7544 20.8569L14.5218 19.1919L18.1982 21.8226C18.876 22.1843 19.3628 21.9984 19.5315 21.2147L21.9448 10.196C22.1918 9.23649 21.5667 8.80203 20.92 9.08548Z"
-                      fill="#E13C3C"
-                    />
-                  </svg>
+                  <a href="/" class="contacts__ref">
+                    <svg
+                      width="1rem"
+                      height="0.625rem"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.6332 0.677197C15.7449 0.286507 15.6332 0 15.1046 0H13.3535C12.908 0 12.7044 0.247858 12.5926 0.520081C12.5926 0.520081 11.7023 2.80457 10.4407 4.28583C10.0335 4.71685 9.84747 4.85297 9.6255 4.85297C9.51451 4.85297 9.35322 4.71685 9.35322 4.32616V0.677197C9.35322 0.208368 9.22467 0 8.85338 0H6.10187C5.82401 0 5.65633 0.21677 5.65633 0.423458C5.65633 0.867081 6.28712 0.969585 6.35179 2.21979V4.93194C6.35179 5.52596 6.25039 5.63435 6.02682 5.63435C5.43356 5.63435 3.98993 3.34146 3.13318 0.716686C2.9663 0.206688 2.79782 0.000840535 2.35068 0.000840535H0.600446C0.0998082 0.000840535 0 0.248698 0 0.520921C0 1.00991 0.59326 3.42968 2.76349 6.62998C4.21031 8.81532 6.24719 10 8.10282 10C9.21509 10 9.35242 9.73702 9.35242 9.28331V7.63149C9.35242 7.10553 9.45862 6.99966 9.81074 6.99966C10.0694 6.99966 10.515 7.13746 11.5538 8.19022C12.7403 9.43875 12.9367 9.99916 13.6035 9.99916H15.3537C15.8535 9.99916 16.1034 9.73618 15.9597 9.21694C15.8024 8.70022 15.2355 7.94824 14.4834 7.05848C14.0745 6.551 13.4637 6.00487 13.2777 5.73181C13.0182 5.37977 13.0932 5.22433 13.2777 4.91178C13.2785 4.91262 15.4112 1.75181 15.6332 0.677197Z"
+                        fill="#E13C3C"
+                      />
+                    </svg>
+                  </a>
+                  <a href="/" class="contacts__ref">
+                    <svg
+                      width="1rem"
+                      height="1rem"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.3504 0H4.58752C2.0581 0 0 2.05784 0 4.58752V11.4125C0 13.9419 2.05784 16 4.58752 16H11.3504C13.8801 16 15.938 13.9419 15.938 11.4125V4.58752C15.938 2.0581 13.8801 0 11.3504 0ZM14.4197 11.4125C14.4197 13.1048 13.0428 14.4818 11.3504 14.4818H4.58752C2.89516 14.4818 1.51822 13.1048 1.51822 11.4125V4.58752C1.51822 2.89516 2.89516 1.51822 4.58752 1.51822H11.3504C13.0428 1.51822 14.4197 2.89516 14.4197 4.58752V11.4125Z"
+                        fill="#E23D3D"
+                      />
+                      <rect x="1" y="1" width="14" height="14" rx="3" fill="#E23D3D" />
+                      <path
+                        d="M7.98228 3.85449C5.68852 3.85449 3.82202 5.70092 3.82202 7.97069C3.82202 10.2402 5.68826 12.0866 7.98228 12.0866C10.276 12.0866 12.1425 10.2402 12.1425 7.97069C12.1425 5.70092 10.276 3.85449 7.98228 3.85449ZM7.98228 10.5713C6.52375 10.5713 5.33738 9.40445 5.33738 7.97069C5.33738 6.53667 6.52375 5.37011 7.98228 5.37011C9.44054 5.37011 10.6272 6.53667 10.6272 7.97069C10.6272 9.40471 9.4408 10.5713 7.98228 10.5713Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M12.2164 4.66526C12.757 4.66526 13.1953 4.227 13.1953 3.68639C13.1953 3.14577 12.757 2.70752 12.2164 2.70752C11.6758 2.70752 11.2375 3.14577 11.2375 3.68639C11.2375 4.227 11.6758 4.66526 12.2164 4.66526Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
                 </div>
                 <button type="button" class="contacts__consul">Консультация</button>
               </div>

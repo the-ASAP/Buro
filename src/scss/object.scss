@@ -444,7 +444,9 @@
 
   &__back {
     height: 45.5625rem;
-    padding: 3.75rem;
+    padding: 0 3.75rem;
+    display: flex;
+    align-items: center;
     position: relative;
   }
 
@@ -458,7 +460,6 @@
 
   &__form {
     width: 27.0625rem;
-    height: 38rem;
     padding: 1.875rem;
     background-color: #fff;
     border-radius: 3px;
@@ -470,6 +471,32 @@
     margin-top: 1.25rem;
     display: block;
     max-width: 18.75rem;
+  }
+
+  &__banks {
+    margin-top: 1.25rem;
+    display: flex;
+  }
+
+  &__bank {
+    width: 5.625rem;
+    height: 2.875rem;
+    border: 1px solid #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.625rem;
+  }
+
+  &__bankLogo {
+    max-width: 4.125rem;
+  }
+
+  &__bankText {
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.37;
+    color: $grayMain;
   }
 }
 

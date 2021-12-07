@@ -1,91 +1,34 @@
-import * as $ from 'jquery';
-
-$(function () {
-  //MODx pdoResources Ajax Filter
-  //Filter Settings
-  var fadeSpeed = 200, // Fade Animation Speed
-    ajaxCountSelector = '.ajax-count', // CSS Selector of Items Counter
-    ajaxContainerSelector = '.ajax-container', // CSS Selector of Ajax Container
-    ajaxItemSelector = '.ajax-item', // CSS Selector of Ajax Item
-    ajaxFormSelector = '.ajax-form', // CSS Selector of Ajax Filter Form
-    ajaxFormButtonStart = '.ajax-start', // CSS Selector of Button Start Filtering
-    ajaxFormButtonReset = '.ajax-reset', // CSS Selector of Button Reset Ajax Form
-    sortDownText = 'По убыванию',
-    sortUpText = 'По возрастанию';
-
-  function ajaxCount() {
-    if ($('.ajax-filter-count').length) {
-      var count = $('.ajax-filter-count').data('count');
-      $(ajaxCountSelector).text(count);
-    } else {
-      $(ajaxCountSelector).text($(ajaxItemSelector).length);
-    }
-  }
-  ajaxCount();
-
-  function ajaxMainFunction() {
-    $.ajax({
-      data: $(ajaxFormSelector).serialize()
-    }).done(function (response) {
-      var $response = $(response);
-      $(ajaxContainerSelector).fadeOut(fadeSpeed);
-      setTimeout(function () {
-        $(ajaxContainerSelector)
-          .html($response.find(ajaxContainerSelector).html())
-          .fadeIn(fadeSpeed);
-        ajaxCount();
-      }, fadeSpeed);
-    });
+export class filterObjects {
+  constructor() {
+    this.parent = '';
+    this.priceFrom = '';
+    this.priceTo = '';
+    this.squareFrom = '';
+    this.squareTo = '';
+    this.dir = '';
+    this.sort = '';
+    this.address = '';
+    this.flatRooms = '';
+    this.flatBuildingType = '';
   }
 
-  $(ajaxContainerSelector).on('click', '.ajax-more', function (e) {
-    e.preventDefault();
-    var offset = $(ajaxItemSelector).length;
-    $.ajax({
-      data: $(ajaxFormSelector).serialize() + '&offset=' + offset
-    }).done(function (response) {
-      $('.ajax-more').remove();
-      var $response = $(response);
-      $response.find(ajaxItemSelector).hide();
-      $(ajaxContainerSelector).append($response.find(ajaxContainerSelector).html());
-      $(ajaxItemSelector).fadeIn();
-    });
-  });
+  setAttr(prop, str) {
+    this[prop] = str;
+    return this;
+  }
 
-  $(ajaxFormButtonStart).click(function (e) {
-    e.preventDefault();
-    ajaxMainFunction();
-  });
+  getAttrs() {
+    return this;
+  }
 
-  $(ajaxFormButtonReset).click(function (e) {
-    e.preventDefault();
-    $(ajaxFormSelector).trigger('reset');
-    $('input[name=sortby]').val('pagetitle');
-    $('input[name=sortdir]').val('asc');
-    setTimeout(function () {
-      $('[data-sort-by]').data('sort-dir', 'asc').toggleClass('button-sort-asc').text(sortUpText);
-    }, fadeSpeed);
-    ajaxMainFunction();
-    ajaxCount();
-  });
+  async filterListPage() {
+    // window.location.href = `http://buro.asap-lp.ru/obektyi-spisok?parents=${this.parent}&priceFrom=${this.priceFrom}&priceTo=${this.priceTo}&squareFrom=${this.squareFrom}&squareTo=${this.squareTo}&sortby=${this.dir}&sortdir=${this.sort}&address=${this.address}&flatRooms=${this.flatRooms}&flatBuildingType=${this.flatBuildingType}`;
+    await fetch(
+      `http://buro.asap-lp.ru/obektyi-spisok?parents=${this.parent}&priceFrom=${this.priceFrom}&priceTo=${this.priceTo}&squareFrom=${this.squareFrom}&squareTo=${this.squareTo}&sortby=${this.dir}&sortdir=${this.sort}&address=${this.address}&flatRooms=${this.flatRooms}&flatBuildingType=${this.flatBuildingType}`
+    ).then((res) => console.log(res));
+  }
 
-  $('' + ajaxFormSelector + ' input').change(function () {
-    ajaxMainFunction();
-  });
-
-  $('[data-sort-by]')
-    .data('sort-dir', 'asc')
-    .click(function () {
-      var ths = $(this);
-      $('input[name=sortby]').val($(this).data('sort-by'));
-      $('input[name=sortdir]').val($(this).data('sort-dir'));
-      setTimeout(function () {
-        $('[data-sort-by]').not(this).toggleClass('button-sort-asc').text(sortUpText);
-        ths.data('sort-dir') == 'asc'
-          ? ths.data('sort-dir', 'desc').text(sortDownText)
-          : ths.data('sort-dir', 'asc').text(sortUpText);
-        $(this).toggleClass('button-sort-asc');
-      }, fadeSpeed);
-      ajaxMainFunction();
-    });
-});
+  filterCartPage() {
+    window.location.href = `http://buro.asap-lp.ru/obektyi-karta?parents=${this.parent}&priceFrom=${this.priceFrom}&priceTo=${this.priceTo}&squareFrom=${this.squareFrom}&squareTo=${this.squareTo}&sortby=${this.dir}&sortdir=${this.sort}&address=${this.address}&flatRooms=${this.flatRooms}&flatBuildingType=${this.flatBuildingType}`;
+  }
+}

@@ -77,6 +77,13 @@ export function reqModal(trigger) {
   $('.modalReq__close').on('click', function () {
     $('.modalReq').removeClass('modalReq_active');
   });
+
+  $('.modalEmailSuccess__close').on('click', function () {
+    $('.modalEmailSuccess').removeClass('modalEmailSuccess_active');
+  });
+  $('.modalEmailFailed__close').on('click', function () {
+    $('.modalEmailFailed').removeClass('modalEmailFailed_active');
+  });
 }
 
 export function consulModal(trigger) {
@@ -89,5 +96,12 @@ export function consulModal(trigger) {
   });
   $('.modalConsul__close').on('click', function () {
     $('.modalConsul').removeClass('modalConsul_active');
+  });
+
+  $('.modalEmailSuccess__close').on('click', function () {
+    $('.modalEmailSuccess').removeClass('modalEmailSuccess_active');
+  });
+  $('.modalEmailFailed__close').on('click', function () {
+    $('.modalEmailFailed').removeClass('modalEmailFailed_active');
   });
 }

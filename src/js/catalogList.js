@@ -10,6 +10,7 @@ import '../vendors/script.js';
 import { select } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
+import { filterObjects } from '../vendors/ajax';
 
 //Components
 // import header from '../components/header.html';
@@ -80,4 +81,74 @@ $(() => {
       new maps.SuggestView('search');
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
+
+  const filter = new filterObjects();
+  $('.filters__category').on('click', function (e) {
+    filter.setAttr('parent', e.target.name);
+  });
+  $('.filter__item_input').on('change', function () {
+    filter.setAttr('squareFrom', this.value);
+  });
+  $('.filter__priceFrom').on('change', function () {
+    filter.setAttr('priceFrom', this.value);
+  });
+  $('.filter__priceTo').on('change', function () {
+    filter.setAttr('priceTo', this.value);
+  });
+  $('.filter__item_city').on('change', function () {
+    filter.setAttr('address', this.value);
+  });
+  $('.filter__map').on('click', function () {
+    filter.filterCartPage();
+  });
+  $('.filter__list').on('click', function () {
+    filter.filterListPage();
+  });
+  $('.filter__item_rooms').on('click', function (e) {
+    let text = $(this).text();
+    $(this).parent().prev().text(text);
+    filter.setAttr('flatRooms', text);
+  });
+
+  $('.filter__item_walls').on('click', function (e) {
+    let text = $(this).text();
+    $(this).parent().prev().text(text);
+    filter.setAttr('flatBuildingType', text);
+  });
+
+  $('.priceDESC').on('click', function () {
+    filter.setAttr('dir', 'flatPrice');
+    filter.setAttr('sort', 'desc');
+  });
+  $('.priceASC').on('click', function () {
+    filter.setAttr('dir', 'flatPrice');
+    filter.setAttr('sort', 'asc');
+  });
+  $('.squareDESC').on('click', function () {
+    filter.setAttr('dir', 'flatSquare');
+    filter.setAttr('sort', 'desc');
+  });
+  $('.squareASC').on('click', function () {
+    filter.setAttr('dir', 'flatSquare');
+    filter.setAttr('sort', 'desc');
+  });
+
+  $('.filter__item_rooms').on('click', function (e) {
+    let text = $(this).text();
+    filter.setAttr('flatRooms', text);
+  });
+
+  $('.filter__item_walls').on('click', function (e) {
+    let text = $(this).text();
+    filter.setAttr('flatBuildingType', text);
+  });
+
+  $('.filter__option').on('click', function () {
+    let text = $(this).text();
+    $(this).parent().prev().text(text);
+  });
+  $('.flats__option').on('click', function (e) {
+    let text = $(this).text();
+    $(this).parent().prev().text(text);
+  });
 });

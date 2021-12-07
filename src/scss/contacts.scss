@@ -47,9 +47,17 @@
 
   &__social {
     margin-top: 1rem;
+    display: flex;
   }
 
-  &__icon {
+  &__ref {
+    width: 1.875rem;
+    height: 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $mainColor;
+    border-radius: 50%;
     margin-right: 0.625rem;
   }
 

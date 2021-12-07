@@ -1,0 +1,147 @@
+@import './rootStyles/main.scss';
+
+@import './components/header.scss';
+@import './components/footer.scss';
+@import './components/modals.scss';
+
+.title {
+  margin-top: 3.125rem;
+}
+
+.subtitle {
+  margin-top: 3.125rem;
+}
+
+.team {
+  margin-top: 1.25rem;
+  border-top: 1px solid #dcdcdc;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.person {
+  margin-top: 3.125rem;
+  margin-left: 1.25rem;
+  width: 20rem;
+  height: 32.125rem;
+  background-color: #fff;
+
+  &:nth-child(4n + 1) {
+    margin-left: 0;
+  }
+
+  &__image {
+    height: 12.5rem;
+    object-fit: cover;
+  }
+
+  &__info {
+    padding: 1.25rem 1.25rem 1.875rem 1.25rem;
+  }
+
+  &__position {
+    display: block;
+    margin-top: 0.625rem;
+    color: $grayLight;
+  }
+
+  &__objects {
+    display: block;
+    margin-top: 0.625rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: $grayMain;
+  }
+
+  &__phone {
+    display: block;
+    margin-top: 1.25rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-decoration-line: underline;
+    color: $mainColor;
+  }
+
+  &__email {
+    display: block;
+    margin-top: 0.625rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $grayMid;
+  }
+
+  &__more {
+    margin-top: 1.875rem;
+    height: 3.125rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: $mainColor;
+    background-color: #fff;
+    border: 1px solid $mainColor;
+    border-radius: 5px;
+    width: 100%;
+
+    display: none;
+  }
+}
+
+.consul {
+  position: relative;
+  height: 22.5rem;
+  background-color: #fff;
+  margin-top: 6.25rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 3.125rem 3.75rem;
+
+  &__pinkBack {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 33.1875rem;
+  }
+
+  &__phone {
+    position: absolute;
+    top: 1.25rem;
+    right: 5.125rem;
+    width: 35.0625rem;
+  }
+
+  &__title {
+    max-width: 28rem;
+  }
+
+  &__text {
+    display: block;
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $grayMain;
+    max-width: 26.375rem;
+  }
+
+  &__button {
+    margin-top: 2.875rem;
+    width: 12.5rem;
+    height: 3.4375rem;
+    background: $mainColor;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background-color: $hoverColor;
+    }
+  }
+}
+
+.footer {
+  margin-top: 6.25rem;
+}
