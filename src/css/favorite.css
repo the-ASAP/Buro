@@ -1231,6 +1231,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   height: 100%;
   width: 100%;
 }
+@charset "UTF-8";
 @media (max-width: 1600px) {
   html {
     font-size: 16px;
@@ -1615,9 +1616,21 @@ button {
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+.menuMobile {
+  display: none;
+}
+.navMobile {
+  display: none;
+}
 @media (max-width: 768px) {
   .header {
     padding: 1.5rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 9;
   }
   .header__mobile {
     display: -webkit-box;
@@ -1648,6 +1661,130 @@ button {
   .logo__icon {
     width: 3.375rem;
     height: 3.375rem;
+  }
+
+  .menuMobile {
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100vh - 5.625rem);
+    position: fixed;
+    top: 5.625rem;
+    left: 100%;
+    z-index: 9;
+    -webkit-transition: left 0.3s ease-in;
+    -o-transition: left 0.3s ease-in;
+    transition: left 0.3s ease-in;
+  }
+  .menuMobile__active {
+    left: 0;
+  }
+
+  .navMobile {
+    display: block;
+    margin-top: 1rem;
+  }
+  .navMobile__item {
+    display: block;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.37;
+    color: #3d3d3d;
+    color: var(--gray-main);
+  }
+  .navMobile__item_button {
+    margin: 0 auto;
+    position: relative;
+    padding: 1rem;
+  }
+  .navMobile__item_button::before, .navMobile__item_button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    width: 5px;
+    height: 1px;
+    background-color: #3d3d3d;
+    background-color: var(--gray-main);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    transition: -webkit-transform 0.3s ease-in;
+    -o-transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  }
+  .navMobile__item_button::after {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    right: 0;
+  }
+  .navMobile__options {
+    margin-top: 0.3125rem;
+  }
+  .navMobile__option {
+    margin-top: 0.625rem;
+    display: block;
+    color: #979797;
+    color: var(--gray-light);
+  }
+  .navMobile__phone, .navMobile__mail {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 3.125rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    color: #3d3d3d;
+    color: var(--gray-main);
+  }
+  .navMobile__mail {
+    margin-top: 0.625rem;
+  }
+  .navMobile__social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 1.875rem;
+  }
+  .navMobile__consul {
+    display: block;
+    margin: 3.125rem auto 0;
+    width: 20.4375rem;
+    height: 3.4375rem;
+    background: #e23d3d;
+    background: var(--main-color);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.37;
+    color: #fff;
+  }
+  .navMobile__ref {
+    width: 1.875rem;
+    height: 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #e23d3d;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    margin-right: 0.625rem;
   }
 }
 .footer {
@@ -1755,11 +1892,17 @@ button {
   }
 
   .footerMenu {
+    display: block;
+  }
+  .footerMenu__ref {
     display: none;
+  }
+  .footerMenu__column {
+    margin-top: 1rem;
   }
 
   .license {
-    padding: 1.5625rem 0;
+    padding: 1.5625rem 0 4.375rem;
   }
   .license__text {
     font-size: 0.75rem;
@@ -1815,9 +1958,13 @@ button {
   width: 100%;
   height: 20rem;
 }
+.object__price:after {
+  content: " ₽";
+}
 .object__info {
   padding: 1.25rem 1.875rem 1.25rem 1.25rem;
   position: relative;
+  width: 100%;
 }
 .object__intro {
   display: -webkit-box;

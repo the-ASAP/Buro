@@ -7,7 +7,7 @@ import ymaps from 'ymaps';
 import '../vendors/mortgageCalc.js';
 import '../vendors/script.js';
 
-import { select } from '../vendors/script.js';
+import { select, filter } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
 import { filterObjects } from '../vendors/ajax';
@@ -82,9 +82,11 @@ $(() => {
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 
-  const filter = new filterObjects();
+  // const filter = new filterObjects();
+
   $('.filters__category').on('click', function (e) {
     filter.setAttr('parent', e.target.name);
+    filter.filterCartPage();
   });
   $('.filter__item_input').on('change', function () {
     filter.setAttr('squareFrom', this.value);
@@ -113,24 +115,28 @@ $(() => {
   $('.filter__item_walls').on('click', function (e) {
     let text = $(this).text();
     $(this).parent().prev().text(text);
-    filter.setAttr('flatBuildingType', text);
+    filter.setAttr('flatBuildingType', `'${text}'`);
   });
 
   $('.priceDESC').on('click', function () {
     filter.setAttr('dir', 'flatPrice');
     filter.setAttr('sort', 'desc');
+    filter.filterCartPage();
   });
   $('.priceASC').on('click', function () {
     filter.setAttr('dir', 'flatPrice');
     filter.setAttr('sort', 'asc');
+    filter.filterCartPage();
   });
   $('.squareDESC').on('click', function () {
     filter.setAttr('dir', 'flatSquare');
     filter.setAttr('sort', 'desc');
+    filter.filterCartPage();
   });
   $('.squareASC').on('click', function () {
     filter.setAttr('dir', 'flatSquare');
-    filter.setAttr('sort', 'desc');
+    filter.setAttr('sort', 'asc');
+    filter.filterCartPage();
   });
 
   $('.filter__item_rooms').on('click', function (e) {
@@ -140,7 +146,7 @@ $(() => {
 
   $('.filter__item_walls').on('click', function (e) {
     let text = $(this).text();
-    filter.setAttr('flatBuildingType', text);
+    filter.setAttr('flatBuildingType', `'${text}'`);
   });
 
   $('.filter__option').on('click', function () {

@@ -6,17 +6,17 @@ import * as $ from 'jquery';
 import ymaps from 'ymaps';
 import '../vendors/script.js';
 
-import { select } from '../vendors/script.js';
+import { select, filter } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 import { filterObjects } from '../vendors/ajax';
 
 //Components
-// import header from '../components/header.html';
-// import footer from '../components/footer.html';
+import header from '../components/header.html';
+import footer from '../components/footer.html';
 
 $(() => {
-  // $('#root').prepend(header);
-  // $('.section').append(footer);
+  $('#root').prepend(header);
+  $('.section').append(footer);
 
   owlGallery('.carouselFlats', {
     dots: false,
@@ -80,9 +80,10 @@ $(() => {
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 
-  const filter = new filterObjects();
+  // const filter = new filterObjects();
   $('.filters__category').on('click', function (e) {
     filter.setAttr('parent', e.target.name);
+    filter.filterListPage();
   });
   $('.filter__squareFrom').on('change', function () {
     filter.setAttr('squareFrom', this.value);
@@ -97,6 +98,7 @@ $(() => {
     filter.setAttr('priceTo', this.value);
   });
   $('.filter__item_city').on('change', function () {
+    console.log(this.value);
     filter.setAttr('address', this.value);
   });
   $('.filter__map').on('click', function () {
@@ -114,24 +116,28 @@ $(() => {
   $('.filter__item_walls').on('click', function (e) {
     let text = $(this).text();
     $(this).parent().prev().text(text);
-    filter.setAttr('flatBuildingType', text);
+    filter.setAttr('flatBuildingType', `'${text}'`);
   });
 
   $('.priceDESC').on('click', function () {
     filter.setAttr('dir', 'flatPrice');
     filter.setAttr('sort', 'desc');
+    filter.filterListPage();
   });
   $('.priceASC').on('click', function () {
     filter.setAttr('dir', 'flatPrice');
     filter.setAttr('sort', 'asc');
+    filter.filterListPage();
   });
   $('.squareDESC').on('click', function () {
     filter.setAttr('dir', 'flatSquare');
     filter.setAttr('sort', 'desc');
+    filter.filterListPage();
   });
   $('.squareASC').on('click', function () {
     filter.setAttr('dir', 'flatSquare');
-    filter.setAttr('sort', 'desc');
+    filter.setAttr('sort', 'asc');
+    filter.filterListPage();
   });
 
   $('.filter__item_rooms').on('click', function (e) {
@@ -141,7 +147,7 @@ $(() => {
 
   $('.filter__item_walls').on('click', function (e) {
     let text = $(this).text();
-    filter.setAttr('flatBuildingType', text);
+    filter.setAttr('flatBuildingType', `'${text}'`);
   });
 
   $('.filter__option').on('click', function () {

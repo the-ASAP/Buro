@@ -2,6 +2,7 @@
 // import footer from '../components/footer.html';
 
 import * as $ from 'jquery';
+import '../vendors/script.js';
 import { select } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 
@@ -20,5 +21,13 @@ $(() => {
     items: 1,
     margin: 16,
     loop: false
+  });
+
+  $('.object__favorite').on('click', function () {
+    let favorite = localStorage.getItem('favorite').split(',');
+    let newFavorite = favorite.filter((id) => id !== this.name).join(',');
+    localStorage.setItem('favorite', newFavorite);
+    document.cookie = `favorite=${favorite}; path=/izbrannoe`;
+    $(this).closest('.object').remove();
   });
 });

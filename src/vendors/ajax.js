@@ -21,11 +21,8 @@ export class filterObjects {
     return this;
   }
 
-  async filterListPage() {
-    // window.location.href = `http://buro.asap-lp.ru/obektyi-spisok?parents=${this.parent}&priceFrom=${this.priceFrom}&priceTo=${this.priceTo}&squareFrom=${this.squareFrom}&squareTo=${this.squareTo}&sortby=${this.dir}&sortdir=${this.sort}&address=${this.address}&flatRooms=${this.flatRooms}&flatBuildingType=${this.flatBuildingType}`;
-    await fetch(
-      `http://buro.asap-lp.ru/obektyi-spisok?parents=${this.parent}&priceFrom=${this.priceFrom}&priceTo=${this.priceTo}&squareFrom=${this.squareFrom}&squareTo=${this.squareTo}&sortby=${this.dir}&sortdir=${this.sort}&address=${this.address}&flatRooms=${this.flatRooms}&flatBuildingType=${this.flatBuildingType}`
-    ).then((res) => console.log(res));
+  filterListPage() {
+    window.location.href = `http://buro.asap-lp.ru/obektyi-spisok?parents=${this.parent}&priceFrom=${this.priceFrom}&priceTo=${this.priceTo}&squareFrom=${this.squareFrom}&squareTo=${this.squareTo}&sortby=${this.dir}&sortdir=${this.sort}&address=${this.address}&flatRooms=${this.flatRooms}&flatBuildingType=${this.flatBuildingType}`;
   }
 
   filterCartPage() {

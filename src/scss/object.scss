@@ -259,6 +259,9 @@
     line-height: 1.2;
     color: #fff;
     transition: background-color 0.3s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background-color: $hoverColor;
@@ -279,6 +282,7 @@
     width: 9rem;
     height: 9rem;
     margin-right: 1.6875rem;
+    display: none;
   }
 
   &__lightText {

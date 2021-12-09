@@ -978,6 +978,8 @@
   }
 
   .cards {
+    margin-top: 3.125rem;
+
     &__blocks {
       display: block;
     }
@@ -1024,6 +1026,7 @@
     &__back {
       padding: 0;
       height: auto;
+      display: block;
     }
 
     &__image {

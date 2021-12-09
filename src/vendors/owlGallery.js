@@ -29,8 +29,10 @@ export const owlGallery = (selector, params) => {
   $('.owl-dot').on('click', function () {
     if ($(this).hasClass('active')) {
       let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
+      let favoriteRef = $(this).parents('.object').find('.object__more').attr('href');
       // window.location.href = ref;
-      window.open(ref);
+      if (ref) window.open(ref);
+      else window.open(favoriteRef);
     }
   });
 };

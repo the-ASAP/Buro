@@ -13,11 +13,11 @@ import { createHint } from '../vendors/map.js';
 import { filterObjects } from '../vendors/ajax';
 
 //Components
-// import header from '../components/header.html';
+import header from '../components/header.html';
 // import footer from '../components/footer.html';
 
 $(() => {
-  // $('#root').prepend(header);
+  $('#root').prepend(header);
   // $('.contacts').append(footer);
 
   owlGallery('.carouselFlats', {
@@ -78,7 +78,11 @@ $(() => {
   consulModal('.contacts__consul');
   consulModal('.exchange__mainButton');
   consulModal('.exchange__button');
-  consulModal('.card__openConsul');
+  // consulModal('.card__openConsul');
+
+  $('.card__openConsul').on('click', function () {
+    window.open('http://buro.asap-lp.ru/obektyi');
+  });
 
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')
@@ -107,7 +111,8 @@ $(() => {
     filter.setAttr('parent', e.target.name);
   });
   $('.filter__item_input').on('change', function () {
-    filter.setAttr('squareFrom', this.value);
+    filter.setAttr('squareFrom', Number(this.value) * 0.8);
+    filter.setAttr('squareTo', Number(this.value) * 1.2);
   });
   $('.filter__priceFrom').on('change', function () {
     filter.setAttr('priceFrom', this.value);
@@ -124,17 +129,15 @@ $(() => {
   $('.filter__list').on('click', function () {
     filter.filterListPage();
   });
-
-  $('.filter__item_rooms').on('click', function (e) {
+  $('.filter__item_rooms').on('click', function () {
     let text = $(this).text();
+    console.log(text);
     filter.setAttr('flatRooms', text);
   });
-
-  $('.filter__item_walls').on('click', function (e) {
+  $('.filter__item_walls').on('click', function () {
     let text = $(this).text();
-    filter.setAttr('flatBuildingType', text);
+    filter.setAttr('flatBuildingType', `'${text}'`);
   });
-
   $('.filter__option').on('click', function () {
     let text = $(this).text();
     $(this).parent().prev().text(text);

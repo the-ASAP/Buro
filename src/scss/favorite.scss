@@ -42,9 +42,16 @@
     height: 20rem;
   }
 
+  &__price {
+    &:after {
+      content: ' \20BD';
+    }
+  }
+
   &__info {
     padding: 1.25rem 1.875rem 1.25rem 1.25rem;
     position: relative;
+    width: 100%;
   }
 
   &__intro {
