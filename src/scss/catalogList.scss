@@ -110,6 +110,11 @@
   height: 46.625rem;
   width: 50%;
   margin-top: 3.75rem;
+
+  &__hint {
+    color: $mainColor;
+    text-decoration: underline;
+  }
 }
 
 .flat {
@@ -190,4 +195,89 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    display: none;
+  }
+
+  .content {
+    &__info {
+      flex-direction: column;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .wrapper {
+      width: 100%;
+    }
+  }
+
+  .flats {
+    width: 90%;
+    background-color: #fff;
+    position: absolute;
+    top: calc(100vh - 25rem);
+    left: 5%;
+    z-index: 1;
+
+    &__intro {
+      width: 100%;
+      display: none;
+    }
+
+    &__notice {
+      &_select {
+        width: 50%;
+      }
+    }
+
+    &__choice {
+      height: auto;
+      overflow-y: initial;
+      overflow-x: scroll;
+      flex-wrap: nowrap;
+    }
+  }
+
+  .flat {
+    margin: 0 1.25rem 0 0;
+    width: 100%;
+
+    &:nth-child(4n + 2),
+    &:nth-child(4n + 3),
+    &:nth-child(odd) {
+      margin: 0 1.25rem 0 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &__image {
+      height: 50vw;
+    }
+  }
+
+  .yandexMap {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .filters {
+    &__categories {
+      display: none;
+    }
+  }
+  .filter {
+    &__inputs {
+      display: none;
+    }
+  }
+  .pagination {
+    display: none;
+  }
 }

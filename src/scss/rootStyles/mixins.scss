@@ -1,60 +1,60 @@
 //Создание необходимых миксинов
-@import "./root.scss";
+@import './root.scss';
 
 %flexbox {
-    display: flex;
-    align-items: center;
-    align-self: center;
+  display: flex;
+  align-items: center;
+  align-self: center;
 }
 
 %scrollbar::-webkit-scrollbar {
-    width: 0.5%;
-    min-width: 8px;
+  width: 0.5%;
+  min-width: 8px;
 }
 
 %scrollbar::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 %scrollbar::-webkit-scrollbar-thumb {
-    border-left: 1px solid $mainBack;
-    background: $mainColor;
-    border-radius: 3px;
+  border-left: 1px solid $mainBack;
+  background: $mainColor;
+  border-radius: 3px;
 }
 
 %mediumText {
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.2;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 %semiMediumText {
-    font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 1.2;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.2;
 
-    @media (max-width: 768px) {
-        font-weight: 400;
-    }
+  @media (max-width: 768px) {
+    font-weight: 400;
+  }
 }
 
 %regularText {
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.37;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.37;
 
-    @media (max-width: 768px) {
-        font-size: 0.875rem;
-        line-height: 1.28;
-    }
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    line-height: 1.28;
+  }
 }
 
 %semiRegularText {
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 1.2;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.2;
 
-    @media (max-width: 768px) {
-        font-weight: 500;
-    }
+  @media (max-width: 768px) {
+    font-weight: 500;
+  }
 }

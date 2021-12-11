@@ -1350,6 +1350,41 @@ button {
   .breadcrumbs {
     display: none;
   }
+
+  .content__info {
+    display: block;
+  }
+  .content__text {
+    margin-top: 1.25rem;
+    display: block;
+  }
+  .content__select {
+    margin-top: 1.25rem;
+    width: 100%;
+  }
+
+  .flat {
+    width: 100%;
+    margin: 1.25rem 0 0 0;
+  }
+  .flat:nth-child(4n+2), .flat:nth-child(4n+3) {
+    margin: 1.25rem 0 0 0;
+  }
+  .flat__image {
+    height: 50vw;
+  }
+
+  .page-item:first-child, .page-item:last-child {
+    display: none;
+  }
+
+  .filters__categories {
+    display: none;
+  }
+
+  .filter__inputs {
+    display: none;
+  }
 }
 .not-selectable {
   -webkit-user-select: none;

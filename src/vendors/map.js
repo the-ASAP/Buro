@@ -1,45 +1,22 @@
 export function createHint(maps, address, object, coorArr, link) {
-  let HintLayout = maps.templateLayoutFactory.createClass(
-    '<div class="yandexHint">' +
-      '<p>{{ properties.object }}</p>' +
-      '<p>{{ properties.address }}</p>' +
-      '</div>',
-    {
-      getShape: function () {
-        var el = this.getElement(),
-          result = null;
-        if (el) {
-          var firstChild = el.firstChild;
-          result = new maps.shape.Rectangle(
-            new maps.geometry.pixel.Rectangle([
-              [0, 0],
-              [firstChild.offsetWidth, firstChild.offsetHeight]
-            ])
-          );
-        }
-        return result;
-      }
-    }
-  );
-
   let myPlacemark = new maps.Placemark(
     [coorArr[0], coorArr[1]],
     {
       address,
       object,
-      link
+      link,
+      balloonContentHeader: object,
+      balloonContentBody: address,
+      balloonContentFooter: link
+        ? `<a href=${link} class="yandexMap__hint">` + 'Перейти' + '</a>'
+        : '',
+      hintContent: 'Открыть'
     },
     {
-      hintLayout: HintLayout,
+      // hintLayout: HintLayout,
       iconColor: '#e23d3d'
     }
   );
-
-  myPlacemark.events.add('click', function (e) {
-    let link = e.get('target')['properties'].get('link');
-    console.log(e.get('target')['options'].get('hintLayout'));
-    if (link) window.location.href = link;
-  });
 
   return myPlacemark;
 }

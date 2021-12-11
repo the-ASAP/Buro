@@ -85,3 +85,29 @@
   height: 28.75rem;
   margin-top: 3.75rem;
 }
+
+@media (max-width: 768px) {
+  .contacts {
+    margin-top: 3.125rem;
+    padding: 0;
+
+    &__blocks {
+      margin-top: 1.5625rem;
+      display: block;
+    }
+
+    &__block {
+      width: 100%;
+
+      & + & {
+        margin-top: 1.25rem;
+      }
+    }
+
+    &__consul {
+      width: 100%;
+      position: relative;
+      margin-top: 3.125rem;
+    }
+  }
+}

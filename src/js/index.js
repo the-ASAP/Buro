@@ -7,17 +7,17 @@ import ymaps from 'ymaps';
 import '../vendors/mortgageCalc.js';
 import '../vendors/script.js';
 
-import { select, reqModal, consulModal } from '../vendors/script.js';
+import { select, reqModal, consulModal, openModal } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
 import { filterObjects } from '../vendors/ajax';
 
 //Components
-import header from '../components/header.html';
+// import header from '../components/header.html';
 // import footer from '../components/footer.html';
 
 $(() => {
-  $('#root').prepend(header);
+  // $('#root').prepend(header);
   // $('.contacts').append(footer);
 
   owlGallery('.carouselFlats', {
@@ -78,7 +78,13 @@ $(() => {
   consulModal('.contacts__consul');
   consulModal('.exchange__mainButton');
   consulModal('.exchange__button');
+  // openModal('.agency__ref', '.modalDomClick', 'modalDomClick_active');
   // consulModal('.card__openConsul');
+
+  $('.agency__ref').on('click', function (e) {
+    e.preventDefault();
+    $('.modalDomClick__image').trigger('click');
+  });
 
   $('.card__openConsul').on('click', function () {
     window.open('http://buro.asap-lp.ru/obektyi');
@@ -109,6 +115,7 @@ $(() => {
   const filter = new filterObjects();
   $('.filter__tab').on('click', function (e) {
     filter.setAttr('parent', e.target.name);
+    filter.filterListPage();
   });
   $('.filter__item_input').on('change', function () {
     filter.setAttr('squareFrom', Number(this.value) * 0.8);

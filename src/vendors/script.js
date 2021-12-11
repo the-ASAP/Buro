@@ -109,9 +109,22 @@ export function consulModal(trigger) {
   });
 }
 
+export function openModal(trigger, modal, activeClass) {
+  $(trigger).on('click', function (e) {
+    e.preventDefault();
+    $(modal).addClass(activeClass);
+  });
+
+  $(modal).on('click', function (e) {
+    if ($(e.target).hasClass(activeClass)) $(this).removeClass(activeClass);
+  });
+  $(`${modal}__close`).on('click', function () {
+    $(modal).removeClass(activeClass);
+  });
+}
+
 function fillFavoriteColor() {
   $('.flat__favorites').each(function (index, button) {
-    console.log('its work');
     let favoriteArr = [];
     if (localStorage.getItem('favorite')) {
       favoriteArr = localStorage.getItem('favorite').split(',');

@@ -76,7 +76,10 @@ $(() => {
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')
     .then((maps) => {
-      new maps.SuggestView('search');
+      let suggest = new maps.SuggestView('search');
+      suggest.events.add('select', function (e) {
+        filter.setAttr('address', e.get('item').value);
+      });
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 
@@ -97,14 +100,13 @@ $(() => {
   $('.filter__priceTo').on('change', function () {
     filter.setAttr('priceTo', this.value);
   });
-  $('.filter__item_city').on('change', function () {
-    console.log(this.value);
+  $('.filter__item_city').on('input', function (e) {
     filter.setAttr('address', this.value);
   });
   $('.filter__map').on('click', function () {
     filter.filterCartPage();
   });
-  $('.filter__list').on('click', function () {
+  $('.filter__list').on('click', function (e) {
     filter.filterListPage();
   });
   $('.filter__item_rooms').on('click', function (e) {

@@ -9,7 +9,7 @@
 .intro {
   height: 46.625rem;
   position: relative;
-  background: url('../img/mainBack2.png') no-repeat;
+  background: url('../img/mainBack.png') no-repeat;
   background-position: center;
   background-size: cover;
 
@@ -901,6 +901,11 @@
 .yandexMap {
   height: 28.75rem;
   margin-top: 3.75rem;
+
+  &__hint {
+    color: $mainColor;
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 768px) {

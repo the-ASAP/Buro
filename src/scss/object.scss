@@ -9,8 +9,11 @@
 
 .content {
   margin-top: 3.75rem;
-  display: flex;
-  justify-content: space-between;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .object {
@@ -686,5 +689,177 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    display: block;
+    margin-top: 1rem;
+
+    .wrapper {
+      display: block;
+    }
+  }
+
+  .object {
+    width: 100%;
+    padding: 1.25rem;
+
+    &__title {
+      margin-top: 1.25rem;
+    }
+    &__intro {
+      flex-direction: column;
+    }
+
+    &__icons {
+      order: -1;
+    }
+    &__button {
+      &--favorite {
+        margin: 0;
+      }
+    }
+    &__text {
+      margin-top: 1.25rem;
+    }
+  }
+
+  .description {
+    &__text {
+      max-width: 100%;
+    }
+  }
+
+  .specifications {
+    &__row {
+      justify-content: space-between;
+    }
+
+    &__key {
+      width: auto;
+    }
+  }
+
+  .card {
+    margin-top: 1.25rem;
+    width: 100%;
+  }
+  .realtor {
+    margin-top: 1.25rem;
+  }
+  .family {
+    &__back {
+      padding: 0;
+      height: auto;
+      display: block;
+    }
+
+    &__image {
+      position: relative;
+      width: 100%;
+      height: 73vw;
+      object-fit: cover;
+    }
+
+    &__form {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mortgageCalc {
+    &__blocks {
+      flex-wrap: wrap;
+    }
+
+    &__block {
+      &:nth-child(2) {
+        width: 100%;
+      }
+
+      width: 100%;
+    }
+  }
+
+  .mortgage {
+    margin-top: 3.125rem;
+
+    &__blocks {
+      display: block;
+      margin-top: 1.5625rem;
+    }
+
+    &__block {
+      width: 100%;
+      height: fit-content;
+
+      & + & {
+        margin-top: 1.25rem;
+      }
+    }
+
+    &__subtitle {
+      font-weight: 600;
+      font-size: 1.125rem;
+      line-height: 1.2;
+    }
+
+    &__text {
+      margin-top: 1.25rem;
+      font-size: 0.875rem;
+      line-height: 1.29;
+      color: $grayMid;
+    }
+  }
+
+  .agency {
+    height: auto;
+    display: block;
+    text-align: center;
+    padding: 0 3.125rem;
+
+    &__title {
+      padding-top: 1.875rem;
+    }
+
+    &__ref {
+      margin-top: 1.25rem;
+    }
+
+    &__image {
+      width: auto;
+      height: auto;
+      margin-top: 1.875rem;
+      padding-bottom: 1.875rem;
+    }
+  }
+
+  .flats {
+    &__choice {
+      display: none;
+
+      &_mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.875rem;
+      }
+    }
+
+    &__title {
+      h1 {
+        font-size: 1.5rem;
+        line-height: 1.37;
+      }
+    }
+  }
+  .fire {
+    width: 2.25rem;
+    height: 2.625rem;
+  }
+
+  .carouselFlats {
+    margin-top: 1.5rem;
   }
 }

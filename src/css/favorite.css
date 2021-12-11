@@ -2087,3 +2087,29 @@ button {
 .footer {
   margin-top: 6.25rem;
 }
+@media (max-width: 768px) {
+  .categories {
+    display: none;
+  }
+
+  .carouselFlatPhotos {
+    height: 60vw;
+    width: 100%;
+  }
+
+  .object {
+    height: auto;
+    display: block;
+  }
+  .object__image {
+    height: 60vw;
+  }
+  .object__info {
+    padding: 1.25rem;
+  }
+  .object__more {
+    position: relative;
+    bottom: 0;
+    margin-top: 1.25rem;
+  }
+}

@@ -22,17 +22,19 @@ export const owlGallery = (selector, params) => {
     })
     .trigger('refresh.owl.carousel');
 
-  $('.owl-dot').mouseenter(function () {
-    if (!$(this).hasClass('active')) $(this).trigger('click');
-  });
+  if (document.documentElement.clientWidth > 768) {
+    $('.owl-dot').mouseenter(function () {
+      if (!$(this).hasClass('active')) $(this).trigger('click');
+    });
 
-  $('.owl-dot').on('click', function () {
-    if ($(this).hasClass('active')) {
-      let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
-      let favoriteRef = $(this).parents('.object').find('.object__more').attr('href');
-      // window.location.href = ref;
-      if (ref) window.open(ref);
-      else window.open(favoriteRef);
-    }
-  });
+    $('.owl-dot').on('click', function () {
+      if ($(this).hasClass('active')) {
+        let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
+        let favoriteRef = $(this).parents('.object').find('.object__more').attr('href');
+        // window.location.href = ref;
+        if (ref) window.open(ref);
+        else window.open(favoriteRef);
+      }
+    });
+  }
 };

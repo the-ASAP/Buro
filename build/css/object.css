@@ -74,14 +74,20 @@
   --main-font: "Inter", sans-serif;
   --font-color: #484848;
 }
-.modalEmailFailed__content::-webkit-scrollbar, .modalEmailFailed::-webkit-scrollbar, .modalEmailSuccess__content::-webkit-scrollbar, .modalEmailSuccess::-webkit-scrollbar, .modalReq__content::-webkit-scrollbar, .modalReq::-webkit-scrollbar, .modalConsul__content::-webkit-scrollbar, .modalConsul::-webkit-scrollbar, body::-webkit-scrollbar {
+.modalEmailFailed__content::-webkit-scrollbar, .modalEmailFailed::-webkit-scrollbar, .modalEmailSuccess__content::-webkit-scrollbar, .modalEmailSuccess::-webkit-scrollbar, .modalReq__content::-webkit-scrollbar, .modalReq::-webkit-scrollbar, .modalConsul__content::-webkit-scrollbar,
+.modalDomClick__content::-webkit-scrollbar, .modalConsul::-webkit-scrollbar,
+.modalDomClick::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 0.5%;
   min-width: 8px;
 }
-.modalEmailFailed__content::-webkit-scrollbar-track, .modalEmailFailed::-webkit-scrollbar-track, .modalEmailSuccess__content::-webkit-scrollbar-track, .modalEmailSuccess::-webkit-scrollbar-track, .modalReq__content::-webkit-scrollbar-track, .modalReq::-webkit-scrollbar-track, .modalConsul__content::-webkit-scrollbar-track, .modalConsul::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+.modalEmailFailed__content::-webkit-scrollbar-track, .modalEmailFailed::-webkit-scrollbar-track, .modalEmailSuccess__content::-webkit-scrollbar-track, .modalEmailSuccess::-webkit-scrollbar-track, .modalReq__content::-webkit-scrollbar-track, .modalReq::-webkit-scrollbar-track, .modalConsul__content::-webkit-scrollbar-track,
+.modalDomClick__content::-webkit-scrollbar-track, .modalConsul::-webkit-scrollbar-track,
+.modalDomClick::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
   background: transparent;
 }
-.modalEmailFailed__content::-webkit-scrollbar-thumb, .modalEmailFailed::-webkit-scrollbar-thumb, .modalEmailSuccess__content::-webkit-scrollbar-thumb, .modalEmailSuccess::-webkit-scrollbar-thumb, .modalReq__content::-webkit-scrollbar-thumb, .modalReq::-webkit-scrollbar-thumb, .modalConsul__content::-webkit-scrollbar-thumb, .modalConsul::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+.modalEmailFailed__content::-webkit-scrollbar-thumb, .modalEmailFailed::-webkit-scrollbar-thumb, .modalEmailSuccess__content::-webkit-scrollbar-thumb, .modalEmailSuccess::-webkit-scrollbar-thumb, .modalReq__content::-webkit-scrollbar-thumb, .modalReq::-webkit-scrollbar-thumb, .modalConsul__content::-webkit-scrollbar-thumb,
+.modalDomClick__content::-webkit-scrollbar-thumb, .modalConsul::-webkit-scrollbar-thumb,
+.modalDomClick::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   border-left: 1px solid #e5e5e5;
   border-left: 1px solid var(--main-back);
   background: #e23d3d;
@@ -853,7 +859,8 @@ button {
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
-.modalConsul {
+.modalConsul,
+.modalDomClick {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -871,12 +878,14 @@ button {
   overflow-y: scroll;
   display: none;
 }
-.modalConsul_active {
+.modalConsul_active,
+.modalDomClick_active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.modalConsul__content {
+.modalConsul__content,
+.modalDomClick__content {
   width: 34.1875rem;
   background-color: #fff;
   border-radius: 3px;
@@ -894,14 +903,17 @@ button {
   overflow-y: scroll;
   position: relative;
 }
-.modalConsul__close {
+.modalConsul__close,
+.modalDomClick__close {
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
-.modalConsul__close::before, .modalConsul__close::after {
+.modalConsul__close::before, .modalConsul__close::after,
+.modalDomClick__close::before,
+.modalDomClick__close::after {
   content: "";
   width: 2rem;
   height: 2px;
@@ -914,19 +926,22 @@ button {
   background-color: #979797;
   background-color: var(--gray-light);
 }
-.modalConsul__close::after {
+.modalConsul__close::after,
+.modalDomClick__close::after {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.modalConsul__title {
+.modalConsul__title,
+.modalDomClick__title {
   font-weight: 500;
   font-size: 2.25rem;
   line-height: 120%;
   color: #3d3d3d;
   color: var(--gray-main);
 }
-.modalConsul__text {
+.modalConsul__text,
+.modalDomClick__text {
   text-align: center;
   font-size: 1rem;
   line-height: 1.37;
@@ -935,11 +950,13 @@ button {
   margin-top: 1.375rem;
   display: block;
 }
-.modalConsul__form {
+.modalConsul__form,
+.modalDomClick__form {
   margin-top: 2.5rem;
   width: 100%;
 }
-.modalConsul__input {
+.modalConsul__input,
+.modalDomClick__input {
   display: block;
   width: 100%;
   height: 3.75rem;
@@ -952,37 +969,39 @@ button {
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__input::-webkit-input-placeholder {
+.modalConsul__input::-webkit-input-placeholder, .modalDomClick__input::-webkit-input-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__input::-moz-placeholder {
+.modalConsul__input::-moz-placeholder, .modalDomClick__input::-moz-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__input:-ms-input-placeholder {
+.modalConsul__input:-ms-input-placeholder, .modalDomClick__input:-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__input::-ms-input-placeholder {
+.modalConsul__input::-ms-input-placeholder, .modalDomClick__input::-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__input::placeholder {
+.modalConsul__input::placeholder,
+.modalDomClick__input::placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__area {
+.modalConsul__area,
+.modalDomClick__area {
   padding: 1.375rem 1.25rem;
   border-radius: 3px;
   border: 1px solid #dcdcdc;
@@ -994,37 +1013,39 @@ button {
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__area::-webkit-input-placeholder {
+.modalConsul__area::-webkit-input-placeholder, .modalDomClick__area::-webkit-input-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__area::-moz-placeholder {
+.modalConsul__area::-moz-placeholder, .modalDomClick__area::-moz-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__area:-ms-input-placeholder {
+.modalConsul__area:-ms-input-placeholder, .modalDomClick__area:-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__area::-ms-input-placeholder {
+.modalConsul__area::-ms-input-placeholder, .modalDomClick__area::-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__area::placeholder {
+.modalConsul__area::placeholder,
+.modalDomClick__area::placeholder {
   font-size: 1rem;
   line-height: 1.37;
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__miniText {
+.modalConsul__miniText,
+.modalDomClick__miniText {
   font-size: 0.875rem;
   line-height: 1.37;
   text-align: center;
@@ -1033,7 +1054,8 @@ button {
   display: block;
   margin-top: 0.625rem;
 }
-.modalConsul__totalMort {
+.modalConsul__totalMort,
+.modalDomClick__totalMort {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.2;
@@ -1042,7 +1064,8 @@ button {
   color: var(--gray-main);
   margin-top: 0.5rem;
 }
-.modalConsul__submit {
+.modalConsul__submit,
+.modalDomClick__submit {
   margin-top: 1.5rem;
   width: 100%;
   height: 3.4375rem;
@@ -1056,11 +1079,13 @@ button {
   -o-transition: background-color 0.3s ease-in;
   transition: background-color 0.3s ease-in;
 }
-.modalConsul__submit:hover {
+.modalConsul__submit:hover,
+.modalDomClick__submit:hover {
   background-color: #c83a3a;
   background-color: var(--hover-color);
 }
-.modalConsul__processing {
+.modalConsul__processing,
+.modalDomClick__processing {
   margin-top: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.37;
@@ -1068,7 +1093,8 @@ button {
   color: #5d5d5d;
   color: var(--gray-mid);
 }
-.modalConsul__processing--colorRed {
+.modalConsul__processing--colorRed,
+.modalDomClick__processing--colorRed {
   color: #e23d3d;
   color: var(--main-color);
   -webkit-text-decoration-line: underline;
@@ -1770,6 +1796,8 @@ button {
 }
 .content {
   margin-top: 3.75rem;
+}
+.content .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2034,6 +2062,15 @@ button {
   -webkit-transition: background-color 0.3s ease-in;
   -o-transition: background-color 0.3s ease-in;
   transition: background-color 0.3s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .card__button:hover {
   background-color: #c83a3a;
@@ -2055,6 +2092,7 @@ button {
   width: 9rem;
   height: 9rem;
   margin-right: 1.6875rem;
+  display: none;
 }
 .realtor__lightText {
   display: block;
@@ -2501,6 +2539,167 @@ button {
 .yandexHint p:first-child {
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .content {
+    display: block;
+    margin-top: 1rem;
+  }
+  .content .wrapper {
+    display: block;
+  }
+
+  .object {
+    width: 100%;
+    padding: 1.25rem;
+  }
+  .object__title {
+    margin-top: 1.25rem;
+  }
+  .object__intro {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .object__icons {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .object__button--favorite {
+    margin: 0;
+  }
+  .object__text {
+    margin-top: 1.25rem;
+  }
+
+  .description__text {
+    max-width: 100%;
+  }
+
+  .specifications__row {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .specifications__key {
+    width: auto;
+  }
+
+  .card {
+    margin-top: 1.25rem;
+    width: 100%;
+  }
+
+  .realtor {
+    margin-top: 1.25rem;
+  }
+
+  .family__back {
+    padding: 0;
+    height: auto;
+    display: block;
+  }
+  .family__image {
+    position: relative;
+    width: 100%;
+    height: 73vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .family__form {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mortgageCalc__blocks {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .mortgageCalc__block {
+    width: 100%;
+  }
+  .mortgageCalc__block:nth-child(2) {
+    width: 100%;
+  }
+
+  .mortgage {
+    margin-top: 3.125rem;
+  }
+  .mortgage__blocks {
+    display: block;
+    margin-top: 1.5625rem;
+  }
+  .mortgage__block {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .mortgage__block + .mortgage__block {
+    margin-top: 1.25rem;
+  }
+  .mortgage__subtitle {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+  }
+  .mortgage__text {
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.29;
+    color: #5d5d5d;
+    color: var(--gray-mid);
+  }
+
+  .agency {
+    height: auto;
+    display: block;
+    text-align: center;
+    padding: 0 3.125rem;
+  }
+  .agency__title {
+    padding-top: 1.875rem;
+  }
+  .agency__ref {
+    margin-top: 1.25rem;
+  }
+  .agency__image {
+    width: auto;
+    height: auto;
+    margin-top: 1.875rem;
+    padding-bottom: 1.875rem;
+  }
+
+  .flats__choice {
+    display: none;
+  }
+  .flats__choice_mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 1.875rem;
+  }
+  .flats__title h1 {
+    font-size: 1.5rem;
+    line-height: 1.37;
+  }
+
+  .fire {
+    width: 2.25rem;
+    height: 2.625rem;
+  }
+
+  .carouselFlats {
+    margin-top: 1.5rem;
+  }
 }
 .not-selectable {
   -webkit-user-select: none;
