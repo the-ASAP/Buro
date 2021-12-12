@@ -64,8 +64,46 @@
       border-color: $mainColor;
     }
   }
+
+  &__rooms {
+    min-width: 13rem;
+    margin-right: 1.25rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+  }
+
+  &__room {
+    width: calc(100% / 4);
+    border-right: 1px solid #dcdcdc;
+    background-color: #fff;
+    transition: color 0.3s ease-in, background-color 0.3s ease-in;
+
+    &:last-child {
+      border: none;
+    }
+
+    &_active {
+      background-color: $mainColor;
+      color: #fff;
+    }
+  }
+
+  &__label {
+    min-width: 13rem;
+    margin-right: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: $grayMain;
+
+    &_mobile {
+      display: none;
+    }
+  }
+
   &__item {
-    min-width: 12.9375rem;
+    min-width: 13rem;
     height: 3.125rem;
     padding: 0 1.25rem;
     border: 1px solid #dcdcdc;
@@ -107,7 +145,7 @@
       &::placeholder {
         font-size: 0.875rem;
         line-height: 1.57;
-        color: $grayMain;
+        color: $grayLight;
       }
     }
 
@@ -121,7 +159,7 @@
       &::placeholder {
         font-size: 0.875rem;
         line-height: 1.57;
-        color: $grayMain;
+        color: $grayLight;
       }
     }
 
@@ -177,6 +215,10 @@
   &__row {
     display: flex;
     margin-top: 1.25rem;
+
+    &_inputs {
+      margin-top: 0.5rem;
+    }
   }
 
   &__price &__item {
@@ -395,6 +437,8 @@
     bottom: 0;
     left: 0;
     right: 0;
+    height: 45.5625rem;
+    object-fit: cover;
   }
 
   &__form {
@@ -931,23 +975,36 @@
       display: none;
     }
 
+    &__label {
+      display: none;
+
+      &_mobile {
+        display: block;
+        margin: 1.5rem 0 0.625rem 0;
+      }
+    }
+
     &__row {
       flex-wrap: wrap;
       justify-content: space-between;
+      margin: 0;
+    }
+
+    &__rooms {
+      min-width: 100%;
+      height: 3.125rem;
     }
 
     &__item {
       min-width: 100%;
 
       &_select {
-        min-width: calc(50% - 0.375rem);
-        margin: 0 0 1.25rem 0;
+        min-width: 100%;
       }
     }
 
     &__price {
       height: auto;
-      margin-top: 1.25rem;
     }
 
     &__price &__item {

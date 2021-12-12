@@ -8,7 +8,6 @@ import '../vendors/script.js';
 
 import { select, filter } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
-import { filterObjects } from '../vendors/ajax';
 
 //Components
 import header from '../components/header.html';
@@ -109,10 +108,15 @@ $(() => {
   $('.filter__list').on('click', function (e) {
     filter.filterListPage();
   });
-  $('.filter__item_rooms').on('click', function (e) {
+  $('.filter__room').on('click', function () {
+    $('.filter__room').each((index, item) => {
+      $(item).removeClass('filter__room_active');
+    });
+    $(this).addClass('filter__room_active');
+
     let text = $(this).text();
-    $(this).parent().prev().text(text);
-    filter.setAttr('flatRooms', text);
+    if (text === '4+') filter.setAttr('flatRooms', `>=4`);
+    else filter.setAttr('flatRooms', `=${text}`);
   });
 
   $('.filter__item_walls').on('click', function (e) {
@@ -160,5 +164,16 @@ $(() => {
   $('.content__option').on('click', function () {
     let text = $(this).text();
     $(this).parent().prev().text(text);
+  });
+
+  $('.mobileMenu__toggleFilters').on('click', function () {
+    $('.filter__inputs').toggleClass('filter__inputs_active');
+
+    if ($('.filter__inputs').hasClass('filter__inputs_active')) {
+      $('body').css('overflow', 'hidden');
+    } else $('body').css('overflow', 'scroll');
+  });
+  $('.mobileMenu__openCart').on('click', function () {
+    filter.filterCartPage();
   });
 });

@@ -190,6 +190,7 @@
   .content {
     &__info {
       display: block;
+      height: fit-content;
     }
     &__text {
       margin-top: 1.25rem;
@@ -198,6 +199,7 @@
     &__select {
       margin-top: 1.25rem;
       width: 100%;
+      z-index: 7;
     }
   }
   .flat {
@@ -217,17 +219,6 @@
   .page-item {
     &:first-child,
     &:last-child {
-      display: none;
-    }
-  }
-
-  .filters {
-    &__categories {
-      display: none;
-    }
-  }
-  .filter {
-    &__inputs {
       display: none;
     }
   }

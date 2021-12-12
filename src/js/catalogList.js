@@ -10,15 +10,14 @@ import '../vendors/script.js';
 import { select, filter } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
-import { filterObjects } from '../vendors/ajax';
 
 //Components
-// import header from '../components/header.html';
-// import footer from "../components/footer.html";
+import header from '../components/header.html';
+import footer from '../components/footer.html';
 
 $(() => {
-  // $('#root').prepend(header);
-  // $(".content").append(footer);
+  $('#root').prepend(header);
+  $('.content').append(footer);
 
   owlGallery('.carouselFlats', {
     dots: false,
@@ -104,7 +103,8 @@ $(() => {
     filter.filterCartPage();
   });
   $('.filter__list').on('click', function () {
-    filter.filterListPage();
+    // filter.filterListPage();
+    filter.filterCartPage();
   });
   $('.filter__item_rooms').on('click', function (e) {
     let text = $(this).text();
@@ -139,9 +139,15 @@ $(() => {
     filter.filterCartPage();
   });
 
-  $('.filter__item_rooms').on('click', function (e) {
+  $('.filter__room').on('click', function () {
+    $('.filter__room').each((index, item) => {
+      $(item).removeClass('filter__room_active');
+    });
+    $(this).addClass('filter__room_active');
+
     let text = $(this).text();
-    filter.setAttr('flatRooms', text);
+    if (text === '4+') filter.setAttr('flatRooms', `>=4`);
+    else filter.setAttr('flatRooms', `=${text}`);
   });
 
   $('.filter__item_walls').on('click', function (e) {
@@ -156,5 +162,16 @@ $(() => {
   $('.flats__option').on('click', function (e) {
     let text = $(this).text();
     $(this).parent().prev().text(text);
+  });
+
+  $('.mobileMenu__toggleFilters').on('click', function () {
+    $('.filter__inputs').toggleClass('filter__inputs_active');
+
+    if ($('.filter__inputs').hasClass('filter__inputs_active')) {
+      $('body').css('overflow', 'hidden');
+    } else $('body').css('overflow', 'scroll');
+  });
+  $('.mobileMenu__openCart').on('click', function () {
+    filter.filterListPage();
   });
 });

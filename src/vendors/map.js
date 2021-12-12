@@ -9,14 +9,17 @@ export function createHint(maps, address, object, coorArr, link) {
       balloonContentBody: address,
       balloonContentFooter: link
         ? `<a href=${link} class="yandexMap__hint">` + 'Перейти' + '</a>'
-        : '',
-      hintContent: 'Открыть'
+        : ''
     },
     {
       // hintLayout: HintLayout,
       iconColor: '#e23d3d'
     }
   );
+
+  // myPlacemark.events.add('click', function () {
+  //   console.log(link);
+  // });
 
   return myPlacemark;
 }

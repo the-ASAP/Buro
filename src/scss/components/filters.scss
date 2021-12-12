@@ -1,3 +1,7 @@
+.mobileMenu {
+  display: none;
+}
+
 .filters {
   &__categories {
     margin-top: 1.875rem;
@@ -37,9 +41,50 @@
     border-bottom: 1px solid #c4c4c4;
   }
 
+  &__rooms {
+    min-width: 13rem;
+    margin-right: 1.25rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+  }
+
+  &__room {
+    width: calc(100% / 4);
+    border-right: 1px solid #dcdcdc;
+    background-color: #fff;
+    transition: color 0.3s ease-in, background-color 0.3s ease-in;
+
+    &:last-child {
+      border: none;
+    }
+
+    &_active {
+      background-color: $mainColor;
+      color: #fff;
+    }
+  }
+
+  &__label {
+    min-width: 13rem;
+    margin-right: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: $grayMain;
+
+    &_double {
+      min-width: calc(27.0625rem + 1.25rem);
+    }
+
+    &_mobile {
+      display: none;
+    }
+  }
+
   &__item {
     background-color: #fff;
-    min-width: 12.9375rem;
+    min-width: 13rem;
     height: 3.125rem;
     padding: 0 1.25rem;
     border: 1px solid #dcdcdc;
@@ -81,7 +126,7 @@
       &::placeholder {
         font-size: 0.875rem;
         line-height: 1.57;
-        color: $grayMain;
+        color: $grayLight;
       }
     }
 
@@ -95,7 +140,7 @@
       &::placeholder {
         font-size: 0.875rem;
         line-height: 1.57;
-        color: $grayMain;
+        color: $grayLight;
       }
     }
 
@@ -155,6 +200,10 @@
   &__row {
     display: flex;
     margin-top: 1.25rem;
+
+    &_inputs {
+      margin-top: 0.5rem;
+    }
   }
 
   &__price &__item {
@@ -214,5 +263,113 @@
     color: $grayMid;
 
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobileMenu {
+    display: flex;
+
+    &__toggleFilters,
+    &__openCart {
+      border: 1px solid #dcdcdc;
+      width: 50%;
+      height: 2.5rem;
+      background-color: #fff;
+
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1.2;
+      color: $grayMain;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .filters {
+    &__categories {
+      display: none;
+    }
+  }
+
+  .filter {
+    &__inputs {
+      overflow-y: scroll;
+      display: block;
+      position: fixed;
+      background-color: #fff;
+      width: inherit;
+      height: calc(100vh - 8.125rem);
+      z-index: 8;
+      margin: 0;
+      padding: 0 1.5rem 3.125rem;
+      left: -100%;
+      transition: left 0.3s ease-in;
+
+      &_active {
+        left: 0;
+      }
+    }
+
+    &__rooms {
+      min-width: 100%;
+      height: 3.125rem;
+    }
+
+    &__item {
+      min-width: 100%;
+      border: 1px solid #dcdcdc;
+
+      &_select {
+        min-width: 100%;
+      }
+      &_city {
+        width: 100%;
+      }
+
+      &:first-child {
+        border-bottom: 1px solid #dcdcdc;
+      }
+    }
+
+    &__label {
+      display: none;
+
+      &_mobile {
+        display: block;
+        margin: 1.5rem 0 0.625rem 0;
+      }
+    }
+
+    &__row {
+      display: block;
+      margin: 0;
+    }
+
+    &__price {
+      width: 100%;
+      height: fit-content;
+      display: block;
+      border: none;
+    }
+
+    &__price &__item {
+      border: 1px solid #dcdcdc;
+    }
+
+    &__map {
+      display: none;
+    }
+
+    &__list {
+      margin-top: 1.875rem;
+      width: 100%;
+    }
   }
 }

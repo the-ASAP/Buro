@@ -267,17 +267,10 @@
     margin: 0;
   }
 
-  .filters {
-    &__categories {
+  .page-item {
+    &:first-child,
+    &:last-child {
       display: none;
     }
-  }
-  .filter {
-    &__inputs {
-      display: none;
-    }
-  }
-  .pagination {
-    display: none;
   }
 }

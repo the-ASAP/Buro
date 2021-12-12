@@ -116,14 +116,28 @@
           </div>
           <form class="filter__inputs">
             <div class="filter__row">
-              <button type="button" class="filter__item filter__item_select">
+              <span class="filter__label">Комнатность</span>
+              <span class="filter__label">Тип дома</span>
+              <span class="filter__label">Площадь</span>
+              <span class="filter__label">Цена</span>
+            </div>
+            <div class="filter__row filter__row_inputs">
+              <span class="filter__label">Комнатность</span>
+              <div class="filter__rooms">
+                <button type="button" class="filter__room">1</button>
+                <button type="button" class="filter__room">2</button>
+                <button type="button" class="filter__room">3</button>
+                <button type="button" class="filter__room">4+</button>
+              </div>
+              <!-- <button type="button" class="filter__item filter__item_select">
                 <span class="filter__text">Комнат</span>
                 <div class="filter__options">
                   <span class="filter__option filter__item_rooms">1</span>
                   <span class="filter__option filter__item_rooms">2</span>
                   <span class="filter__option filter__item_rooms">3</span>
                 </div>
-              </button>
+              </button> -->
+              <span class="filter__label filter__label_mobile">Комнатность</span>
               <button type="button" class="filter__item filter__item_select">
                 <span class="filter__text">Стены</span>
                 <div class="filter__options">
@@ -132,6 +146,7 @@
                   <span class="filter__option filter__item_walls">3-комнатная</span>
                 </div>
               </button>
+              <span class="filter__label filter__label_mobile">Комнатность</span>
               <div class="filter__item">
                 <input
                   type="text"
@@ -142,6 +157,7 @@
                 <span class="filter__ruble">м2</span>
               </div>
 
+              <span class="filter__label filter__label_mobile">Комнатность</span>
               <div class="filter__price">
                 <div class="filter__item">
                   <input
@@ -161,7 +177,7 @@
                 </div>
               </div>
             </div>
-
+            <span class="filter__label filter__label_mobile">Комнатность</span>
             <div class="filter__row">
               <input
                 type="text"
@@ -544,7 +560,7 @@
       <section class="family" id="mortgage">
         <div class="wrapper_fullPhone">
           <div class="family__back">
-            <img class="family__image" src="img/family.png" alt="Семья" />
+            <img class="family__image" src="img/frame.png" alt="Семья" />
             <div class="family__form">
               <h1 class="family__title">Ипотека онлайн</h1>
               <span class="family__text">

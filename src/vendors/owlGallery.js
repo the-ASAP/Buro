@@ -32,8 +32,8 @@ export const owlGallery = (selector, params) => {
         let ref = $(this).parents('.flat').find('.flat__desc').attr('href');
         let favoriteRef = $(this).parents('.object').find('.object__more').attr('href');
         // window.location.href = ref;
-        if (ref) window.open(ref);
-        else window.open(favoriteRef);
+        if (ref) window.location.href = ref;
+        else window.location.href = favoriteRef;
       }
     });
   }

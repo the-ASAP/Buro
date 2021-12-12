@@ -13,11 +13,11 @@ import { createHint } from '../vendors/map.js';
 import { filterObjects } from '../vendors/ajax';
 
 //Components
-// import header from '../components/header.html';
+import header from '../components/header.html';
 // import footer from '../components/footer.html';
 
 $(() => {
-  // $('#root').prepend(header);
+  $('#root').prepend(header);
   // $('.contacts').append(footer);
 
   owlGallery('.carouselFlats', {
@@ -136,10 +136,15 @@ $(() => {
   $('.filter__list').on('click', function () {
     filter.filterListPage();
   });
-  $('.filter__item_rooms').on('click', function () {
+  $('.filter__room').on('click', function () {
+    $('.filter__room').each((index, item) => {
+      $(item).removeClass('filter__room_active');
+    });
+    $(this).addClass('filter__room_active');
+
     let text = $(this).text();
-    console.log(text);
-    filter.setAttr('flatRooms', text);
+    if (text === '4+') filter.setAttr('flatRooms', `>=4`);
+    else filter.setAttr('flatRooms', `=${text}`);
   });
   $('.filter__item_walls').on('click', function () {
     let text = $(this).text();
