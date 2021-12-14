@@ -269,6 +269,14 @@
       background-color: $hoverColor;
     }
   }
+
+  &__reset {
+    font-size: 1rem;
+    line-height: 1.37;
+    text-align: center;
+    text-decoration-line: underline;
+    color: $mainColor;
+  }
 }
 
 .cards {
@@ -970,6 +978,7 @@
   .filter {
     width: 100%;
     padding: 0 1.5rem;
+    margin: 0;
 
     &__tabs {
       display: none;
@@ -1014,7 +1023,7 @@
     &__map {
       order: 1;
       width: 100%;
-      margin: 0.625rem 0 3.125rem 0;
+      margin: 0.625rem 0 0 0;
     }
 
     &__list {
@@ -1036,6 +1045,11 @@
         position: absolute;
         right: 2px;
       }
+    }
+
+    &__reset {
+      margin: 1.25rem auto 3.125rem;
+      display: block;
     }
   }
 

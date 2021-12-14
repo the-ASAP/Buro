@@ -1,4 +1,6 @@
-export function createHint(maps, address, object, coorArr, link) {
+import * as $ from 'jquery';
+
+export function createHint(maps, address, object, coorArr, link, id) {
   let myPlacemark = new maps.Placemark(
     [coorArr[0], coorArr[1]],
     {
@@ -17,9 +19,31 @@ export function createHint(maps, address, object, coorArr, link) {
     }
   );
 
-  // myPlacemark.events.add('click', function () {
-  //   console.log(link);
-  // });
+  if (id) {
+    myPlacemark.events.add('click', function () {
+      $('.flats__choice').animate(
+        {
+          scrollLeft: $(`#${id}`).offset().left + 'px'
+        },
+        {
+          duration: 750,
+          easing: 'swing'
+        }
+      );
+      return false;
+    });
+  }
+
+  myPlacemark.events.add('balloonclose', function () {
+    if (document.documentElement.clientWidth < 768 && id) {
+      $('.flats').css('bottom', '-100%');
+    }
+  });
+  myPlacemark.events.add('balloonopen', function () {
+    if (document.documentElement.clientWidth < 768 && id) {
+      $('.flats').css('bottom', '0');
+    }
+  });
 
   return myPlacemark;
 }

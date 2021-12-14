@@ -93,6 +93,11 @@ $(() => {
   reqModal('.total__button');
   consulModal('.realtor__button');
 
+  $('.agency__ref').on('click', function (e) {
+    e.preventDefault();
+    $('.modalDomClick__image').trigger('click');
+  });
+
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')
     .then((maps) => {

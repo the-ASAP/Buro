@@ -693,6 +693,10 @@
 }
 
 @media (max-width: 768px) {
+  .breadcrumbs {
+    display: none;
+  }
+
   .content {
     display: block;
     margin-top: 1rem;

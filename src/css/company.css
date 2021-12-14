@@ -93,13 +93,13 @@
   background: var(--main-color);
   border-radius: 3px;
 }
-.nav__item {
+.footerMenu__title, .nav__item {
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.37;
 }
 @media (max-width: 768px) {
-  .nav__item {
+  .footerMenu__title, .nav__item {
     font-size: 0.875rem;
     line-height: 1.28;
   }
@@ -611,12 +611,6 @@ button {
 }
 .footerMenu__column {
   margin-right: 6.25rem;
-}
-.footerMenu__title {
-  display: block;
-  font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.5;
 }
 .footerMenu__ref {
   display: block;

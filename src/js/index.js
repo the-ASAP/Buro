@@ -13,12 +13,12 @@ import { createHint } from '../vendors/map.js';
 import { filterObjects } from '../vendors/ajax';
 
 //Components
-import header from '../components/header.html';
-// import footer from '../components/footer.html';
+// import header from '../components/header.html';
+import footer from '../components/footer.html';
 
 $(() => {
-  $('#root').prepend(header);
-  // $('.contacts').append(footer);
+  // $('#root').prepend(header);
+  $('.contacts').append(footer);
 
   owlGallery('.carouselFlats', {
     dots: false,

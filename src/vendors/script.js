@@ -229,6 +229,7 @@ if (params.get('parents')) {
     if (params.get('parents') === button.name)
       $(button).css('background-color', '#e23d3d').css('color', '#fff');
   });
+  filter.setAttr('parent', params.get('parent'));
 }
 if (params.get('squareFrom')) {
   $('.filter__squareFrom').val(params.get('squareFrom'));
@@ -248,7 +249,13 @@ if (params.get('priceTo')) {
 }
 
 if (params.get('flatRooms')) {
-  $('.filter__text_rooms').text(`Кол-во комнат: ${params.get('flatRooms')}`);
+  $('.filter__room').each(function (index, room) {
+    if (index + 1 === Number(params.get('flatRooms').slice(-1)))
+      // $(room).css('background-color', '#e23d3d').css('color', '#fff');
+      $(room).addClass('filter__room_active');
+  });
+
+  // $('.filter__room').css('background-color', '#fff').css('color', '#3d3d3d');
   filter.setAttr('flatRooms', params.get('flatRooms'));
 }
 
@@ -257,10 +264,10 @@ if (params.get('flatBuildingType')) {
   filter.setAttr('flatBuildingType', params.get('flatBuildingType'));
 }
 
-if (params.get('flatAddress')) {
-  let address = params.get('flatAddress').replace(/%20/g, ' ');
+if (params.get('address')) {
+  let address = params.get('address').replace(/%20/g, ' ');
   $('.filter__item_city').val(address);
-  filter.setAttr('flatAddress', address);
+  filter.setAttr('address', address);
 }
 
 if (params.get('sortby') === 'flatPrice' && params.get('sortdir') === 'desc') {
@@ -300,13 +307,33 @@ const svgOpen = `<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xml
 </svg>
 `;
 
-setTimeout(() => {
-  $('.header__mobile').on('click', function () {
-    $('.menuMobile').toggleClass('menuMobile__active');
+$('.header__mobile').on('click', function () {
+  $('.menuMobile').toggleClass('menuMobile__active');
 
-    if ($('.menuMobile').hasClass('menuMobile__active')) {
-      $('.header__mobile').html(svgClose);
-    } else $('.header__mobile').html(svgOpen);
+  if ($('.menuMobile').hasClass('menuMobile__active')) {
+    $('.header__mobile').html(svgClose);
+  } else $('.header__mobile').html(svgOpen);
+});
+consulModal('.navMobile__consul');
+
+// Сброс фильтров
+$('.filter__reset').on('click', function () {
+  filter.resetAttrs();
+
+  //очистка данных на странице объектов
+  $('.filter__room').each(function (index, room) {
+    $(room).removeClass('filter__room_active');
   });
-  consulModal('.navMobile__consul');
-}, 3000);
+  $('.filter__text_walls').text('Тип дома');
+
+  $('.filter__item_price').each(function (index, input) {
+    $(input).val('');
+  });
+
+  $('#search').removeAttr('autocomplete');
+  $('.filter__item_city').val('');
+
+  //Очитска данных на главной странице
+  $('.filter__text').text('Выберите тип');
+  $('.filter__item_input').val('');
+});

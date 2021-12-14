@@ -218,10 +218,11 @@
   .flats {
     width: 90%;
     background-color: #fff;
-    position: absolute;
-    top: calc(100vh - 25rem);
+    position: fixed;
+    bottom: -100%;
     left: 5%;
     z-index: 1;
+    transition: bottom 0.3s ease-in;
 
     &__intro {
       width: 100%;
@@ -244,7 +245,8 @@
 
   .flat {
     margin: 0 1.25rem 0 0;
-    width: 100%;
+    min-width: 20.375rem;
+    width: 20.375rem;
 
     &:nth-child(4n + 2),
     &:nth-child(4n + 3),

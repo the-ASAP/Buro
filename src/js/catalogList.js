@@ -12,12 +12,12 @@ import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
 
 //Components
-import header from '../components/header.html';
-import footer from '../components/footer.html';
+// import header from '../components/header.html';
+// import footer from '../components/footer.html';
 
 $(() => {
-  $('#root').prepend(header);
-  $('.content').append(footer);
+  // $('#root').prepend(header);
+  // $('.content').append(footer);
 
   owlGallery('.carouselFlats', {
     dots: false,
@@ -70,14 +70,19 @@ $(() => {
         let address = $(item).find('.flat__address').text();
         let oldprice = $(item).find('.flat__price').text();
         let link = $(item).find('.flat__desc').attr('href');
+        let id = $(item).attr('id');
 
         if (latitude && longitude)
           myMap.geoObjects.add(
-            createHint(maps, address, `${oldprice} ₽`, [latitude, longitude], link)
+            createHint(maps, address, `${oldprice} ₽`, [latitude, longitude], link, id)
           );
       });
 
-      new maps.SuggestView('search');
+      let suggest = new maps.SuggestView('search');
+      $('#search').removeAttr('autocomplete');
+      suggest.events.add('select', function (e) {
+        filter.setAttr('address', e.get('item').value);
+      });
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 
@@ -103,10 +108,10 @@ $(() => {
     filter.filterCartPage();
   });
   $('.filter__list').on('click', function () {
-    // filter.filterListPage();
-    filter.filterCartPage();
+    if (document.documentElement.clientWidth > 768) filter.filterListPage();
+    else filter.filterCartPage();
   });
-  $('.filter__item_rooms').on('click', function (e) {
+  $('.filter__item_rooms').on('click', function () {
     let text = $(this).text();
     $(this).parent().prev().text(text);
     filter.setAttr('flatRooms', text);
@@ -159,7 +164,7 @@ $(() => {
     let text = $(this).text();
     $(this).parent().prev().text(text);
   });
-  $('.flats__option').on('click', function (e) {
+  $('.flats__option').on('click', function () {
     let text = $(this).text();
     $(this).parent().prev().text(text);
   });

@@ -10,12 +10,12 @@ import { select, filter } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 
 //Components
-import header from '../components/header.html';
-import footer from '../components/footer.html';
+// import header from '../components/header.html';
+// import footer from '../components/footer.html';
 
 $(() => {
-  $('#root').prepend(header);
-  $('.section').append(footer);
+  // $('#root').prepend(header);
+  // $('.section').append(footer);
 
   owlGallery('.carouselFlats', {
     dots: false,
@@ -76,6 +76,7 @@ $(() => {
     .load('https://api-maps.yandex.ru/2.1/?apikey=2b543523-54f1-4a9f-af8a-8333795718cd&lang=ru_RU')
     .then((maps) => {
       let suggest = new maps.SuggestView('search');
+      $('#search').removeAttr('autocomplete');
       suggest.events.add('select', function (e) {
         filter.setAttr('address', e.get('item').value);
       });
