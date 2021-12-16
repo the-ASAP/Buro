@@ -2012,6 +2012,7 @@ button {
   border-right: 1px solid #dcdcdc;
   border-left: 1px solid #dcdcdc;
   border-radius: 0 0 3px 3px;
+  z-index: 1;
 }
 .filter__option {
   display: block;
@@ -2876,16 +2877,24 @@ button {
   color: var(--main-color);
   text-decoration: underline;
 }
+.filter__category_mobile {
+  display: none;
+}
 @media (max-width: 768px) {
+  .filter__category_mobile {
+    display: block;
+  }
+
   .intro {
     background: #fff;
     height: auto;
   }
   .intro__title {
-    color: #3d3d3d;
-    color: var(--gray-main);
-    padding-top: 3.125rem;
-    max-width: 80%;
+    background-image: url(../img/mainBack.png);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    padding: 3.125rem 10%;
     font-weight: 600;
     font-size: 1.125rem;
     line-height: 1.37;

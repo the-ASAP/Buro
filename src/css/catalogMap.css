@@ -712,6 +712,9 @@ button {
   -o-transition: color 0.3s ease-in, background-color 0.3s ease-in;
   transition: color 0.3s ease-in, background-color 0.3s ease-in;
 }
+.filters__category_mobile {
+  display: none;
+}
 .filters__category:hover, .filters__category:focus {
   background-color: #e23d3d;
   background-color: var(--main-color);
@@ -1031,6 +1034,9 @@ button {
   color: #e23d3d;
   color: var(--main-color);
 }
+.filter__category_mobile {
+  display: none;
+}
 @media (max-width: 768px) {
   .mobileMenu {
     display: -webkit-box;
@@ -1134,6 +1140,12 @@ button {
   .filter__reset {
     margin: 1.25rem auto 0;
     display: block;
+  }
+  .filter__category_mobile {
+    display: block;
+  }
+  .filter__category_mobile .filter__options {
+    z-index: 1;
   }
 }
 .flat {
@@ -1387,11 +1399,12 @@ button {
   border-right: 1px solid #dcdcdc;
   border-left: 1px solid #dcdcdc;
   border-radius: 0 0 3px 3px;
+  z-index: 2;
 }
 .content__option {
   display: block;
-  padding-left: 1.25rem;
-  margin: 0.625rem 0 0.625rem;
+  padding: 0.625rem 0 0.625rem 1.25rem;
+  z-index: 2;
 }
 .content__option:first-child {
   margin-top: 1.25rem;

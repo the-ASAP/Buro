@@ -270,6 +270,13 @@ if (params.get('address')) {
   filter.setAttr('address', address);
 }
 
+if (params.get('sortby') === 'menuindex') {
+  $('.content__newText').text('Новизна');
+  $('.flats__text').text('Новизна');
+  filter.setAttr('dir', 'menuindex');
+  filter.setAttr('sort', 'desc');
+}
+
 if (params.get('sortby') === 'flatPrice' && params.get('sortdir') === 'desc') {
   $('.content__newText').text('Цена (по убыванию)');
   $('.flats__text').text('Цена (по убыванию)');
@@ -283,8 +290,8 @@ if (params.get('sortby') === 'flatPrice' && params.get('sortdir') === 'asc') {
   filter.setAttr('sort', 'asc');
 }
 if (params.get('sortby') === 'flatSquare' && params.get('sortdir') === 'desc') {
-  $('.content__newText').text('Цена (по убыванию)');
-  $('.flats__text').text('Цена (по убыванию)');
+  $('.content__newText').text('Площадь (по убыванию)');
+  $('.flats__text').text('Площадь (по убыванию)');
   filter.setAttr('dir', 'flatSquare');
   filter.setAttr('sort', 'desc');
 }
@@ -320,20 +327,24 @@ consulModal('.navMobile__consul');
 $('.filter__reset').on('click', function () {
   filter.resetAttrs();
 
+  if (window.location.pathname === '/obektyi-spisok' || window.location.pathname === '/obektyi')
+    filter.filterListPage();
+  if (window.location.pathname === '/obektyi-karta') filter.filterCartPage();
+
   //очистка данных на странице объектов
-  $('.filter__room').each(function (index, room) {
-    $(room).removeClass('filter__room_active');
-  });
-  $('.filter__text_walls').text('Тип дома');
+  // $('.filter__room').each(function (index, room) {
+  //   $(room).removeClass('filter__room_active');
+  // });
+  // $('.filter__text_walls').text('Тип дома');
 
-  $('.filter__item_price').each(function (index, input) {
-    $(input).val('');
-  });
+  // $('.filter__item_price').each(function (index, input) {
+  //   $(input).val('');
+  // });
 
-  $('#search').removeAttr('autocomplete');
-  $('.filter__item_city').val('');
+  // $('#search').removeAttr('autocomplete');
+  // $('.filter__item_city').val('');
 
-  //Очитска данных на главной странице
-  $('.filter__text').text('Выберите тип');
-  $('.filter__item_input').val('');
+  // //Очитска данных на главной странице
+  // $('.filter__text').text('Выберите тип');
+  // $('.filter__item_input').val('');
 });

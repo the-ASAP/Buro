@@ -20,6 +20,10 @@
     color: $grayMain;
     transition: color 0.3s ease-in, background-color 0.3s ease-in;
 
+    &_mobile {
+      display: none;
+    }
+
     &:hover,
     &:focus {
       background-color: $mainColor;
@@ -276,6 +280,12 @@
     text-decoration-line: underline;
     color: $mainColor;
   }
+
+  &__category {
+    &_mobile {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -390,6 +400,16 @@
     &__reset {
       margin: 1.25rem auto 0;
       display: block;
+    }
+
+    &__category {
+      &_mobile {
+        display: block;
+
+        .filter__options {
+          z-index: 1;
+        }
+      }
     }
   }
 }

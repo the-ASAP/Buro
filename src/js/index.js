@@ -14,11 +14,11 @@ import { filterObjects } from '../vendors/ajax';
 
 //Components
 // import header from '../components/header.html';
-import footer from '../components/footer.html';
+// import footer from '../components/footer.html';
 
 $(() => {
   // $('#root').prepend(header);
-  $('.contacts').append(footer);
+  // $('.contacts').append(footer);
 
   owlGallery('.carouselFlats', {
     dots: false,
@@ -108,13 +108,21 @@ $(() => {
         )
       );
 
-      new maps.SuggestView('search');
+      let suggest = new maps.SuggestView('search');
+      $('#search').removeAttr('autocomplete');
+      suggest.events.add('select', function (e) {
+        filter.setAttr('address', e.get('item').value);
+      });
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 
   const filter = new filterObjects();
   $('.filter__tab').on('click', function (e) {
     filter.setAttr('parent', e.target.name);
+    filter.filterListPage();
+  });
+  $('.category__option_mobile').on('click', function () {
+    filter.setAttr('parent', $(this).attr('name'));
     filter.filterListPage();
   });
   $('.filter__item_input').on('change', function () {

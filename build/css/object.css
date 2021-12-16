@@ -1850,6 +1850,9 @@ button {
   fill: #e23d3d;
   fill: var(--main-color);
 }
+.object__button--share {
+  display: none;
+}
 .object__text {
   display: block;
   margin-top: 0.625rem;

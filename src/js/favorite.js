@@ -27,7 +27,7 @@ $(() => {
     let favorite = localStorage.getItem('favorite').split(',');
     let newFavorite = favorite.filter((id) => id !== this.name).join(',');
     localStorage.setItem('favorite', newFavorite);
-    document.cookie = `favorite=${favorite}; path=/izbrannoe`;
+    document.cookie = `favorite=${newFavorite}; path=/izbrannoe`;
     $(this).closest('.object').remove();
   });
 });

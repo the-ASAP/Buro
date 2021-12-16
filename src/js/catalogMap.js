@@ -88,6 +88,11 @@ $(() => {
     filter.setAttr('parent', e.target.name);
     filter.filterListPage();
   });
+  $('.category__option_mobile').on('click', function () {
+    filter.setAttr('parent', $(this).attr('name'));
+    filter.filterListPage();
+  });
+
   $('.filter__squareFrom').on('change', function () {
     filter.setAttr('squareFrom', this.value);
   });
@@ -126,6 +131,11 @@ $(() => {
     filter.setAttr('flatBuildingType', `'${text}'`);
   });
 
+  $('.newDESC').on('click', function () {
+    filter.setAttr('dir', 'menuindex');
+    filter.setAttr('sort', 'desc');
+    filter.filterListPage();
+  });
   $('.priceDESC').on('click', function () {
     filter.setAttr('dir', 'flatPrice');
     filter.setAttr('sort', 'desc');

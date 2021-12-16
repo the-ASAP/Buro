@@ -77,12 +77,13 @@
     border-right: 1px solid #dcdcdc;
     border-left: 1px solid #dcdcdc;
     border-radius: 0 0 3px 3px;
+    z-index: 2;
   }
 
   &__option {
     display: block;
-    padding-left: 1.25rem;
-    margin: 0.625rem 0 0.625rem;
+    padding: 0.625rem 0 0.625rem 1.25rem;
+    z-index: 2;
 
     &:first-child {
       margin-top: 1.25rem;
