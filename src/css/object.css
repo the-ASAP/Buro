@@ -2453,6 +2453,15 @@ button {
   color: var(--gray-light);
   margin-left: 0.5rem;
 }
+.total__payment_text {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: #979797;
+  color: var(--gray-light);
+  display: block;
+  margin-top: 0.625rem;
+  text-align: center;
+}
 .mortgage {
   margin-top: 6.25rem;
 }
@@ -2536,6 +2545,39 @@ button {
 .yandexHint p:first-child {
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+.ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more.ya-share2__link_more-button-type_short {
+  background: #fff !important;
+  border: 1px solid #dcdcdc !important;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  padding: 0 !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  margin-left: 0.625rem !important;
+  -webkit-transition: border-color 0.3s ease-in !important;
+  -o-transition: border-color 0.3s ease-in !important;
+  transition: border-color 0.3s ease-in !important;
+}
+.ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more.ya-share2__link_more-button-type_short:hover {
+  border-color: #e23d3d;
+  border-color: var(--main-color);
+}
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__icon_more {
+  opacity: 0.3 !important;
+}
+.ya-share2__container.ya-share2__container_color-scheme_blackwhite .ya-share2__badge {
+  background-color: #e23d3d !important;
+}
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__badge_more {
+  background-color: #fff !important;
 }
 @media (max-width: 768px) {
   .breadcrumbs {

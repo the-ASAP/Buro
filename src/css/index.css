@@ -2143,6 +2143,19 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
+}
+.card__image {
+  position: absolute;
+  width: 7.1875rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+.card__image_2 {
+  position: absolute;
+  width: 9rem;
+  bottom: 0;
+  right: 0;
 }
 .card__intro {
   display: -webkit-box;
@@ -2481,6 +2494,15 @@ button {
   color: #979797;
   color: var(--gray-light);
   margin-left: 0.5rem;
+}
+.total__payment_text {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: #979797;
+  color: var(--gray-light);
+  display: block;
+  margin-top: 0.625rem;
+  text-align: center;
 }
 .mortgage {
   margin-top: 6.25rem;

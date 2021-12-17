@@ -614,6 +614,14 @@
     color: $grayLight;
     margin-left: 0.5rem;
   }
+  &__payment_text {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    color: $grayLight;
+    display: block;
+    margin-top: 0.625rem;
+    text-align: center;
+  }
 }
 
 .mortgage {
@@ -694,6 +702,35 @@
       margin-bottom: 0.5rem;
     }
   }
+}
+
+.ya-share2__container_size_m
+  .ya-share2__item_more.ya-share2__item_has-pretty-view
+  .ya-share2__link_more.ya-share2__link_more-button-type_short {
+  background: #fff !important;
+  border: 1px solid #dcdcdc !important;
+  width: 2.25rem !important ;
+  height: 2.25rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  align-items: center !important;
+  margin-left: 0.625rem !important;
+  transition: border-color 0.3s ease-in !important;
+
+  &:hover {
+    border-color: $mainColor;
+  }
+}
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__icon_more {
+  opacity: 0.3 !important;
+}
+
+.ya-share2__container.ya-share2__container_color-scheme_blackwhite .ya-share2__badge {
+  background-color: #e23d3d !important;
+}
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__badge_more {
+  background-color: #fff !important;
 }
 
 @media (max-width: 768px) {

@@ -298,6 +298,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+
+  &__image {
+    position: absolute;
+    width: 7.1875rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  &__image_2 {
+    position: absolute;
+    width: 9rem;
+    bottom: 0;
+    right: 0;
+  }
 
   &__intro {
     display: flex;
@@ -594,6 +609,14 @@
     line-height: 1.2;
     color: $grayLight;
     margin-left: 0.5rem;
+  }
+  &__payment_text {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    color: $grayLight;
+    display: block;
+    margin-top: 0.625rem;
+    text-align: center;
   }
 }
 
