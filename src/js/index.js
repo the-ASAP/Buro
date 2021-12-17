@@ -78,16 +78,13 @@ $(() => {
   consulModal('.contacts__consul');
   consulModal('.exchange__mainButton');
   consulModal('.exchange__button');
+  consulModal('.card__openConsul');
   // openModal('.agency__ref', '.modalDomClick', 'modalDomClick_active');
   // consulModal('.card__openConsul');
 
   $('.agency__ref').on('click', function (e) {
     e.preventDefault();
     $('.modalDomClick__image').trigger('click');
-  });
-
-  $('.card__openConsul').on('click', function () {
-    window.open('http://buro.asap-lp.ru/obektyi');
   });
 
   ymaps
