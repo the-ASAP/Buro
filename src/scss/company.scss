@@ -141,6 +141,47 @@
   }
 }
 
+.invite {
+  background-color: #fff;
+  margin-top: 3.125rem;
+  padding: 3rem;
+  
+  &__title {
+    text-align: center;
+
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+
+    &_center {
+      text-align: center;
+    }
+  }
+
+  &__point {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    margin-top: 0.625rem;
+    list-style: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #000;
+      position: absolute;
+      top: calc(50% - 3px);
+      left: 0;
+    }
+  }
+}
 .footer {
   margin-top: 6.25rem;
 }
@@ -190,6 +231,20 @@
     }
     &__pinkBack {
       width: 22rem;
+    }
+  }
+  
+  .invite {
+    &__title {
+      text-align: left;
+    }
+
+    &__text {
+      text-align: left;
+
+      &_center {
+        text-align: left;
+      }
     }
   }
 }

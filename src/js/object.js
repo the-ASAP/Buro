@@ -11,6 +11,7 @@ import { select, reqModal, consulModal } from '../vendors/script.js';
 import { owlGallery } from '../vendors/owlGallery.js';
 import { createHint } from '../vendors/map.js';
 
+import '../scss/object.scss';
 // Components
 // import header from '../components/header.html';
 // import footer from '../components/footer.html';
@@ -110,4 +111,16 @@ $(() => {
       myMap.geoObjects.add(createHint(maps, address, object, [latitude, longitude]));
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
+
+
+  console.log($('.realtor__name').html())
+  console.log($('.realtor__phone').html())
+  
+  const elem = `<span class="modalConsul__text">${$('.realtor__name').html()}</text>`
+  const elem2 = `<span class="modalConsul__text">${$('.realtor__phone').html()}</text>`
+
+  $('.modalConsul__text').append(elem)
+  $('.modalConsul__text').first().append(elem2)
+
+  $('.modalConsul__text:not(:first)').css('color', '#1d1d1d')
 });

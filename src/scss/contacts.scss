@@ -21,6 +21,7 @@
 
   &__label {
     display: block;
+    max-width: 50%;
   }
 
   &__time {
@@ -28,11 +29,17 @@
   }
 
   &__phone,
+  &__phone_2,
   &__mail {
     margin: 1rem 0 2.25rem;
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 1.37;
+    display: block;
+  }
+
+  &__phone {
+    margin-bottom: 0;
   }
 
   &__address,
@@ -91,6 +98,11 @@
     margin-top: 3.125rem;
     padding: 0;
 
+    &__label {
+      max-width: 100%;
+      height: auto;
+    }
+    
     &__blocks {
       margin-top: 1.5625rem;
       display: block;

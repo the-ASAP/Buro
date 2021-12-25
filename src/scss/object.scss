@@ -769,6 +769,11 @@
     &__text {
       margin-top: 1.25rem;
     }
+
+    &__image {
+      width: 90vw !important;
+      object-fit: cover;
+    }
   }
 
   .description {

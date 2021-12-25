@@ -229,7 +229,7 @@ if (params.get('parents')) {
     if (params.get('parents') === button.name)
       $(button).css('background-color', '#e23d3d').css('color', '#fff');
   });
-  filter.setAttr('parent', params.get('parent'));
+  filter.setAttr('parent', params.get('parents'));
 }
 if (params.get('squareFrom')) {
   $('.filter__squareFrom').val(params.get('squareFrom'));

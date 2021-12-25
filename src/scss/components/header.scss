@@ -261,6 +261,10 @@
       font-size: 1.125rem;
       line-height: 1.2;
       color: $grayMain;
+
+      & + & {
+        margin-top: 1rem;
+      }
     }
 
     &__mail {

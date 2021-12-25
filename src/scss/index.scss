@@ -312,16 +312,16 @@
 
   &__image_2 {
     position: absolute;
-    width: 5.25rem;
-    top: 1.25rem;
-    right: 2.25rem;
+    width: 9.25rem;
+    top: 0.5rem;
+    right: 1.25rem;
   }
 
   &__image_3 {
     position: absolute;
-    width: 8.125rem;
-    top: 2.375rem;
-    right: 0;
+    width: 6.5rem;
+    bottom: 0.5rem;
+    right: 1.5rem;
   }
   &__image_4 {
     position: absolute;
@@ -342,10 +342,10 @@
   }
 
   &__title {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.5rem;
     line-height: 1.2;
-    color: $grayMain;
+    color: $mainColor;
     max-width: 10.375rem;
   }
 
@@ -368,6 +368,10 @@
     font-size: 1rem;
     line-height: 1.2;
     color: $grayMid;
+  }
+
+  &_cursor {
+    cursor: pointer;
   }
 }
 
@@ -937,6 +941,7 @@
 
   &__label {
     display: block;
+    max-width: 50%;
   }
 
   &__time {
@@ -944,11 +949,16 @@
   }
 
   &__phone,
+  &__phone_2,
   &__mail {
     margin: 1rem 0 2.25rem;
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 1.37;
+  }
+
+  &__phone {
+    margin-bottom: 0;
   }
 
   &__address,
@@ -1347,6 +1357,11 @@
     margin-top: 3.125rem;
     padding: 0;
 
+    &__label {
+      max-width: 100%;
+      height: auto;
+    }
+    
     &__info {
       padding: 3.125rem 5% 0;
     }

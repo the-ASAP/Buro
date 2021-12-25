@@ -1,5 +1,7 @@
 .modalConsul,
-.modalDomClick {
+.modalDomClick,
+.modalRansom,
+.modalRansom2 {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -56,10 +58,20 @@
   }
 
   &__title {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 2.25rem;
     line-height: 120%;
     color: $grayMain;
+    text-align: center;
+
+    &_sizeText {
+      font-size: 1rem;
+    }
+
+    &_red {
+      color: $mainColor;
+      font-weight: 600;
+    }
   }
 
   &__text {
@@ -69,6 +81,15 @@
     color: $grayMid;
     margin-top: 1.375rem;
     display: block;
+
+    & + & {
+      margin-top: 0.625rem;
+    }
+    
+    &_red {
+      color: $mainColor;
+      font-weight: 500;
+    }
   }
 
   &__form {
@@ -164,6 +185,30 @@
     }
   }
 }
+
+.modalRansom2 {
+  &__content {
+    align-items: flex-start;
+  }
+  
+  &__row {
+    display: flex;
+    margin-top: 1.375rem;
+  }
+
+  &__mark {
+    margin-right: 1rem;
+    min-width: 1rem;
+    margin-top: 2px;
+  }
+
+  &__text {
+    text-align: left;
+    position: relative;
+    margin: 0;
+  }
+}
+
 .modalReq {
   position: fixed;
   width: 100%;
@@ -662,8 +707,12 @@
 }
 
 @media (max-width: 768px) {
-  .modalConsul {
+  .modalConsul,
+  .modalDomClick,
+  .modalRansom,
+  .modalRansom2 {
     overflow: auto;
+    align-items: flex-start;
 
     &__content {
       height: 100vh;
@@ -689,6 +738,10 @@
 
     &__submit {
       min-height: 3.4375rem;
+    }
+
+    &__totalMort {
+      display: block;
     }
   }
 }

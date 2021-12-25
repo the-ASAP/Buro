@@ -78,9 +78,10 @@ $(() => {
   consulModal('.contacts__consul');
   consulModal('.exchange__mainButton');
   consulModal('.exchange__button');
-  consulModal('.card__openConsul');
-  // openModal('.agency__ref', '.modalDomClick', 'modalDomClick_active');
-  // consulModal('.card__openConsul');
+
+  openModal('.card__openConsul', '.modalRansom', 'modalRansom_active');
+  openModal('.card__openConsul2', '.modalRansom2', 'modalRansom2_active');
+
 
   $('.agency__ref').on('click', function (e) {
     e.preventDefault();
