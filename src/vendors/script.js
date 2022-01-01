@@ -50,15 +50,20 @@ export function transformText(classElement, callback) {
 }
 
 // Заполнение инпута
-let reqPhone = document.getElementById('modalReq__input_phone');
-let consulPhone = document.getElementById('modalConsul__input_phone');
+function getMaskOnPhone(phoneClass) {
+  let maskOptions = {
+    mask: '+{7} (000) 000-00-00'
+  };
+  
+  $(phoneClass).each((_, item) => IMask(item, maskOptions))
+}
 
-let maskOptions = {
-  mask: '+{7} (000) 000-00-00'
-};
+getMaskOnPhone('.modalReq__input_phone')
+getMaskOnPhone('.modalConsul__input_phone')
+getMaskOnPhone('.modalDomClick__input_phone')
+getMaskOnPhone('.modalRansom__input_phone')
+getMaskOnPhone('.modalRansom2__input_phone')
 
-if (reqPhone) IMask(reqPhone, maskOptions);
-if (consulPhone) IMask(consulPhone, maskOptions);
 
 transformText('.flat__price', addNulles);
 transformText('.card__newPrice', addNulles);

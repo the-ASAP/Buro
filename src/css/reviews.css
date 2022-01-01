@@ -1225,6 +1225,7 @@ button {
   color: #1d1d1d;
   color: var(--gray-main);
   margin-top: 0.5rem;
+  display: block;
 }
 .modalReq__submit {
   margin-top: 1.5rem;

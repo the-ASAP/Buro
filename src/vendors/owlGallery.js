@@ -37,4 +37,8 @@ export const owlGallery = (selector, params) => {
       }
     });
   }
+
+  else {
+    $('.owl-dots').css('height', '1px')
+  }
 };

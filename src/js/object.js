@@ -112,10 +112,6 @@ $(() => {
     })
     .catch((error) => console.log('Failed to load Yandex Maps', error));
 
-
-  console.log($('.realtor__name').html())
-  console.log($('.realtor__phone').html())
-  
   const elem = `<span class="modalConsul__text">${$('.realtor__name').html()}</text>`
   const elem2 = `<span class="modalConsul__text">${$('.realtor__phone').html()}</text>`
 
