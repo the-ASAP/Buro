@@ -129,7 +129,7 @@ $(() => {
   });
 
   $('.newDESC').on('click', function () {
-    filter.setAttr('dir', 'menuindex');
+    filter.setAttr('dir', 'id');
     filter.setAttr('sort', 'desc');
     filter.filterCartPage();
   });
